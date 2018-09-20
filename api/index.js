@@ -55,7 +55,8 @@ export default {
             guid: data.guid.rendered,
             link: data.link,
             slug: data.slug,
-            title: data.title.rendered
+            title: data.title.rendered,
+            fi_medium: data.fi_medium
           };
           resolve(filtered);
         } else {
@@ -84,7 +85,13 @@ export default {
               title: item.title.rendered,
               content: item.content.rendered,
               excerpt: item.excerpt.rendered,
-              slug: item.slug
+              aerobic_bias: item.acf.aerobic_bias,
+              gymnastics_bias: item.acf.gymnastics_bias,
+              strength_bias: item.acf.strength_bias,
+              balanced_athlete: item.acf.balanced_athlete,
+              slug: item.slug,
+              fi_medium: item.fi_medium,
+              activeItem: 'aerobic'
             }))
           };
           resolve(filtered);

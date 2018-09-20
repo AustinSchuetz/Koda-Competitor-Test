@@ -2,14 +2,13 @@
   <div>
     <section class="header">
       <categories :categories="categories"></categories>
-      <img class="logo" src="~assets/logo.svg">
-
-      <h2 class="subtitle">
-        WordPress as a Progressive Web App
-      </h2>
+    </section>
+    <section class="programming-sidebar">
+      <programming-sidebar></programming-sidebar>
     </section>
     <section class="container">
-      <div>
+      <div class="inside-container">
+        <h1 class="home-title">Title Line</h1>
         <div class="content">
           <post-list v-if="posts" :posts="posts" title="Recent Posts"></post-list>
         </div>
@@ -25,9 +24,10 @@ import api from "../api/index";
 import postList from '../components/postList.vue'
 import recentPosts from '../components/recentPosts.vue'
 import categories from '../components/categories.vue'
+import programmingSidebar from '../components/programmingSidebar.vue'
 
 export default {
-  components: { postList, categories, recentPosts },
+  components: { postList, categories, recentPosts, programmingSidebar },
   async asyncData({ params }) {
     // We can use async/await ES6 feature
     let { data } = await api.getPosts()
@@ -38,7 +38,7 @@ export default {
   },
   head() {
     return {
-      title: `Nuxt WordPress | Home`,
+      title: `Koda Competitor | Home`,
       meta: [
         {
           name: 'description',
@@ -68,8 +68,7 @@ export default {
 <style>
 
 .header {
-  background-color:#1e5799;
-  background-image: linear-gradient(to right, #34495F, #3A5674);
+  background: none !important;
   text-align: center;
 }
 .container {
@@ -79,6 +78,9 @@ export default {
   text-align: center;
   padding-top:60px;
 }
+.inside-container {
+    width: 100%;
+}
 
 .content {
   font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -86,10 +88,15 @@ export default {
   justify-content: center;
   align-items: flex-start;
   text-align: left;
-  margin: 0px auto;
+  margin: 0 0 0 260px;
   line-height: 150%;
-  padding: 0px 30px 30px 30px;
-  max-width:1000px;
+  padding: 30px;
+  width: calc(100% - 260px);
+}
+.home-title {
+  font-size: 3em;
+  margin: 50px auto 0;
+  text-align: center;
 }
 
 .title {
@@ -134,7 +141,7 @@ and (max-device-width : 480px) {
     padding:5px 10px 15px;
   }
   h3 {
-    font-size: 34px;
+    font-size: 1.5em;
     font-weight: 700;
     line-height: 44px;
   }

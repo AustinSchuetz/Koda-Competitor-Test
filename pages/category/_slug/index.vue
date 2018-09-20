@@ -2,7 +2,6 @@
   <div>
     <section class="header">
       <categories :categories="categories"></categories>
-      <h1 class="page-title">{{slug}}</h1>
     </section>
     <section class="category-container">
       <div class="category-content">
@@ -34,7 +33,7 @@ export default {
   },
   head() {
     return {
-      title: `Nuxt WordPress | ${this.slug}`,
+      title: `Koda Competitor | ${this.slug}`,
       meta: [
         {
           name: 'description',
@@ -45,7 +44,6 @@ export default {
   },
   data() {
     return {
-      title: 'default'
     }
   },
   mounted() {
@@ -66,20 +64,12 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 /* layout */
 
-.page-title {
-    text-align: center;
-    font-size:36px;
-    background-color:#1e5799;
-    background-image: linear-gradient(to right, #34495F, #3A5674);
-    text-align: center;
-    padding-top: 80px;
-    color:#fff;
-    padding-bottom:10px;
+h2 {
+  padding-top: 50px;
 }
-
 .category-container {
   font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   display: flex;
