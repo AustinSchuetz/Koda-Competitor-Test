@@ -6,6 +6,7 @@
       </div>
       <div class="find-programming">
           <h2>Filtering of WODS</h2>
+          <h2>Or maybe most recent leaderboard?????</h2>
       </div>
   </div>
 </template>
