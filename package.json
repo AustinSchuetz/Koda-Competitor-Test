@@ -10,6 +10,7 @@
     "bulma": "^0.4.0",
     "es6-promise": "^4.2.4",
     "firebase": "^5.5.2",
+    "firebase-functions": "^2.0.5",
     "hover.css": "^2.2.0",
     "node-sass": "^4.5.1",
     "nuxt": "^1.4.0",
