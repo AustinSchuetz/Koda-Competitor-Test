@@ -1,13 +1,12 @@
 language: node_js
-sudo: false
 node_js:
-  - "4.1"
-  - "4.0"
+  - "iojs"
+  - "8"
 install:
   - npm install
-   - npm install -g firebase-tools
+  - npm install -g firebase-tools
 script:
-  - npm test
   - echo "Deploy!!"
+  - npm test
 after_success:
-  - firebase deploy - project koda-competitor-testing-- token $FIREBASE_TOKEN
+   -  firebase deploy — project koda-competitor-testing — token $FIREBASE_TOKEN.
