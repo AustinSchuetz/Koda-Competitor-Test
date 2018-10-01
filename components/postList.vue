@@ -6,10 +6,10 @@
         <div class="bias-wrap">
             <!--- maybe make a new component for each item so then I can set the activeItem easily --->
             {{ index }}
-            <a v-if="item.aerobic_bias" @click="setActive('aerobic')" :class="item.activeItem" href="javascript:void(0)" class="bias activebias">Aerobic Bias</a>
-            <a v-if="item.gymnastics_bias" @click="setActive('gymnastics')" :class="item.activeItem" href="javascript:void(0)" class="bias">Gymnastics Bias</a>
-            <a v-if="item.strength_bias" @click="setActive('strength')" :class="item.activeItem" href="javascript:void(0)" class="bias">Strength Bias</a>
-            <a v-if="item.balanced_athlete" @click="setActive('balanced')" :class="item.activeItem" href="javascript:void(0)" class="bias">Balanced Athlete</a>
+            <a v-if="item.aerobic_bias" href="javascript:void(0)" class="bias activebias">Aerobic Bias</a>
+            <a v-if="item.gymnastics_bias" href="javascript:void(0)" class="bias">Gymnastics Bias</a>
+            <a v-if="item.strength_bias" href="javascript:void(0)" class="bias">Strength Bias</a>
+            <a v-if="item.balanced_athlete" href="javascript:void(0)" class="bias">Balanced Athlete</a>
         </div>
         <nuxt-link :to="slugToUrl(item.slug)" class="post-content">
             <div class="post-content-date">
