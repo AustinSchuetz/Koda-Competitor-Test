@@ -5,12 +5,12 @@
         <h2>Koda<span>Competitor</span></h2>
    </nuxt-link>
     <div class="main-menu">
-      <nuxt-link to="/wod/">WOD</nuxt-link>
+      <nuxt-link to="/workout-of-the-day/">WOD</nuxt-link>
       <nuxt-link to="/individual-programming/">Individual Programming</nuxt-link>
       <nuxt-link to="/blog/">Blog</nuxt-link>
       <nuxt-link to="/coaches/">Coaches</nuxt-link>
       <nuxt-link to="/athletes/">Athletes</nuxt-link>
-      <nuxt-link to="/community/">Community</nuxt-link>
+      <!--<nuxt-link to="/community/">Community</nuxt-link>-->
       <nuxt-link to="/sign-up/" class="sign-up">Sign Up</nuxt-link>
       <nuxt-link to="/login/">Log In</nuxt-link>
   </div>
