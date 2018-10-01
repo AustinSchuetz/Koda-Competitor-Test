@@ -4,7 +4,10 @@ module.exports = {
   ** Learn more: https://github.com/nuxt/nuxt-modules
   */
   modules: [{ src: '@nuxtjs/pwa', options: { icon: { sizes: [512, 192, 380 ] } } }],
-  plugins: ['~/plugins/vue-tabs-component'],
+  plugins: [
+      '~/plugins/vue-tabs-component',
+      '~/plugins/firebase'
+  ],
   
   /*
   ** Headers of the page
