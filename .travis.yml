@@ -6,4 +6,5 @@ script:
 install:
   - npm install -g firebase-tools
 after_success:
+  - npm get prefix
    - firebase deploy -  project koda-competitor-testing - token $FIREBASE_TOKEN.
