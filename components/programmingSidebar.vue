@@ -1,9 +1,5 @@
 <template>
   <div class="logo-programming-select-holder">
-      <div class="social">
-        <a href="https://www.instagram.com/kodacompetitor/" class="fa fa-instagram" target="_blank"></a>
-        <a href="https://www.facebook.com/KodaCrossFit/" class="fa fa-facebook" target="_blank"></a>
-      </div>
       <div class="find-programming">
           <h2>Filtering of WODS</h2>
           <h2>Or maybe most recent leaderboard?????</h2>

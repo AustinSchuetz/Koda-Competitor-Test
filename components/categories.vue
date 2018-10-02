@@ -6,13 +6,10 @@
    </nuxt-link>
     <div class="main-menu">
       <nuxt-link to="/workout-of-the-day/">WOD</nuxt-link>
-      <nuxt-link to="/individual-programming/">Individual Programming</nuxt-link>
+      <nuxt-link to="/athlete-type/" class="sign-up">Pick a Track</nuxt-link>
       <nuxt-link to="/blog/">Blog</nuxt-link>
       <nuxt-link to="/coaches/">Coaches</nuxt-link>
-      <nuxt-link to="/athletes/">Athletes</nuxt-link>
-      <!--<nuxt-link to="/community/">Community</nuxt-link>-->
-      <nuxt-link to="/sign-up/" class="sign-up">Sign Up</nuxt-link>
-      <nuxt-link to="/login/">Log In</nuxt-link>
+      <nuxt-link to="/community/">Community</nuxt-link>
   </div>
   </div>
 </template>
