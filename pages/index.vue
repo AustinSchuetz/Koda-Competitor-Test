@@ -8,7 +8,7 @@
     </section>
     <section class="container">
       <div class="inside-container">
-        <h1 class="home-title">Title Line</h1>
+        <h1 class="home-title">Title Line Firebase Deploy</h1>
         <div class="content">
           <post-list v-if="posts" :posts="posts" title="Recent Posts"></post-list>
         </div>
