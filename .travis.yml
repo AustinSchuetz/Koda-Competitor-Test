@@ -9,4 +9,4 @@ install:
 script:
   - echo "Deploy!!"
 after_success:
-  - echo "After Success!"
+  - echo "After Success Message!"
