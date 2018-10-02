@@ -8,5 +8,5 @@ script:
   - echo "Deploy!!"
   - npm test
 after_success:
-   - firebase deploy — project koda-competitor-testing— token $FIREBASE_TOKEN.
-  - firebase deploy
+   firebase deploy — project koda-competitor-testing— token $FIREBASE_TOKEN.
+  firebase deploy
