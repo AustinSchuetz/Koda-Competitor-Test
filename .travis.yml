@@ -6,5 +6,4 @@ install:
 script:
   - echo "Deploy!!"
 after_success:
-  - echo "After Success Message!"
-   - firebase deploy — project koda-competitor-testing— token $FIREBASE_TOKEN.
+   firebase deploy — project koda-competitor-testing— token $FIREBASE_TOKEN
