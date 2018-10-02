@@ -22,3 +22,27 @@
 [debug] [2018-10-02T00:13:53.096Z] <<< HTTP RESPONSE 200
 [info] i  hosting[koda-competitor-testing]: Serving hosting files from: public
 [info] +  hosting[koda-competitor-testing]: Local server: http://localhost:5000
+[debug] [2018-10-02T00:17:55.104Z] ----------------------------------------------------------------------
+[debug] [2018-10-02T00:17:55.107Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ausi4\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-10-02T00:17:55.107Z] CLI Version:   4.2.1
+[debug] [2018-10-02T00:17:55.107Z] Platform:      win32
+[debug] [2018-10-02T00:17:55.107Z] Node Version:  v8.12.0
+[debug] [2018-10-02T00:17:55.107Z] Time:          Mon Oct 01 2018 18:17:55 GMT-0600 (Mountain Daylight Time)
+[debug] [2018-10-02T00:17:55.107Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-10-02T00:17:55.116Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-10-02T00:17:55.117Z] > authorizing via signed-in user
+[debug] [2018-10-02T00:17:55.119Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/koda-competitor-testing  
+ 
+[debug] [2018-10-02T00:17:55.493Z] <<< HTTP RESPONSE 200
+[debug] [2018-10-02T00:17:55.496Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/koda-competitor-testing  
+ 
+[debug] [2018-10-02T00:17:55.827Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\ausi4\PhpstormProjects\Koda-Competitor-Test'...
+[info] 
+[debug] [2018-10-02T00:17:55.831Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/495914058922/clients/_:getWebAppConfig  
+ 
+[debug] [2018-10-02T00:17:56.123Z] <<< HTTP RESPONSE 200
+[info] i  hosting[koda-competitor-testing]: Serving hosting files from: public
+[info] +  hosting[koda-competitor-testing]: Local server: http://localhost:5000
