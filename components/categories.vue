@@ -36,7 +36,7 @@ export default {
 
 <style lang="scss" scoped>
 .categories-menu {
-    /*border-top: 5px solid #C60314;*/
+    border-top: 3px solid #C60314;
     width:100%;
     background: transparent;
     display: flex;
