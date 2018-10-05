@@ -32,10 +32,10 @@
 <script>
 import { mapGetters } from 'vuex'
 import axios from 'axios'
-import config from "../../api/config";
-import recentPosts from '../../components/recentPosts.vue'
-import categories from '../../components/categories.vue'
-import programmingSidebar from '../../components/programmingSidebar.vue'
+import config from "../../../api/config/index";
+import recentPosts from '../../../components/recentPosts.vue'
+import categories from '../../../components/categories.vue'
+import programmingSidebar from '../../../components/programmingSidebar.vue'
 
 export default {
   components: { recentPosts, categories, programmingSidebar },

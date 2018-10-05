@@ -11,7 +11,7 @@
             <a v-if="item.strength_bias" href="javascript:void(0)" class="bias">Strength Bias</a>
             <a v-if="item.balanced_athlete" href="javascript:void(0)" class="bias">Balanced Athlete</a>
         </div>
-        <nuxt-link :to="slugToUrl(item.slug)" class="post-content">
+        <nuxt-link :to="'workout-of-the-day' + slugToUrl(item.slug)" class="post-content">
             <div class="post-content-date">
                 <h2>{{ item.title }}</h2>
             </div>

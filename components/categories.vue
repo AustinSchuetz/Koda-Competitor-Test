@@ -5,8 +5,8 @@
         <h2>Koda<span>Competitor</span></h2>
    </nuxt-link>
     <div class="main-menu">
-      <nuxt-link to="/workout-of-the-day/">WOD</nuxt-link>
-      <nuxt-link to="/athlete-type/" class="sign-up">Pick a Track</nuxt-link>
+      <nuxt-link to="/workout-of-the-day/" class="sign-up">WOD</nuxt-link>
+      <nuxt-link to="/athlete-type/">Pick a Track</nuxt-link>
       <nuxt-link to="/blog/">Blog</nuxt-link>
       <nuxt-link to="/coaches/">Coaches</nuxt-link>
       <nuxt-link to="/community/">Community</nuxt-link>

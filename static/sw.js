@@ -4,48 +4,52 @@ importScripts('/_nuxt/workbox.678c6960.js')
 
 workbox.precaching.precacheAndRoute([
   {
-    "url": "/_nuxt/app.f3722ee6e8ae2b430c18.js",
-    "revision": "0fb412c4677d0d3af18367a423a3e060"
+    "url": "/_nuxt/app.3fdac15d2aa065a8e388.js",
+    "revision": "1e3aca2814f187a07ba56b0ba8774311"
   },
   {
-    "url": "/_nuxt/layouts_default.45653ad5c259973f990c.js",
-    "revision": "d1b4bd5aec63b4f3fbcca510879a89bf"
+    "url": "/_nuxt/layouts_default.cc13fc1454dbb18583de.js",
+    "revision": "900b4d3612ed61411f26a86bcbfee2fd"
   },
   {
-    "url": "/_nuxt/manifest.f34ffe748fa41a85177c.js",
-    "revision": "19de99238b292ac740b6a078c6e9df38"
+    "url": "/_nuxt/manifest.7185a119d349f51be885.js",
+    "revision": "14aa948d56bb0d81fb4107da8c5f9f7f"
   },
   {
-    "url": "/_nuxt/pages__slug_index.f4e68f67e9a723502d59.js",
-    "revision": "d020b69dc71c2e10bf53058e84f49206"
+    "url": "/_nuxt/pages_about_index.1b7ef8d348ff2d6d0ab3.js",
+    "revision": "e8bd60d4bce6eafbf8c3d89b48ca8a51"
   },
   {
-    "url": "/_nuxt/pages_about_index.bbd7ef43627d319581e0.js",
-    "revision": "6f385a6b0e8f48866a802b2f34db3543"
+    "url": "/_nuxt/pages_athlete-type_index.772837fbef232cfba607.js",
+    "revision": "ad1fbb329fa8d0b34e64399292e52805"
   },
   {
-    "url": "/_nuxt/pages_athlete-type_index.1bce83a316bac2f17845.js",
-    "revision": "e6e0b85049ff6037936b2a89443b6ed9"
+    "url": "/_nuxt/pages_category__slug_index.3b05c3cb1e035bab0d8c.js",
+    "revision": "dbb48add046a8e1e6c387760f9be7dcd"
   },
   {
-    "url": "/_nuxt/pages_category__slug_index.46ea6ffa0e2c35657137.js",
-    "revision": "ab1edf6bc611c74574e821cb05a62988"
+    "url": "/_nuxt/pages_category_index.f4ef1c7a737e88f14a82.js",
+    "revision": "6f0d300c0a96793c2900f562cec98c28"
   },
   {
-    "url": "/_nuxt/pages_category_index.8193e70b85a4f731fe55.js",
-    "revision": "358a96966bc6b7b0fac37580b58faaec"
+    "url": "/_nuxt/pages_community_index.54bec7accda7c5cf1de6.js",
+    "revision": "beb27e46cc2dd7b5c14209bd1e1abcf2"
   },
   {
-    "url": "/_nuxt/pages_community_index.a55c06b2c6b82f17f7b6.js",
-    "revision": "39117fe9273d3c9af2dcef5a06035a72"
+    "url": "/_nuxt/pages_index.bd036507e0f248af7501.js",
+    "revision": "907b3435770dd0454ba5c4c8152bddd0"
   },
   {
-    "url": "/_nuxt/pages_index.956c8dbffaf0d9dc5787.js",
-    "revision": "7a6ba9c48ff033b5e4be239a38b1efb8"
+    "url": "/_nuxt/pages_workout-of-the-day__slug_index.6421cf3e114f10e93472.js",
+    "revision": "6299c5799b1c920a7130e19b1963883e"
   },
   {
-    "url": "/_nuxt/vendor.6c3109bd27315ad4df9b.js",
-    "revision": "67a1e1f7deb1ea2d89b6c72463a46823"
+    "url": "/_nuxt/pages_workout-of-the-day_index.b93d358b9403c16b931b.js",
+    "revision": "4eecf7005198499c4112f8ce4b45dfd1"
+  },
+  {
+    "url": "/_nuxt/vendor.4473e200fa9dcafa4852.js",
+    "revision": "99636c7a99363a6d211674909a637828"
   }
 ], {
   "cacheId": "wp-vue-ssr",
