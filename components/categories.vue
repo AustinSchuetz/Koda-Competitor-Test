@@ -1,5 +1,5 @@
 <template>
-  <div class="categories-menu" :style="{borderTop: loadingBorder}">
+  <div class="categories-menu">
    <nuxt-link to="/" class="logo">
         <img src="~assets/KODACompLightRedLogo.svg">
         <h2>Koda<span>Competitor</span></h2>
@@ -16,20 +16,9 @@
 <script>
 export default {
   props: ['categories'],
-  data: () => ({
-      loading: false
-  }),
   methods: {
     slugToUrl(slug) {
       return `/category/${slug}`
-    },
-      start() {
-        this.loading = true,
-        this.loadingBorder = '5px solid transparent'
-      },
-    finish() {
-        this.loading = false,
-        this.loadingBorder = '5px solid #C60314'
     }
   },
   head () {

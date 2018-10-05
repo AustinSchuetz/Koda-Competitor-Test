@@ -24,7 +24,10 @@ module.exports = {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: "#3B8070" },
+  loading: {
+      color: "#C60314",
+      height: '5px'
+  },
   generate: {
     dir: 'public'
   },
@@ -33,7 +36,7 @@ module.exports = {
   */
   manifest: {
     name: "Nuxt.js",
-    theme_color: "#3B8070"
+    theme_color: "#C60314"
   },
   /*
   ** Build configuration
