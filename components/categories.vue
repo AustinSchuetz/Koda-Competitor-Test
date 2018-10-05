@@ -1,5 +1,5 @@
 <template>
-  <div class="categories-menu">
+  <div class="categories-menu" :style="{borderTop: loadingBorder}">
    <nuxt-link to="/" class="logo">
         <img src="~assets/KODACompLightRedLogo.svg">
         <h2>Koda<span>Competitor</span></h2>
@@ -16,9 +16,20 @@
 <script>
 export default {
   props: ['categories'],
+  data: () => ({
+      loading: false
+  }),
   methods: {
     slugToUrl(slug) {
       return `/category/${slug}`
+    },
+      start() {
+        this.loading = true,
+        this.loadingBorder = '5px solid transparent'
+      },
+    finish() {
+        this.loading = false,
+        this.loadingBorder = '5px solid #C60314'
     }
   },
   head () {
@@ -36,7 +47,7 @@ export default {
 
 <style lang="scss" scoped>
 .categories-menu {
-    border-top: 5px solid #C60314;
+    /*border-top: 5px solid #C60314;*/
     width:100%;
     background: transparent;
     display: flex;
@@ -44,6 +55,7 @@ export default {
     background: transparent;
     position: fixed;
     z-index: 10;
+    padding: 0 20px 0 0;
     .category-item {
         width: inherit;
     }
@@ -57,11 +69,9 @@ export default {
         transition: 0.2s ease-in-out;
     }
     a:hover {
-        border-bottom: 3px solid rgba(198, 3, 20, 0.9);
-        opacity: 0.9;
+        border-bottom: 3px solid rgba(198, 3, 20, 1);
     }
     a.nuxt-link-exact-active {
-        opacity: 0.9;
     }
     .sign-up {
         padding: 10px;
@@ -114,8 +124,8 @@ export default {
         }
     }
     .logo:hover img, .logo:hover h2 {
-        transform: scale(1.05);
-        transition: 0.4s ease-in-out;
+        /*transform: scale(1.05);*/
+        /*transition: 0.4s ease-in-out;*/
     }
     .logo:hover {
         border-bottom: 0;

@@ -1,8 +1,27 @@
 <template>
   <div>
+      <section class="header">
+          <categories :categories="categories"></categories>
+        </section>
+      <section class="programming-sidebar">
+          <programming-sidebar></programming-sidebar>
+      </section>
     <nuxt/>
   </div>
 </template>
+
+<script>
+    import { mapGetters } from 'vuex'
+    import api from "../api/index";
+    import postList from '../components/postList.vue'
+    import recentPosts from '../components/recentPosts.vue'
+    import categories from '../components/categories.vue'
+    import programmingSidebar from '../components/programmingSidebar.vue'
+
+    export default {
+        components: {postList, categories, recentPosts, programmingSidebar}
+    }
+</script>
 
 <style>
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
@@ -35,4 +54,7 @@ body {
   box-sizing: border-box;
   margin: 0;
 }
+    .main-content {
+        margin: 100px auto 0;
+    }
 </style>

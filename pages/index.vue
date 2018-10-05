@@ -42,7 +42,7 @@ export default {
       meta: [
         {
           name: 'description',
-          content: 'This is the meta description of the content.'
+          content: 'Follow Koda Competitor CrossFit Programming for any body type and athletic goals.'
         }
       ]
     }
@@ -53,6 +53,11 @@ export default {
     }
   },
   mounted() {
+      this.$nextTick(() => {
+          this.$nuxt.$loading.start()
+
+          setTimeout(() => this.$nuxt.$loading.finish(), 400)
+      })
     if (this.categories.length === 0) {
       this.$store.dispatch('getCategories')
     }
