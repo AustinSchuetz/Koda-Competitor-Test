@@ -6,7 +6,13 @@
       <section class="programming-sidebar">
           <programming-sidebar></programming-sidebar>
       </section>
-    <nuxt/>
+      <section class="container">
+          <div class="inside-container">
+              <div class="content">
+                  <nuxt/>
+              </div>
+          </div>
+      </section>
   </div>
 </template>
 
@@ -54,7 +60,49 @@ body {
   box-sizing: border-box;
   margin: 0;
 }
-    .main-content {
-        margin: 100px auto 0;
+.header {
+    background: none !important;
+    text-align: center;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top:60px;
+}
+.inside-container {
+    width: 100%;
+}
+.content {
+    font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    margin: 0 0 0 260px;
+    line-height: 150%;
+    padding: 30px;
+    width: calc(100% - 260px);
+}
+    .clean-page-content {
+        width: 850px;
+        margin: 0 auto;
+        max-width: 95%;
+        border-radius: 5px;
+        border-top: 5px solid #c60314;
+        box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07);
+        background: #fff;
+        padding: 20px 15px;
     }
+.clean-page-content p {
+    margin: 10px 0;
+}
+.clean-page-content h1.clean-title {
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    width: 95%;
+    margin: 0 auto 20px;
+    text-align: center;
+}
 </style>

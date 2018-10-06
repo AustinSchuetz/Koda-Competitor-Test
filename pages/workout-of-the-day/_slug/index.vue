@@ -1,13 +1,6 @@
 <template>
-  <div>
-    <section class="header">
-      <categories :categories="categories"></categories>
-    </section>
-    <section class="programming-sidebar">
-      <programming-sidebar></programming-sidebar>
-    </section>
-    <section class="post-container">
-      <div class="post-content">
+<div class="post-container">
+    <div class="post-content">
         <h3>{{post.title.rendered}}</h3>
         <div v-html="post.content.rendered"></div>
         <div class="bias-wrap">
@@ -22,12 +15,8 @@
           <div v-if="activeItem === 'strength'" id="strength-bias-content" v-html="post.acf.strength_bias"></div>
           <div v-if="activeItem === 'balanced'" id="balanced-athlete-content" v-html="post.acf.balanced_athlete"></div>
         </div>
-      </div>
-      <!--<div class="sidebar">-->
-        <!--<recent-posts v-if="posts" :posts="posts.data"></recent-posts>-->
-      <!--</div>-->
-    </section>
-  </div>
+    </div>
+</div>
 </template>
 <script>
 import { mapGetters } from 'vuex'
@@ -48,11 +37,11 @@ export default {
   },
   head() {
     return {
-      title: `Koda Competitor | ${this.post.title.rendered}`,
+      title: 'Koda Competitor | ' + this.post.title.rendered,
       meta: [
         {
           name: 'description',
-          content: 'This is the meta description of the content.'
+          content: 'Koda Competitor | Daily CrossFit Workout information for ' + this.post.title.rendered
         }
       ]
     }
@@ -104,10 +93,9 @@ export default {
   text-align: left;
   margin: 0px auto;
   line-height: 150%;
-  padding: 60px 30px 30px 30px;
-  width: 1000px;
-  max-width: 100%;
-  margin: 0 0 0 350px;
+  padding: 0 30px 30px 30px;
+  width: 850px;
+  max-width: 95%;
 }
 
 .bias-wrap {
@@ -152,7 +140,7 @@ export default {
 
 .post-content {
   width: 100%;
-  padding: 50px 10px;
+  padding: 20px 10px;
 }
 
 .post-content img {
