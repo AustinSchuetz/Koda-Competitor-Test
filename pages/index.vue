@@ -1,6 +1,5 @@
 <template>
-    <div>
-        <h1 class="home-title">Title Line</h1>
+    <div class="home-holder">
         <post-list v-if="posts" :posts="posts" title="Recent Posts"></post-list>
     </div>
 </template>
@@ -54,6 +53,11 @@ export default {
 </script>
 
 <style>
+    .home-holder {
+        width: 100%;
+        margin: 0 auto;
+        padding: 30px 10px;
+    }
 .home-title {
   font-size: 3em;
   margin: 50px auto 0;

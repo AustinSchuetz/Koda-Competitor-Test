@@ -2,14 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="73810ecd-a2d9-4697-8462-e42b269b209d" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/pages/coaches/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/default.vue" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/default.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/athlete-type/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/athlete-type/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/categories.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/categories.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/postList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/postList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/programmingSidebar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/programmingSidebar.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/workout-of-the-day/_slug/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/workout-of-the-day/_slug/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/200.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/200.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_nuxt/layouts_default.d5a189644d0e0c754c79.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_nuxt/manifest.2de2ff9357abd572335c.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_nuxt/pages_category__slug_index.d5c0001a8528428d4a2c.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_nuxt/pages_index.781ddaf057bcb69c47b9.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_nuxt/pages_workout-of-the-day__slug_index.4ce8fb2d9d2ccd5a5049.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/about/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/about/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/athlete-type/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/athlete-type/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/blog/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/blog/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/category/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/category/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/coaches/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/coaches/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/community/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/community/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/sw.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/sw.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/workout-of-the-day/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/workout-of-the-day/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/sw.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/sw.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,13 +36,22 @@
       <file leaf-file-name="categories.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/categories.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="38" column="34" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="34" />
+            <state relative-caret-position="388">
+              <caret line="95" column="38" selection-start-line="95" selection-start-column="38" selection-end-line="95" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.vue" pinned="false" current-in-tab="true">
+      <file leaf-file-name="programmingSidebar.vue" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/components/programmingSidebar.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="52" column="13" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/workout-of-the-day/_slug/index.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="207">
@@ -41,8 +63,8 @@
       <file leaf-file-name="index.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/index.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6">
-              <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="36" selection-end-column="4" />
+            <state relative-caret-position="207">
+              <caret line="57" column="22" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
               <folding>
                 <element signature="e#531#564#0" expanded="true" />
               </folding>
@@ -54,7 +76,7 @@
         <entry file="file://$PROJECT_DIR$/pages/coaches/index.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="10" lean-forward="true" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+              <caret column="10" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -71,8 +93,8 @@
       <file leaf-file-name="postList.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/postList.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="91" column="39" selection-start-line="91" selection-start-column="31" selection-end-line="91" selection-end-column="39" />
+            <state relative-caret-position="782">
+              <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -80,8 +102,11 @@
       <file leaf-file-name="default.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/layouts/default.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
+            <state relative-caret-position="2254">
               <caret line="98" column="18" selection-start-line="98" selection-start-column="18" selection-end-line="98" selection-end-column="18" />
+              <folding>
+                <element signature="e#292#325#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -118,19 +143,19 @@
         <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/pages/google055810a3e96a2927.html" />
         <option value="$PROJECT_DIR$/plugins/firebase.js" />
-        <option value="$PROJECT_DIR$/components/programmingSidebar.vue" />
         <option value="$PROJECT_DIR$/pages/community/index.vue" />
         <option value="$PROJECT_DIR$/pages/workout-of-the-day/index.vue" />
-        <option value="$PROJECT_DIR$/components/postList.vue" />
         <option value="$PROJECT_DIR$/nuxt.config.js" />
         <option value="$PROJECT_DIR$/.nuxt/components/nuxt-loading.vue" />
         <option value="$PROJECT_DIR$/pages/blog/index.vue" />
-        <option value="$PROJECT_DIR$/components/categories.vue" />
         <option value="$PROJECT_DIR$/pages/coaches/index.vue" />
         <option value="$PROJECT_DIR$/layouts/default.vue" />
-        <option value="$PROJECT_DIR$/pages/index.vue" />
         <option value="$PROJECT_DIR$/pages/athlete-type/index.vue" />
         <option value="$PROJECT_DIR$/pages/workout-of-the-day/_slug/index.vue" />
+        <option value="$PROJECT_DIR$/pages/index.vue" />
+        <option value="$PROJECT_DIR$/components/postList.vue" />
+        <option value="$PROJECT_DIR$/components/categories.vue" />
+        <option value="$PROJECT_DIR$/components/programmingSidebar.vue" />
       </list>
     </option>
   </component>
@@ -152,10 +177,10 @@
     <servers />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-11" />
-    <option name="y" value="-11" />
-    <option name="width" value="1943" />
-    <option name="height" value="1103" />
+    <option name="x" value="-1928" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -307,18 +332,18 @@
       <workItem from="1537549688433" duration="672000" />
       <workItem from="1537552078837" duration="845000" />
       <workItem from="1537553559355" duration="17771000" />
-      <workItem from="1538429492546" duration="24891000" />
+      <workItem from="1538429492546" duration="32589000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48158000" />
+    <option name="totallyTimeSpent" value="55856000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28178138" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18550107" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5003903" side_tool="true" weight="0.3298969" />
@@ -327,7 +352,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49960968" weight="0.3290441" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3290441" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.2757353" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.16611296" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -350,7 +375,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/pages/index.vue</url>
-          <line>9</line>
+          <line>8</line>
           <properties lambdaOrdinal="-1" />
         </line-breakpoint>
       </breakpoints>
@@ -494,13 +519,6 @@
     <entry file="file://$PROJECT_DIR$/.nuxt/loading.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/programmingSidebar.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="30" column="21" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3248">
@@ -541,13 +559,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/categories.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="38" column="34" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/store/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-138">
@@ -573,30 +584,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/postList.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="91" column="39" selection-start-line="91" selection-start-column="31" selection-end-line="91" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layouts/default.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="98" column="18" selection-start-line="98" selection-start-column="18" selection-end-line="98" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6">
-          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="36" selection-end-column="4" />
-          <folding>
-            <element signature="e#531#564#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/athlete-type/index.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="98">
@@ -607,7 +594,34 @@
     <entry file="file://$PROJECT_DIR$/pages/coaches/index.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="10" lean-forward="true" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+          <caret column="10" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="57" column="22" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
+          <folding>
+            <element signature="e#531#564#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layouts/default.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2254">
+          <caret line="98" column="18" selection-start-line="98" selection-start-column="18" selection-end-line="98" selection-end-column="18" />
+          <folding>
+            <element signature="e#292#325#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/postList.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -615,6 +629,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
           <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/categories.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="95" column="38" selection-start-line="95" selection-start-column="38" selection-end-line="95" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/programmingSidebar.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="52" column="13" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
         </state>
       </provider>
     </entry>

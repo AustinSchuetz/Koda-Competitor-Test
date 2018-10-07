@@ -1,36 +1,44 @@
 <template>
-  <div class="categories-menu">
-   <nuxt-link to="/" class="logo">
+<div class="categories-menu" :class="{ scrolled: scrollPosition > 0 }">
+    <nuxt-link to="/" class="logo">
         <img src="~assets/KODACompLightRedLogo.svg">
         <h2>Koda<span>Competitor</span></h2>
-   </nuxt-link>
+    </nuxt-link>
     <div class="main-menu">
       <nuxt-link to="/workout-of-the-day/" class="sign-up">WOD</nuxt-link>
       <nuxt-link to="/athlete-type/">Pick a Track</nuxt-link>
       <nuxt-link to="/blog/">Blog</nuxt-link>
       <nuxt-link to="/coaches/">Coaches</nuxt-link>
       <nuxt-link to="/community/">Community</nuxt-link>
-  </div>
-  </div>
+    </div>
+</div>
 </template>
 <script>
 export default {
-  props: ['categories'],
-  methods: {
-    slugToUrl(slug) {
-      return `/category/${slug}`
+    data() {
+        return {
+            scrollPosition: null
+        }
+    },
+    methods: {
+        updateScroll() {
+            this.scrollPosition = window.scrollY
+        }
+    },
+    mounted() {
+        window.addEventListener('scroll', this.updateScroll);
+        this.scrollPosition = window.scrollY
+    },
+    head () {
+        return {
+          meta: [
+              {name: 'google-site-verification', content: 'U8s6_hyMSS_5u6wJRQjjEc0TOiht43u-VPbj4wD57jc'}
+          ],
+          link: [
+            {rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'}
+          ]
+        }
     }
-  },
-  head () {
-    return {
-      meta: [
-          {name: 'google-site-verification', content: 'U8s6_hyMSS_5u6wJRQjjEc0TOiht43u-VPbj4wD57jc'}
-      ],
-      link: [
-        {rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'}
-      ]
-    }
-  }
 }
 </script>
 
@@ -45,6 +53,7 @@ export default {
     position: fixed;
     z-index: 10;
     padding: 0 20px 0 0;
+    height: 70px;
     .category-item {
         width: inherit;
     }
@@ -52,7 +61,7 @@ export default {
         color:#C60314;
         font-weight: bold;
         text-decoration:none;
-        padding:25px 20px;
+        padding: 20px;
         border-bottom: 3px solid transparent;
         display: inline-block;
         transition: 0.2s ease-in-out;
@@ -67,6 +76,7 @@ export default {
         margin: 15px 10px;
         border: 1px solid;
         border-radius: 5px;
+        height: inherit;
     }
     .sign-up:hover {
         background: #C60314;
@@ -75,14 +85,15 @@ export default {
     }
     .logo img {
         height: 55px;
-        filter: drop-shadow( 4px 4px 5px rgba(0, 0, 0,0.15) );
+        filter: drop-shadow( 0px 0px 2px rgba(0, 0, 0,0.15) );
         display: flex;
         flex-direction: column;
         justify-content: center;
         text-align: center;
+        margin: 7px auto;
     }
     .logo:hover img {
-        filter: drop-shadow( 4px 4px 5px rgba(0, 0, 0,0.3) );
+        filter: drop-shadow( 0px 0px 4px rgba(0, 0, 0,0.3) );
     }
     .logo {
         display: flex;
@@ -91,7 +102,8 @@ export default {
         text-decoration: none !important;
         opacity: 1 !important;
         padding: 0;
-        margin: 10px;
+        margin: 0;
+        width: 260px;
         h2 {
             display: flex;
             flex-direction: column;
@@ -119,6 +131,10 @@ export default {
     .logo:hover {
         border-bottom: 0;
     }
+}
+.categories-menu.scrolled {
+    background: #fff;
+    box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
 }
 
 </style>

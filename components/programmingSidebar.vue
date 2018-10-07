@@ -1,19 +1,32 @@
 <template>
-  <div class="logo-programming-select-holder">
+  <div class="logo-programming-select-holder" :class="{ scrolled: scrollPosition > 0 }">
       <div class="social">
         <a href="https://www.instagram.com/kodacompetitor/" class="fa fa-instagram" target="_blank"></a>
         <a href="https://www.facebook.com/KodaCrossFit/" class="fa fa-facebook" target="_blank"></a>
       </div>
-      <div class="find-programming">
-          <h2>Filtering of WODS</h2>
-          <h2>Or maybe most recent leaderboard?????</h2>
+      <div class="leaderboard-wrap">
+          <h2>Leaderboard</h2>
       </div>
   </div>
 </template>
 
 <script>
     export default {
-      name: "programming-sidebar"
+      name: "programming-sidebar",
+        data() {
+            return {
+                scrollPosition: null
+            }
+        },
+        methods: {
+            updateScroll() {
+                this.scrollPosition = window.scrollY
+            }
+        },
+        mounted() {
+            window.addEventListener('scroll', this.updateScroll);
+            this.scrollPosition = window.scrollY
+        }
     }
 </script>
 
@@ -29,12 +42,29 @@
     bottom: 0;
     top: 0;
     overflow: hidden;
-    padding: 100px 20px 20px;
+    padding: 0 20px 20px;
+}
+.scrolled {
+    box-shadow: 0 35px 35px rgba(50,50,93,.1), 0 25px 15px rgba(0,0,0,.07);
 }
 .social {
     margin: 0 auto;
     text-align: center;
     padding: 15px;
+    position: absolute;
+    bottom: 0;
+    width: 220px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+.leaderboard-wrap {
+    padding: 15px;
+    position: absolute;
+    top: 90px;
+    width: 220px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+.scrolled .leaderboard-wrap {
+    top: 20px;
 }
 .fa {
     color:#C60314;
@@ -55,4 +85,10 @@
     h2 {
         text-align: center;
     }
+
+.logo-programming-select-holder.scrolled {
+    height: calc(100vh - 70px);
+    top: 70px;
+    z-index: 10;
+}
 </style>

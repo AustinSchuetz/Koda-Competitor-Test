@@ -32,6 +32,7 @@
 export default {
   props: ['posts', 'title', 'content'],
   data: () => ({
+      activeItem: null
   }),
   methods: {
     slugToUrl(slug) {
