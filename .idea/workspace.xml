@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="73810ecd-a2d9-4697-8462-e42b269b209d" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/components/Leaderboard.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plugins/moment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/programmingSidebar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/programmingSidebar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nuxt.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/categories.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/categories.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,11 +22,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Leaderboard.vue" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Leaderboard.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/Leaderboard.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="584">
+            <state relative-caret-position="805">
               <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="categories.vue" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/components/categories.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="299">
+              <caret line="34" column="105" selection-start-line="34" selection-start-column="105" selection-end-line="34" selection-end-column="105" />
             </state>
           </provider>
         </entry>
@@ -42,18 +45,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="23">
               <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/index.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="897">
-              <caret line="57" column="22" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
-              <folding>
-                <element signature="e#531#564#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -142,13 +133,13 @@
         <option value="$PROJECT_DIR$/pages/workout-of-the-day/_slug/index.vue" />
         <option value="$PROJECT_DIR$/pages/index.vue" />
         <option value="$PROJECT_DIR$/components/postList.vue" />
-        <option value="$PROJECT_DIR$/components/categories.vue" />
         <option value="$PROJECT_DIR$/layouts/default.vue" />
         <option value="$PROJECT_DIR$/.wp-install.yml" />
         <option value="$PROJECT_DIR$/plugins/moment.js" />
         <option value="$PROJECT_DIR$/nuxt.config.js" />
         <option value="$PROJECT_DIR$/components/programmingSidebar.vue" />
         <option value="$PROJECT_DIR$/components/Leaderboard.vue" />
+        <option value="$PROJECT_DIR$/components/categories.vue" />
       </list>
     </option>
   </component>
@@ -329,17 +320,18 @@
       <workItem from="1537549688433" duration="672000" />
       <workItem from="1537552078837" duration="845000" />
       <workItem from="1537553559355" duration="17771000" />
-      <workItem from="1538429492546" duration="37401000" />
+      <workItem from="1538429492546" duration="38153000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60668000" />
+    <option name="totallyTimeSpent" value="61420000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18550107" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18550107" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5003903" side_tool="true" weight="0.3298969" />
@@ -348,7 +340,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49960968" weight="0.3290441" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3290441" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.16611296" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.16611296" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -582,13 +574,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/categories.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/index.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="897">
@@ -655,8 +640,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/components/Leaderboard.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="584">
+        <state relative-caret-position="805">
           <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/categories.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="34" column="105" selection-start-line="34" selection-start-column="105" selection-end-line="34" selection-end-column="105" />
         </state>
       </provider>
     </entry>
