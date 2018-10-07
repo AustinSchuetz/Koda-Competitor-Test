@@ -2,25 +2,26 @@
     <div class="leaderboard">
         <h2>Leaderboard</h2>
         <h2>{{ this.leaderboard.date | moment("MMM Do YYYY") }}</h2>
+        <div v-for="postID in leaderboardPost" ref="workoutIDdiv" id="workoutIDdiv" :load="loadLeaderboard(postID.acf.workout_id)"></div>
         <div class="divider"></div>
         <h3 class="workout-title">{{ this.leaderboard.workoutTitle }}</h3>
         <div v-if="leaderboard.tests.length === 1" class="test" v-for="item in leaderboard.tests">
             <h4>{{ item.title }}</h4>
             <p v-if="item.testInstructions">{{ item.testInstructions }}</p>
-            <p>test length = 1</p>
             <div class="leaders" v-for="result in leaderboard.results">
-                <p>{{ result.rank }} - <img :src="result.profileImg"> {{ result.userFirstName }} {{ result.userLastName }} ({{ result.tests }})</p>
+                <p>{{ result.rank }} - <img :src="result.profileImg"> {{ result.userFirstName }} {{ result.userLastName }} ({{ result.userTests[0].value }})</p>
             </div>
         </div>
         <!-- display test titles in multiple columns then post the athlete's scores in that order. Order athletes by ascending avgRank-->
         <div v-if="leaderboard.tests.length > 1" class="test" v-for="item in leaderboard.tests">
             <h4>{{ item.title }}</h4>
             <p v-if="item.testInstructions">{{ item.testInstructions }}</p>
-            <p>test length > 1</p>
             <div class="leaders" v-for="result in leaderboard.results">
-                <p>{{ result.rank }} - <img :src="result.profileImg"> {{ result.userFirstName }} {{ result.userLastName }} ({{ result.tests }})</p>
+                <p>round this up? {{ result.avgRank }} - <img :src="result.profileImg"> {{ result.userFirstName }} {{ result.userLastName }} ({{ result.tests }})</p>
             </div>
         </div>
+
+        <!--in script https://wod.kodacompetitor.com/wp-json/wp/v2/posts?categories=5 and acf.workout_id-->
 
 
 
@@ -28,17 +29,26 @@
 </template>
 
 <script>
+
     import axios from 'axios'
     export default {
         name: "Leaderboard",
+        props: ['leaderboardPost'],
         data() {
             return {
                 leaderboard: []
             }
         },
-        mounted() {
-            return  axios.get('https://apis.trainheroic.com/public/leaderboard/4863904')
-                .then(res => (this.leaderboard = res.data))}
+        // mounted() {
+        //     return  axios.get('https://apis.trainheroic.com/public/leaderboard/4863904')
+        //         .then(res => (this.leaderboard = res.data));
+        // },
+        methods: {
+            loadLeaderboard(workoutID) {
+                return  axios.get('https://apis.trainheroic.com/public/leaderboard/' + workoutID)
+                    .then(res => (this.leaderboard = res.data));
+            }
+        }
     }
 </script>
 

@@ -5,12 +5,13 @@
         <a href="https://www.facebook.com/KodaCrossFit/" class="fa fa-facebook" target="_blank"></a>
       </div>
       <div class="leaderboard-wrap">
-          <Leaderboard></Leaderboard>
+          <Leaderboard :leaderboardPost="leaderboardPost"></Leaderboard>
       </div>
   </div>
 </template>
 
 <script>
+    import axios from 'axios'
     import Leaderboard from '../components/Leaderboard.vue'
 
     export default {
@@ -21,14 +22,25 @@
                 scrollPosition: null
             }
         },
+        props: {
+            leaderboardPost: {
+                type: Array,
+                required: true
+            }
+        },
         methods: {
             updateScroll() {
                 this.scrollPosition = window.scrollY
             }
         },
+        created() {
+
+            return  axios.get('https://wod.kodacompetitor.com/wp-json/wp/v2/posts?categories=5&posts_per_page=1')
+                .then(res => (this.leaderboardPost = res.data))
+        },
         mounted() {
             window.addEventListener('scroll', this.updateScroll);
-            this.scrollPosition = window.scrollY
+            this.scrollPosition = window.scrollY;
         }
     }
 </script>
@@ -58,9 +70,11 @@
     bottom: 0;
     width: 220px;
     border-top: 1px solid rgba(0,0,0,0.1);
+    z-index: 5;
+    background: #fff;
 }
 .leaderboard-wrap {
-    padding: 15px;
+    padding: 15px 0;
     position: absolute;
     top: 90px;
     width: 220px;
