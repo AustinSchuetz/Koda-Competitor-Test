@@ -1,7 +1,7 @@
 <template>
   <div>
       <section class="header">
-          <categories :categories="categories"></categories>
+          <categories></categories>
         </section>
       <section class="programming-sidebar">
           <programming-sidebar></programming-sidebar>
