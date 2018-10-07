@@ -55,6 +55,7 @@ export default {
     z-index: 10;
     padding: 0 20px 0 0;
     height: 70px;
+    transition: 0.2s background-color ease-in-out;
     .category-item {
         width: inherit;
     }
