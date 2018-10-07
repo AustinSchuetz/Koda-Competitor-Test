@@ -5,14 +5,17 @@
         <a href="https://www.facebook.com/KodaCrossFit/" class="fa fa-facebook" target="_blank"></a>
       </div>
       <div class="leaderboard-wrap">
-          <h2>Leaderboard</h2>
+          <Leaderboard></Leaderboard>
       </div>
   </div>
 </template>
 
 <script>
+    import Leaderboard from '../components/Leaderboard.vue'
+
     export default {
-      name: "programming-sidebar",
+        components: {Leaderboard},
+        name: "programming-sidebar",
         data() {
             return {
                 scrollPosition: null
@@ -82,10 +85,6 @@
     color: #1d1d1d;
     border: none;
 }
-    h2 {
-        text-align: center;
-    }
-
 .logo-programming-select-holder.scrolled {
     height: calc(100vh - 70px);
     top: 70px;

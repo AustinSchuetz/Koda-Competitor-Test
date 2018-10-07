@@ -6,7 +6,8 @@ module.exports = {
   modules: [{ src: '@nuxtjs/pwa', options: { icon: { sizes: [512, 192, 380 ] } } }],
   plugins: [
       '~/plugins/vue-tabs-component',
-      '~/plugins/firebase'
+      '~/plugins/firebase',
+      '~/plugins/moment.js'
   ],
   
   /*
