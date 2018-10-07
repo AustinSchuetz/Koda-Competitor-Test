@@ -4,15 +4,15 @@ importScripts('/_nuxt/workbox.678c6960.js')
 
 workbox.precaching.precacheAndRoute([
   {
-    "url": "/_nuxt/app.ac906308bb96c0e32e6e.js",
-    "revision": "2f52585bce657b1b073dc1b288890080"
+    "url": "/_nuxt/app.e9f1fdeb1977fbbf9cd1.js",
+    "revision": "8fa3d8397a5b090c88cd742de91703a6"
   },
   {
     "url": "/_nuxt/layouts_default.c0b75d9e69021f0ff9de.js",
     "revision": "d62c1e09ba49679552c371858d849559"
   },
   {
-    "url": "/_nuxt/manifest.94646f2302f0260250a2.js",
+    "url": "/_nuxt/manifest.6ff48a342751595b6eb1.js",
     "revision": "8688770a36d64a96f71f24b9137d00fd"
   },
   {
