@@ -1,11 +1,10 @@
 <template>
 <div class="categories-menu" :class="{ scrolled: scrollPosition > 0 }">
-    <a href="../../../" class="logo">
+    <nuxt-link to="/" class="logo">
         <img src="~assets/KODACompLightRedLogo.svg">
         <h2>Koda<span>Competitor</span></h2>
-    </a>
+    </nuxt-link>
     <div class="main-menu">
-        <nuxt-link to="/">Home</nuxt-link>
         <nuxt-link to="/workout-of-the-day/" class="sign-up">WOD</nuxt-link>
         <nuxt-link to="/athlete-type/">Pick a Track</nuxt-link>
         <nuxt-link to="/blog/">Blog</nuxt-link>
