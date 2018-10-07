@@ -82,7 +82,7 @@ body {
     text-align: left;
     margin: 0 0 0 260px;
     line-height: 150%;
-    padding: 30px;
+    padding: 30px 30px 50px;
     width: calc(100% - 260px);
 }
     .clean-page-content {
