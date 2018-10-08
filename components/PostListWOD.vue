@@ -18,8 +18,8 @@
                     <div v-if="activeItem === 'gymnastics'" id="gymnastics-bias-content" v-html="item.gymnastics_bias"></div>
                     <div v-if="activeItem === 'strength'" id="strength-bias-content" v-html="item.strength_bias"></div>
                     <div v-if="activeItem === 'balanced'" id="balanced-athlete-content" v-html="item.balanced_athlete"></div>
-                    <strong class="more">View WOD</strong>
                 </div>
+                <strong class="more">View WOD</strong>
             </nuxt-link>
         </div>
     </div>
@@ -30,7 +30,7 @@
     export default {
         props: ['posts', 'title', 'content'],
         data: () => ({
-            activeItem: null
+            activeItem: 'aerobic'
         }),
         methods: {
             slugToUrl(slug) {
@@ -54,9 +54,6 @@
         transition: 0.15s all ease-in-out;
         position: relative;
         z-index: 1;
-    }
-    .post-content:hover  {
-        background: rgba(198, 3, 20, 0.05);
     }
     .post-container .post-content:hover  {
         background: none;
@@ -128,7 +125,24 @@
         border-bottom: 1px solid rgba(0, 0, 0, .1);
     }
     .post-text-content {
-        padding: 0  15px 15px;
+        padding: 0 15px 15px;
+        max-height: 200px;
+        overflow-y: hidden;
+        position: relative;
+    }
+    .post:first-child .post-text-content {
+        max-height: 250px;
+    }
+    .post-text-content::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, transparent 85%, rgba(255,255,255,1));
     }
     .post .post-content {
         padding: 0;
@@ -164,7 +178,7 @@
         line-height: 1.5;
         border: 1px solid;
         border-radius: 5px;
-        margin: 15px 0;
+        margin: 15px;
         padding: 5px 10px 7px;
         display: inline-block;
     }

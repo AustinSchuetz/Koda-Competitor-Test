@@ -55,9 +55,6 @@ export default {
         position: relative;
         z-index: 1;
     }
-    .post-content:hover  {
-        background: rgba(198, 3, 20, 0.05);
-    }
     .post-container .post-content:hover  {
         background: none;
     }
@@ -95,7 +92,7 @@ export default {
     .post:first-child {
         border-left: 5px solid #c60314;
         width: 100%;
-        height: 350px;
+        height: 400px;
         margin: 0;
     }
 
@@ -129,8 +126,20 @@ export default {
 }
 .post-text-content {
     padding: 0  15px 15px;
-    max-height: 250px;
+    max-height: 295px;
     overflow-y: hidden;
+    position: relative;
+}
+.post-text-content::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 85%, rgba(255,255,255,1));
 }
 .post .post-content {
     padding: 0;
