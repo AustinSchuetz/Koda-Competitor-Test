@@ -78,8 +78,8 @@
     padding: 15px 0;
     position: absolute;
     top: 90px;
-    left: 10px;
-    width: 240px;
+    left: 5px;
+    width: 250px;
     border-top: 1px solid rgba(0,0,0,0.1);
 }
 .scrolled .leaderboard-wrap {

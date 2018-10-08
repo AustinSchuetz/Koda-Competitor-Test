@@ -5,23 +5,33 @@
         <div v-for="postID in leaderboardPost" ref="workoutIDdiv" id="workoutIDdiv" :load="loadLeaderboard(postID.acf.workout_id)"></div>
         <div class="divider"></div>
         <h3 class="workout-title">{{ this.leaderboard.workoutTitle }}</h3>
-        <div class="scrollable-leaderboard">
             <div v-if="leaderboard.tests.length === 1" class="test" v-for="item in leaderboard.tests">
                 <h4>{{ item.title }}</h4>
                 <p v-if="item.testInstructions">{{ item.testInstructions }}</p>
-                <div class="leader" v-for="result in leaderboard.results">
-                    <div>{{ result.rank }} - <img :src="result.profileImg"> {{ result.userFirstName }} {{ result.userLastName }} ({{ result.userTests[0].value }})</div>
+
+                <div class="scrollable-leaderboard">
+                    <div class="leader" v-for="result in leaderboard.results">
+                        <div class="score-wrap">
+                            <p>{{ result.rank }}</p>
+                            <img :src="result.profileImg">
+                            <div class="score">
+                                <p>{{ result.userFirstName }} {{ result.userLastName }}</p>
+                                <h5>({{ result.userTests[0].value }})</h5>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- display test titles in multiple columns then post the athlete's scores in that order. Order athletes by ascending avgRank-->
             <div v-if="leaderboard.tests.length > 1" class="test" v-for="item in leaderboard.tests">
                 <h4>{{ item.title }}</h4>
                 <p v-if="item.testInstructions">{{ item.testInstructions }}</p>
-                <div class="leader" v-for="result in leaderboard.results">
-                    <p>round this up? {{ result.avgRank }} - <img :src="result.profileImg"> {{ result.userFirstName }} {{ result.userLastName }} ({{ result.tests }})</p>
+                <div class="scrollable-leaderboard">
+                    <div class="leader" v-for="result in leaderboard.results">
+                        <p>round this up? {{ result.avgRank }} - <img :src="result.profileImg"> {{ result.userFirstName }} {{ result.userLastName }} ({{ result.tests }})</p>
+                    </div>
                 </div>
             </div>
-        </div>
 
         <!--in script https://wod.kodacompetitor.com/wp-json/wp/v2/posts?categories=5 and acf.workout_id-->
 
@@ -60,7 +70,8 @@
     }
     .scrollable-leaderboard {
         overflow-y: auto;
-        max-height: calc(100vh - 270px);
+        max-height: calc(100vh - 288px);
+        padding: 0 10px;
     }
     .scrollable-leaderboard::-webkit-scrollbar {
         width: 5px;
@@ -72,11 +83,27 @@
         border-radius: 10px;
         background: rgba(0,0,0,0.15);
     }
+    .leader {
+        padding: 8px 0;
+        align-items: center;
+    }
+    .leader .score-wrap {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        color: #717171;
+    }
+
+    .leader .score-wrap h5 {
+        color: #1d1d1d;
+    }
     .leader img {
-        height: 40px;
-        width: 40px;
+        height: 35px;
+        width: 35px;
         display: inline-block;
         border-radius: 100%;
+        margin: 0 8px;
     }
     h2 {
         text-align: center;
