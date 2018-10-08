@@ -5,33 +5,41 @@
         <div v-for="postID in leaderboardPost" ref="workoutIDdiv" id="workoutIDdiv" :load="loadLeaderboard(postID.acf.workout_id)"></div>
         <div class="divider"></div>
         <h3 class="workout-title">{{ this.leaderboard.workoutTitle }}</h3>
-            <div v-if="leaderboard.tests.length === 1" class="test" v-for="item in leaderboard.tests">
-                <h4>{{ item.title }}</h4>
-                <p v-if="item.testInstructions">{{ item.testInstructions }}</p>
+        <div v-if="leaderboard.tests.length === 1" class="test" v-for="item in leaderboard.tests">
+            <h4>{{ item.title }}</h4>
+            <p v-if="item.testInstructions">{{ item.testInstructions }}</p>
+            <div class="divider lower-divider"></div>
 
-                <div class="scrollable-leaderboard">
-                    <div class="leader" v-for="result in leaderboard.results">
-                        <div class="score-wrap">
-                            <p>{{ result.rank }}</p>
-                            <img :src="result.profileImg">
-                            <div class="score">
-                                <p>{{ result.userFirstName }} {{ result.userLastName }}</p>
-                                <h5>({{ result.userTests[0].value }})</h5>
-                            </div>
+            <div class="scrollable-leaderboard">
+                <div class="leader" v-for="result in leaderboard.results">
+                    <div class="score-wrap">
+                        <p>{{ result.rank }}</p>
+                        <img :src="result.profileImg">
+                        <div class="score">
+                            <p>{{ result.userFirstName }} {{ result.userLastName }}</p>
+                            <h5>({{ result.userTests[0].value }})</h5>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- display test titles in multiple columns then post the athlete's scores in that order. Order athletes by ascending avgRank-->
-            <div v-if="leaderboard.tests.length > 1" class="test" v-for="item in leaderboard.tests">
+        </div>
+
+        <div class="scrollable-leaderboard">
+            <div v-if="leaderboard.tests.length > 1" class="test" v-for="(item, index) in leaderboard.tests">
                 <h4>{{ item.title }}</h4>
                 <p v-if="item.testInstructions">{{ item.testInstructions }}</p>
-                <div class="scrollable-leaderboard">
-                    <div class="leader" v-for="result in leaderboard.results">
-                        <p>round this up? {{ result.avgRank }} - <img :src="result.profileImg"> {{ result.userFirstName }} {{ result.userLastName }} ({{ result.tests }})</p>
+                <div class="leader" v-for="result in leaderboard.results">
+                    <div class="score-wrap" v-if="result.userTests[index].value">
+                        <p>{{ result.ranks[index] }}</p>
+                        <img :src="result.profileImg">
+                        <div class="score">
+                            <p>{{ result.userFirstName }} {{ result.userLastName }}</p>
+                            <h5>({{ result.userTests[index].value }}<span v-if="item.unit == 'lbs'"> lbs</span>)</h5>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
 
         <!--in script https://wod.kodacompetitor.com/wp-json/wp/v2/posts?categories=5 and acf.workout_id-->
 
@@ -84,7 +92,6 @@
         background: rgba(0,0,0,0.15);
     }
     .leader {
-        padding: 8px 0;
         align-items: center;
     }
     .leader .score-wrap {
@@ -93,6 +100,7 @@
         justify-content: flex-start;
         align-items: center;
         color: #717171;
+        padding: 8px 0;
     }
 
     .leader .score-wrap h5 {
@@ -106,24 +114,27 @@
         margin: 0 8px;
     }
     h2 {
-        text-align: center;
-        margin: 0 auto;
+        margin: 0 0 0 15px;
         padding: 0;
-        line-height: 1.2;
+        line-height: 1.15;
+    }
+    h3 {
+        margin: 0 0 0 15px;
     }
     .test {
-        margin: 0 0 15px;
+        margin: 0 0 5px 15px;
     }
     .test h4 {
-        text-align: center;
-    }
-    .workout-title {
-        text-align: center;
+        margin: 0;
     }
     .divider {
         background: #000;
-        height: 3px;
+        height: 2px;
         width: 75px;
-        margin: 10px auto;
+        margin: 5px 0 5px 15px;
+    }
+    .lower-divider {
+        margin-left: 0;
+        margin-top: 8px;
     }
 </style>

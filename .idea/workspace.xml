@@ -3,22 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="73810ecd-a2d9-4697-8462-e42b269b209d" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/components/Leaderboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/Leaderboard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/programmingSidebar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/programmingSidebar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/200.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/200.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_nuxt/layouts_default.005a19741ce3ec6aebbf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_nuxt/manifest.9a10b724770b8a65807e.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_nuxt/pages_index.90ea1d89c4f631c95463.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_nuxt/pages_workout-of-the-day__slug_index.b416789975a05ce43039.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/about/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/about/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/athlete-type/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/athlete-type/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/blog/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/blog/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/category/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/category/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/coaches/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/coaches/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/community/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/community/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sw.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/sw.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/workout-of-the-day/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/workout-of-the-day/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/sw.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/sw.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -44,8 +28,8 @@
       <file leaf-file-name="Leaderboard.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/components/Leaderboard.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="73" column="23" selection-start-line="73" selection-start-column="23" selection-end-line="73" selection-end-column="23" />
+            <state relative-caret-position="138">
+              <caret line="27" column="52" selection-start-line="27" selection-start-column="52" selection-end-line="27" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -336,12 +320,12 @@
       <workItem from="1537549688433" duration="672000" />
       <workItem from="1537552078837" duration="845000" />
       <workItem from="1537553559355" duration="17771000" />
-      <workItem from="1538429492546" duration="61157000" />
+      <workItem from="1538429492546" duration="66460000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84424000" />
+    <option name="totallyTimeSpent" value="89727000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
@@ -670,8 +654,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/components/Leaderboard.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="73" column="23" selection-start-line="73" selection-start-column="23" selection-end-line="73" selection-end-column="23" />
+        <state relative-caret-position="138">
+          <caret line="27" column="52" selection-start-line="27" selection-start-column="52" selection-end-line="27" selection-end-column="52" />
         </state>
       </provider>
     </entry>
