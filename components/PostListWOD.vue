@@ -1,57 +1,49 @@
 <template>
-    <div class="post">
-        <!--<div v-if="item.fi_medium" class="post-featured-background fi_medium" :style="{ 'background-image': 'url(' + item.fi_medium + ')' }">-->
-        <!--</div>-->
-        <div class="bias-wrap">
-            <!--- maybe make a new component for each item so then I can set the activeItem easily --->
-            {{ index }}
-            <a v-if="item.aerobic_bias" @click="setActive('aerobic')" :class="item.activeItem" href="javascript:void(0)" class="bias activebias">Aerobic Bias</a>
-            <a v-if="item.gymnastics_bias" @click="setActive('gymnastics')" :class="item.activeItem" href="javascript:void(0)" class="bias">Gymnastics Bias</a>
-            <a v-if="item.strength_bias" @click="setActive('strength')" :class="item.activeItem" href="javascript:void(0)" class="bias">Strength Bias</a>
-            <a v-if="item.balanced_athlete" @click="setActive('balanced')" :class="item.activeItem" href="javascript:void(0)" class="bias">Balanced Athlete</a>
+    <div class="post-holder">
+        <div class="post" v-for="(item, index) in posts" :key="index" v-if="posts && posts.length > 0 && index <= 10">
+            <div v-if="item.fi_medium" class="post-featured-background fi_medium" :style="{ 'background-image': 'url(' + item.fi_medium + ')' }">
+            </div>
+            <div class="bias-wrap">
+                <a v-if="item.aerobic_bias" href="javascript:void(0)" class="bias activebias">Aerobic Bias</a>
+                <a v-if="item.gymnastics_bias" href="javascript:void(0)" class="bias">Gymnastics Bias</a>
+                <a v-if="item.strength_bias" href="javascript:void(0)" class="bias">Strength Bias</a>
+                <a v-if="item.balanced_athlete" href="javascript:void(0)" class="bias">Balanced Athlete</a>
+            </div>
+            <nuxt-link :to="'/workout-of-the-day' + slugToUrl(item.slug)" class="post-content">
+                <div class="post-content-date">
+                    <h2>{{ item.title }}</h2>
+                </div>
+                <div class="post-text-content">
+                    <div v-if="activeItem === 'aerobic'" id="aerobic-bias-content" v-html="item.aerobic_bias"></div>
+                    <div v-if="activeItem === 'gymnastics'" id="gymnastics-bias-content" v-html="item.gymnastics_bias"></div>
+                    <div v-if="activeItem === 'strength'" id="strength-bias-content" v-html="item.strength_bias"></div>
+                    <div v-if="activeItem === 'balanced'" id="balanced-athlete-content" v-html="item.balanced_athlete"></div>
+                    <strong class="more">View WOD</strong>
+                </div>
+            </nuxt-link>
         </div>
-        <nuxt-link :to="slugToUrl(item.slug)" class="post-content">
-            <div class="post-content-date">
-                <h2>{{ item.title }}</h2>
-            </div>
-            <div class="post-text-content">
-                <div v-if="item.activeItem === 'aerobic'" id="aerobic-bias-content" v-html="item.aerobic_bias"></div>
-                <div v-if="item.activeItem === 'gymnastics'" id="gymnastics-bias-content" v-html="item.gymnastics_bias"></div>
-                <div v-if="item.activeItem === 'strength'" id="strength-bias-content" v-html="item.strength_bias"></div>
-                <div v-if="item.activeItem === 'balanced'" id="balanced-athlete-content" v-html="item.balanced_athlete"></div>
-                <strong class="more">View WOD</strong>
-            </div>
-        </nuxt-link>
     </div>
 </template>
 
 <script>
-export default {
-  name: "individual-post",
-  data: data.map(item => ({
-    id: item.id,
-    title: item.title.rendered,
-    content: item.content.rendered,
-    excerpt: item.excerpt.rendered,
-    aerobic_bias: item.acf.aerobic_bias,
-    gymnastics_bias: item.acf.gymnastics_bias,
-    strength_bias: item.acf.strength_bias,
-    balanced_athlete: item.acf.balanced_athlete,
-    slug: item.slug,
-    fi_medium: item.fi_medium,
-  })),
-    methods: {
-        slugToUrl(slug) {
-            return `/${slug}`
-        },
-        isActive: function (menuItem) {
-            return this.activeItem === menuItem
-        },
-        setActive: function (menuItem) {
-            this.activeItem = menuItem // no need for Vue.set()
+
+    export default {
+        props: ['posts', 'title', 'content'],
+        data: () => ({
+            activeItem: null
+        }),
+        methods: {
+            slugToUrl(slug) {
+                return `/${slug}`
+            },
+            isActive: function (menuItem) {
+                return this.activeItem === menuItem
+            },
+            setActive: function (menuItem) {
+                this.activeItem = menuItem // no need for Vue.set()
+            }
         }
     }
-}
 </script>
 
 <style scoped>
@@ -81,6 +73,10 @@ export default {
         z-index: 2;
         background: rgba(198, 3, 20, 0.35);
     }
+    .post-holder {
+        width: 100%;
+        margin: 0;
+    }
     .post {
         margin: 30px auto;
         padding: 0;
@@ -90,11 +86,17 @@ export default {
         flex-direction: row;
         justify-content: flex-start;
         height: 300px;
-        width: 1000px;
+        width: 800px;
         max-width: 95%;
         border-left: 3px solid #c60314;
         background: #fff;
         box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
+    }
+    .post:first-child {
+        border-left: 5px solid #c60314;
+        width: 100%;
+        height: 350px;
+        margin: 0 auto;
     }
 
     .bias-wrap {

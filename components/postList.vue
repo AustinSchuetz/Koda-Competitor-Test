@@ -1,11 +1,9 @@
 <template>
   <div class="post-holder">
-    <div class="post" v-for="(item, index) in posts" :key="index" v-if="posts && posts.length > 0 && index <= 10">
+    <div class="post" v-for="(item, index) in posts" :key="index" v-if="posts && posts.length > 0 && index == 0">
         <div v-if="item.fi_medium" class="post-featured-background fi_medium" :style="{ 'background-image': 'url(' + item.fi_medium + ')' }">
         </div>
         <div class="bias-wrap">
-            <!--- maybe make a new component for each item so then I can set the activeItem easily --->
-            {{ index }}
             <a v-if="item.aerobic_bias" href="javascript:void(0)" class="bias activebias">Aerobic Bias</a>
             <a v-if="item.gymnastics_bias" href="javascript:void(0)" class="bias">Gymnastics Bias</a>
             <a v-if="item.strength_bias" href="javascript:void(0)" class="bias">Strength Bias</a>
@@ -20,8 +18,8 @@
                 <div v-if="activeItem === 'gymnastics'" id="gymnastics-bias-content" v-html="item.gymnastics_bias"></div>
                 <div v-if="activeItem === 'strength'" id="strength-bias-content" v-html="item.strength_bias"></div>
                 <div v-if="activeItem === 'balanced'" id="balanced-athlete-content" v-html="item.balanced_athlete"></div>
-                <strong class="more">View WOD</strong>
             </div>
+            <strong class="more">View WOD</strong>
         </nuxt-link>
     </div>
   </div>
@@ -32,7 +30,7 @@
 export default {
   props: ['posts', 'title', 'content'],
   data: () => ({
-      activeItem: null
+      activeItem: 'aerobic'
   }),
   methods: {
     slugToUrl(slug) {
@@ -131,6 +129,8 @@ export default {
 }
 .post-text-content {
     padding: 0  15px 15px;
+    max-height: 250px;
+    overflow-y: hidden;
 }
 .post .post-content {
     padding: 0;
@@ -166,7 +166,7 @@ p {
     line-height: 1.5;
     border: 1px solid;
     border-radius: 5px;
-    margin: 15px 0;
+    margin: 15px;
     padding: 5px 10px 7px;
     display: inline-block;
 }

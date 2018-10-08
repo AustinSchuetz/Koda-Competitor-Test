@@ -40,11 +40,6 @@
                 </div>
             </div>
         </div>
-
-        <!--in script https://wod.kodacompetitor.com/wp-json/wp/v2/posts?categories=5 and acf.workout_id-->
-
-
-
     </div>
 </template>
 
