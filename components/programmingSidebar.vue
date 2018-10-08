@@ -1,11 +1,11 @@
 <template>
   <div class="logo-programming-select-holder" :class="{ scrolled: scrollPosition > 0 }">
-      <div class="social">
-        <a href="https://www.instagram.com/kodacompetitor/" class="fa fa-instagram" target="_blank"></a>
-        <a href="https://www.facebook.com/KodaCrossFit/" class="fa fa-facebook" target="_blank"></a>
-      </div>
       <div class="leaderboard-wrap">
           <Leaderboard :leaderboardPost="leaderboardPost"></Leaderboard>
+      </div>
+      <div class="social">
+          <a href="https://www.instagram.com/kodacompetitor/" class="fa fa-instagram" target="_blank"></a>
+          <a href="https://www.facebook.com/KodaCrossFit/" class="fa fa-facebook" target="_blank"></a>
       </div>
   </div>
 </template>
@@ -57,7 +57,7 @@
     bottom: 0;
     top: 0;
     overflow: hidden;
-    padding: 0 20px 20px;
+    padding: 0 0 10px;
 }
 .scrolled {
     box-shadow: 0 35px 35px rgba(50,50,93,.1), 0 25px 15px rgba(0,0,0,.07);
@@ -68,7 +68,8 @@
     padding: 15px;
     position: absolute;
     bottom: 0;
-    width: 220px;
+    left: 10px;
+    width: 240px;
     border-top: 1px solid rgba(0,0,0,0.1);
     z-index: 5;
     background: #fff;
@@ -77,7 +78,8 @@
     padding: 15px 0;
     position: absolute;
     top: 90px;
-    width: 220px;
+    left: 10px;
+    width: 240px;
     border-top: 1px solid rgba(0,0,0,0.1);
 }
 .scrolled .leaderboard-wrap {

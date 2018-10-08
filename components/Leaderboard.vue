@@ -5,19 +5,21 @@
         <div v-for="postID in leaderboardPost" ref="workoutIDdiv" id="workoutIDdiv" :load="loadLeaderboard(postID.acf.workout_id)"></div>
         <div class="divider"></div>
         <h3 class="workout-title">{{ this.leaderboard.workoutTitle }}</h3>
-        <div v-if="leaderboard.tests.length === 1" class="test" v-for="item in leaderboard.tests">
-            <h4>{{ item.title }}</h4>
-            <p v-if="item.testInstructions">{{ item.testInstructions }}</p>
-            <div class="leaders" v-for="result in leaderboard.results">
-                <p>{{ result.rank }} - <img :src="result.profileImg"> {{ result.userFirstName }} {{ result.userLastName }} ({{ result.userTests[0].value }})</p>
+        <div class="scrollable-leaderboard">
+            <div v-if="leaderboard.tests.length === 1" class="test" v-for="item in leaderboard.tests">
+                <h4>{{ item.title }}</h4>
+                <p v-if="item.testInstructions">{{ item.testInstructions }}</p>
+                <div class="leader" v-for="result in leaderboard.results">
+                    <div>{{ result.rank }} - <img :src="result.profileImg"> {{ result.userFirstName }} {{ result.userLastName }} ({{ result.userTests[0].value }})</div>
+                </div>
             </div>
-        </div>
-        <!-- display test titles in multiple columns then post the athlete's scores in that order. Order athletes by ascending avgRank-->
-        <div v-if="leaderboard.tests.length > 1" class="test" v-for="item in leaderboard.tests">
-            <h4>{{ item.title }}</h4>
-            <p v-if="item.testInstructions">{{ item.testInstructions }}</p>
-            <div class="leaders" v-for="result in leaderboard.results">
-                <p>round this up? {{ result.avgRank }} - <img :src="result.profileImg"> {{ result.userFirstName }} {{ result.userLastName }} ({{ result.tests }})</p>
+            <!-- display test titles in multiple columns then post the athlete's scores in that order. Order athletes by ascending avgRank-->
+            <div v-if="leaderboard.tests.length > 1" class="test" v-for="item in leaderboard.tests">
+                <h4>{{ item.title }}</h4>
+                <p v-if="item.testInstructions">{{ item.testInstructions }}</p>
+                <div class="leader" v-for="result in leaderboard.results">
+                    <p>round this up? {{ result.avgRank }} - <img :src="result.profileImg"> {{ result.userFirstName }} {{ result.userLastName }} ({{ result.tests }})</p>
+                </div>
             </div>
         </div>
 
@@ -53,10 +55,24 @@
 </script>
 
 <style scoped>
-    /*.leaderboard {*/
-        /*overflow-y: scroll;*/
-    /*}*/
-    .leaders img {
+    .leaderboard {
+        width: 100%;
+    }
+    .scrollable-leaderboard {
+        overflow-y: auto;
+        max-height: calc(100vh - 270px);
+    }
+    .scrollable-leaderboard::-webkit-scrollbar {
+        width: 5px;
+    }
+    .scrollable-leaderboard::-webkit-scrollbar-track {
+        border-radius: 10px;
+    }
+    .scrollable-leaderboard::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background: rgba(0,0,0,0.15);
+    }
+    .leader img {
         height: 40px;
         width: 40px;
         display: inline-block;
