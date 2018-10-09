@@ -74,7 +74,7 @@ export default {
     console.log("Request to posts");
     return new Promise((resolve, reject) => {
       request.defaults.baseURL = this.baseUrl;
-      request.get(`posts`).then(response => {
+      request.get(`posts?categories=2`).then(response => {
         const data = [...response.data];
         if (response.status === 200 && response.data.length > 0) {
           const filtered = {
