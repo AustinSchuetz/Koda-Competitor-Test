@@ -1,7 +1,8 @@
 <template>
-  <div class="logo-programming-select-holder" :class="{ scrolled: scrollPosition > 0 }">
+  <div class="logo-programming-select-holder" :class="{ scrolled: scrollPosition > 0, hideLeaderboard: this.$store.state.hideLeaderboardGlobal }">
+      <div class="leaderboard-button" title="Collaspe Leaderboard" @click="closeLeaderboard" :class="{ hideLeaderboardBtn: this.$store.state.hideLeaderboardGlobal }"><font-awesome-icon icon="arrow-left" /></div>
       <div class="leaderboard-wrap">
-          <Leaderboard :leaderboardPost="leaderboardPost"></Leaderboard>
+          <Leaderboard  :leaderboardPost="leaderboardPost"></Leaderboard>
       </div>
       <div class="social">
           <a href="https://www.instagram.com/kodacompetitor/" class="fa fa-instagram" target="_blank"></a>
@@ -13,13 +14,18 @@
 <script>
     import axios from 'axios'
     import Leaderboard from '../components/Leaderboard.vue'
+    import { library } from '@fortawesome/fontawesome-svg-core'
+    import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
+    import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+    library.add(faArrowLeft);
 
     export default {
-        components: {Leaderboard},
+        components: {Leaderboard, library, faArrowLeft, FontAwesomeIcon},
         name: "programming-sidebar",
         data() {
             return {
-                scrollPosition: null
+                scrollPosition: null,
+                hideLeaderboard: false
             }
         },
         props: {
@@ -31,6 +37,10 @@
         methods: {
             updateScroll() {
                 this.scrollPosition = window.scrollY
+            },
+            closeLeaderboard() {
+                this.hideLeaderboard = !this.hideLeaderboard;
+                this.$store.commit('leaderboardStatus');
             }
         },
         created() {
@@ -58,6 +68,7 @@
     top: 0;
     overflow: hidden;
     padding: 0 0 10px;
+    transition: 0.25s all ease-in-out;
 }
 .scrolled {
     box-shadow: 0 35px 35px rgba(50,50,93,.1), 0 25px 15px rgba(0,0,0,.07);
@@ -105,5 +116,37 @@
     height: calc(100vh - 70px);
     top: 70px;
     z-index: 10;
+}
+.logo-programming-select-holder.hideLeaderboard {
+    left: -250px;
+    overflow: hidden;
+}
+.leaderboard-button {
+    height: 30px;
+    width: 30px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    left: 220px;
+    position: fixed;
+    z-index: 11;
+    top: 110px;
+    border-radius: 100%;
+    background: #fff;
+    color: rgba(0,0,0,0.25);
+    border: 3px solid rgba(0,0,0,0.25);
+    padding: 2px;
+    transition: 0.25s all ease-in-out;
+}
+.leaderboard-button:hover {
+    color: #c60314;
+    border-color: #c60314;
+}
+.hideLeaderboardBtn {
+    left: 15px;
+}
+.hideLeaderboardBtn svg {
+    transform: rotate(180deg);
 }
 </style>

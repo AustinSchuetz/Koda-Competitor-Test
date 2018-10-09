@@ -3,7 +3,7 @@
       <section class="header">
           <categories></categories>
         </section>
-      <section class="programming-sidebar">
+      <section class="programming-sidebar" :class="{ scrolled: scrollPosition > 0 }">
           <programming-sidebar></programming-sidebar>
       </section>
       <section class="container">
@@ -19,13 +19,22 @@
 <script>
     import { mapGetters } from 'vuex'
     import api from "../api/index";
-    import postList from '../components/postList.vue'
-    import recentPosts from '../components/recentPosts.vue'
-    import categories from '../components/categories.vue'
-    import programmingSidebar from '../components/programmingSidebar.vue'
+    import postList from '~/components/postList.vue'
+    import recentPosts from '~/components/recentPosts.vue'
+    import categories from '~/components/categories.vue'
+    import programmingSidebar from '~/components/programmingSidebar.vue'
 
     export default {
-        components: {postList, categories, recentPosts, programmingSidebar}
+        components: {postList, categories, recentPosts, programmingSidebar},
+        methods: {
+            updateScroll() {
+                this.scrollPosition = window.scrollY
+            }
+        },
+        mounted() {
+            window.addEventListener('scroll', this.updateScroll);
+            this.scrollPosition = window.scrollY;
+        }
     }
 </script>
 
@@ -104,5 +113,15 @@ body {
     width: 95%;
     margin: 0 auto 20px;
     text-align: center;
+}
+.programming-sidebar {
+    width: 275px;
+    height: 100vh;
+    position: absolute;
+}
+.programming-sidebar.scrolled {
+    height: calc(100vh - 70px);
+    top: 70px;
+    z-index: 10;
 }
 </style>

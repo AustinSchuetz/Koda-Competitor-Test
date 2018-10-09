@@ -76,6 +76,9 @@
         max-height: calc(100vh - 288px);
         padding: 0 10px;
     }
+    .logo-programming-select-holder.hideLeaderboard .scrollable-leaderboard {
+        overflow: hidden;
+    }
     .scrollable-leaderboard::-webkit-scrollbar {
         width: 5px;
     }

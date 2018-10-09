@@ -13,5 +13,8 @@ export default {
   },
   CATEGORIES: (state, categories) => {
     state.categories = categories;
-  }
+  },
+  leaderboardStatus (state) {
+      state.hideLeaderboardGlobal = !state.hideLeaderboardGlobal;
+}
 };
