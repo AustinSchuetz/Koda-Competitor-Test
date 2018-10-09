@@ -3,31 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="73810ecd-a2d9-4697-8462-e42b269b209d" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Leaderboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/Leaderboard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/categories.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/categories.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/programmingSidebar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/programmingSidebar.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/layouts/default.vue" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/default.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/200.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/200.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_nuxt/LICENSES" beforeDir="false" afterPath="$PROJECT_DIR$/public/_nuxt/LICENSES" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_nuxt/layouts_default.063a307f903f3668c479.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_nuxt/manifest.8f8f3ad699ebaa28a22a.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_nuxt/pages_index.b58a46c1b739b3d10a3c.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_nuxt/pages_workout-of-the-day__slug_index.9971633c333870bfe0b8.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_nuxt/pages_workout-of-the-day_index.ef7b3ec9568bf77ef423.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/about/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/about/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/athlete-type/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/athlete-type/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/blog/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/blog/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/category/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/category/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/coaches/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/coaches/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/community/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/community/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sw.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/sw.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/workout-of-the-day/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/workout-of-the-day/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/sw.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/sw.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/store/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/mutations.js" beforeDir="false" afterPath="$PROJECT_DIR$/store/mutations.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -47,11 +23,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="programmingSidebar.vue" pinned="false" current-in-tab="true">
+      <file leaf-file-name="programmingSidebar.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/programmingSidebar.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
-              <caret line="145" column="21" selection-start-line="145" selection-start-column="21" selection-end-line="145" selection-end-column="21" />
+            <state relative-caret-position="46">
+              <caret line="2" column="164" selection-start-line="2" selection-start-column="93" selection-end-line="2" selection-end-column="164" />
               <folding>
                 <element signature="e#508#533#0" expanded="true" />
               </folding>
@@ -101,11 +77,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="default.vue" pinned="false" current-in-tab="false">
+      <file leaf-file-name="default.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/layouts/default.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2645">
-              <caret line="115" column="1" selection-start-line="115" selection-start-column="1" selection-end-line="115" selection-end-column="1" />
+            <state relative-caret-position="460">
+              <caret line="95" column="25" selection-start-line="95" selection-start-column="25" selection-end-line="95" selection-end-column="25" />
               <folding>
                 <element signature="e#611#644#0" expanded="true" />
               </folding>
@@ -170,11 +146,11 @@
         <option value="$PROJECT_DIR$/components/PostListWOD.vue" />
         <option value="$PROJECT_DIR$/components/postList.vue" />
         <option value="$PROJECT_DIR$/components/categories.vue" />
-        <option value="$PROJECT_DIR$/layouts/default.vue" />
         <option value="$PROJECT_DIR$/store/index.js" />
         <option value="$PROJECT_DIR$/store/mutations.js" />
         <option value="$PROJECT_DIR$/components/Leaderboard.vue" />
         <option value="$PROJECT_DIR$/components/programmingSidebar.vue" />
+        <option value="$PROJECT_DIR$/layouts/default.vue" />
       </list>
     </option>
   </component>
@@ -356,18 +332,18 @@
       <workItem from="1537549688433" duration="672000" />
       <workItem from="1537552078837" duration="845000" />
       <workItem from="1537553559355" duration="17771000" />
-      <workItem from="1538429492546" duration="82743000" />
+      <workItem from="1538429492546" duration="83575000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106010000" />
+    <option name="totallyTimeSpent" value="106842000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18550107" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18550107" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5003903" side_tool="true" weight="0.3298969" />
@@ -376,7 +352,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49960968" weight="0.3290441" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3290441" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.2414175" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.2414175" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -662,16 +638,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/layouts/default.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2645">
-          <caret line="115" column="1" selection-start-line="115" selection-start-column="1" selection-end-line="115" selection-end-column="1" />
-          <folding>
-            <element signature="e#611#644#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/store/actions.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1152" />
@@ -706,10 +672,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/components/programmingSidebar.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="145" column="21" selection-start-line="145" selection-start-column="21" selection-end-line="145" selection-end-column="21" />
+        <state relative-caret-position="46">
+          <caret line="2" column="164" selection-start-line="2" selection-start-column="93" selection-end-line="2" selection-end-column="164" />
           <folding>
             <element signature="e#508#533#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layouts/default.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="95" column="25" selection-start-line="95" selection-start-column="25" selection-end-line="95" selection-end-column="25" />
+          <folding>
+            <element signature="e#611#644#0" expanded="true" />
           </folding>
         </state>
       </provider>

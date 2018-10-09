@@ -8,7 +8,7 @@
       </section>
       <section class="container">
           <div class="inside-container">
-              <div class="content">
+              <div :class="{ leaderboardHidden: this.$store.state.hideLeaderboardGlobal }" class="content">
                   <nuxt/>
               </div>
           </div>
@@ -93,6 +93,12 @@ body {
     line-height: 150%;
     padding: 30px 30px 50px;
     width: calc(100% - 260px);
+    transition: 0.25s all ease-in-out;
+}
+.leaderboardHidden.content {
+    width: 1070px;
+    max-width: 100%;
+    margin: 0 auto;
 }
     .clean-page-content {
         width: 850px;
