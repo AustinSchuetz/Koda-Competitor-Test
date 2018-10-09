@@ -29,7 +29,9 @@ const store = () => {
         slug: null
       },
       categories: [],
-      hideLeaderboardGlobal: false
+      hideLeaderboardGlobal: false,
+      activeBias: 'aerobic',
+      scrollPosition: null
     },
     actions,
     mutations,

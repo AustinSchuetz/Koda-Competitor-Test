@@ -3,7 +3,7 @@
       <section class="header">
           <categories></categories>
         </section>
-      <section class="programming-sidebar" :class="{ scrolled: scrollPosition > 0 }">
+      <section class="programming-sidebar" :class="{ scrolled: this.$store.state.scrollPosition > 0 }">
           <programming-sidebar></programming-sidebar>
       </section>
       <section class="container">
@@ -25,16 +25,7 @@
     import programmingSidebar from '~/components/programmingSidebar.vue'
 
     export default {
-        components: {postList, categories, recentPosts, programmingSidebar},
-        methods: {
-            updateScroll() {
-                this.scrollPosition = window.scrollY
-            }
-        },
-        mounted() {
-            window.addEventListener('scroll', this.updateScroll);
-            this.scrollPosition = window.scrollY;
-        }
+        components: {postList, categories, recentPosts, programmingSidebar}
     }
 </script>
 
@@ -93,12 +84,18 @@ body {
     line-height: 150%;
     padding: 30px 30px 50px;
     width: calc(100% - 260px);
+    max-width: 1200px;
     transition: 0.25s all ease-in-out;
 }
 .leaderboardHidden.content {
     width: 1200px;
     max-width: 100%;
     margin: 0 auto;
+}
+@media only screen and (min-width:1651px) {
+    .content {
+        margin: 0 auto;
+    }
 }
     .clean-page-content {
         width: 850px;

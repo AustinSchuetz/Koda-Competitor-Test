@@ -4,7 +4,7 @@
         <div v-if="item.fi_medium" class="post-featured-background fi_medium" :style="{ 'background-image': 'url(' + item.fi_medium + ')' }">
         </div>
         <div class="bias-wrap">
-            <a v-if="item.aerobic_bias" href="javascript:void(0)" class="bias activebias">Aerobic Bias</a>
+            <a v-if="item.aerobic_bias" href="javascript:void(0)" class="bias">Aerobic Bias</a>
             <a v-if="item.gymnastics_bias" href="javascript:void(0)" class="bias">Gymnastics Bias</a>
             <a v-if="item.strength_bias" href="javascript:void(0)" class="bias">Strength Bias</a>
             <a v-if="item.balanced_athlete" href="javascript:void(0)" class="bias">Balanced Athlete</a>
@@ -26,8 +26,10 @@
 </template>
 
 <script>
+    import Leaderboard from '../components/Leaderboard.vue'
 
 export default {
+  components: {Leaderboard},
   props: ['posts', 'title', 'content'],
   data: () => ({
       activeItem: 'aerobic'

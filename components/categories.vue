@@ -1,5 +1,5 @@
 <template>
-<div class="categories-menu" :class="{ scrolled: scrollPosition > 0 }">
+<div class="categories-menu" :class="{ scrolled: this.$store.state.scrollPosition > 0 }">
     <nuxt-link to="/" class="logo">
         <img src="~assets/KODACompLightRedLogo.svg">
         <h2>Koda<span>Competitor</span></h2>
@@ -15,19 +15,13 @@
 </template>
 <script>
 export default {
-    data() {
-        return {
-            scrollPosition: null
-        }
-    },
     methods: {
         updateScroll() {
-            this.scrollPosition = window.scrollY
+            this.$store.commit('scrollStatus');
         }
     },
     mounted() {
         window.addEventListener('scroll', this.updateScroll);
-        this.scrollPosition = window.scrollY
     },
     head () {
         return {

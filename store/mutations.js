@@ -16,5 +16,8 @@ export default {
   },
   leaderboardStatus (state) {
       state.hideLeaderboardGlobal = !state.hideLeaderboardGlobal;
-}
+  },
+  scrollStatus (state) {
+    state.scrollPosition =  window.scrollY;
+  }
 };

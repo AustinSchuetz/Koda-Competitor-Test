@@ -1,5 +1,5 @@
 <template>
-  <div class="logo-programming-select-holder" :class="{ scrolled: scrollPosition > 0, hideLeaderboard: this.$store.state.hideLeaderboardGlobal }">
+  <div class="logo-programming-select-holder" :class="{ scrolled: this.$store.state.scrollPosition > 0, hideLeaderboard: this.$store.state.hideLeaderboardGlobal }">
       <div class="leaderboard-button" title="Collaspe Leaderboard" @click="closeLeaderboard" :class="{ hideLeaderboardBtn: this.$store.state.hideLeaderboardGlobal }"><font-awesome-icon icon="arrow-left" /></div>
       <div class="leaderboard-wrap">
           <Leaderboard  :leaderboardPost="leaderboardPost"></Leaderboard>
@@ -24,8 +24,7 @@
         name: "programming-sidebar",
         data() {
             return {
-                scrollPosition: null,
-                hideLeaderboard: false
+                scrollPosition: null
             }
         },
         props: {
@@ -35,11 +34,7 @@
             }
         },
         methods: {
-            updateScroll() {
-                this.scrollPosition = window.scrollY
-            },
             closeLeaderboard() {
-                this.hideLeaderboard = !this.hideLeaderboard;
                 this.$store.commit('leaderboardStatus');
             }
         },
@@ -47,10 +42,6 @@
 
             return  axios.get('https://wod.kodacompetitor.com/wp-json/wp/v2/posts?categories=5&posts_per_page=1')
                 .then(res => (this.leaderboardPost = res.data))
-        },
-        mounted() {
-            window.addEventListener('scroll', this.updateScroll);
-            this.scrollPosition = window.scrollY;
         }
     }
 </script>
@@ -68,7 +59,7 @@
     top: 0;
     overflow: hidden;
     padding: 0 0 10px;
-    transition: 0.25s all ease-in-out;
+    transition: 0.25s left ease-in-out;
 }
 .scrolled {
     box-shadow: 0 35px 35px rgba(50,50,93,.1), 0 25px 15px rgba(0,0,0,.07);
