@@ -96,7 +96,7 @@ body {
     transition: 0.25s all ease-in-out;
 }
 .leaderboardHidden.content {
-    width: 1070px;
+    width: 1200px;
     max-width: 100%;
     margin: 0 auto;
 }

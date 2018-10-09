@@ -93,7 +93,7 @@ export default {
         border-left: 5px solid #c60314;
         width: 100%;
         height: 400px;
-        margin: 0;
+        margin: 0 auto;
     }
 
 .bias-wrap {
