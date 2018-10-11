@@ -135,11 +135,14 @@
     z-index: 10;
 }
 @media only screen and (max-width:790px) {
-    /*.logo-programming-select-holder {*/
-        /*height: calc(100vh - 70px);*/
-        /*top: 70px;*/
-        /*z-index: 10;*/
-    /*}*/
+    .logo-programming-select-holder.scrolled {
+        height: calc(100vh - 60px);
+        top: 60px;
+        z-index: 10;
+    }
+    .scrolled .leaderboard-wrap {
+         top: 30px;
+    }
 }
 .logo-programming-select-holder.hideLeaderboard {
     left: -220px;
