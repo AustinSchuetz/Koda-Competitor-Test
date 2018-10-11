@@ -1,14 +1,16 @@
 <template>
-  <div class="logo-programming-select-holder" :class="{ scrolled: this.$store.state.scrollPosition > 0, hideLeaderboard: this.$store.state.hideLeaderboardGlobal }">
-      <div class="leaderboard-button" title="Collaspe Leaderboard" @click="switchLeaderboard" :class="{ hideLeaderboardBtn: this.$store.state.hideLeaderboardGlobal }"><font-awesome-icon icon="chevron-left" /></div>
-      <div class="leaderboard-wrap">
-          <Leaderboard></Leaderboard>
-      </div>
-      <div class="social">
-          <a href="https://www.instagram.com/kodacompetitor/" class="fa fa-instagram" target="_blank"></a>
-          <a href="https://www.facebook.com/KodaCrossFit/" class="fa fa-facebook" target="_blank"></a>
-      </div>
-  </div>
+    <div>
+        <div class="leaderboard-button" title="Collaspe Leaderboard" @click="switchLeaderboard" :class="{ hideLeaderboardBtn: this.$store.state.hideLeaderboardGlobal }"><font-awesome-icon icon="chevron-left" /></div>
+        <div class="logo-programming-select-holder" :class="{ scrolled: this.$store.state.scrollPosition > 0, hideLeaderboard: this.$store.state.hideLeaderboardGlobal }">
+            <div class="leaderboard-wrap">
+                <Leaderboard></Leaderboard>
+            </div>
+            <div class="social">
+                <a href="https://www.instagram.com/kodacompetitor/" class="fa fa-instagram" target="_blank"></a>
+                <a href="https://www.facebook.com/KodaCrossFit/" class="fa fa-facebook" target="_blank"></a>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -151,8 +153,8 @@
     text-align: center;
     cursor: pointer;
     left: 220px;
-    position: fixed;
-    z-index: 11;
+    position: absolute;
+    z-index: 13;
     top: 110px;
     border-radius: 100%;
     background: #fff;
