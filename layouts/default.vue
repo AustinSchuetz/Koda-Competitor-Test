@@ -129,11 +129,12 @@ body {
 }
 .hideLeaderboardSidebar.programming-sidebar {
     left: -230px;
+    z-index: 9;
 }
 @media only screen and (max-width:790px) {
     .programming-sidebar {
-        height: calc(100vh - 70px);
-        top: 70px;
+        height: calc(100vh - 60px);
+        top: 60px;
         z-index: 7;
     }
     .content {

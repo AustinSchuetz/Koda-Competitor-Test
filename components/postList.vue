@@ -147,7 +147,7 @@ export default {
     right: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, transparent 85%, rgba(255,255,255,1));
+    background: linear-gradient(to bottom, transparent 85%, #fff);
 }
 .post .post-content {
     padding: 0;
@@ -209,6 +209,10 @@ p {
         border: none;
         border-bottom: 3px solid transparent;
         border-left: 1px solid rgba(0,0,0,0.1);
+        max-width: 25%;
+        text-align: center;
+        font-size: 12px;
+        line-height: 1.3;
     }
     .bias-wrap .bias:last-child {
         border-right: 1px solid rgba(0,0,0,0.1);
@@ -223,9 +227,6 @@ p {
         display: block;
         height: 250px;
         background-position: 50% 20%;
-    }
-    .post-text-content {
-
     }
     .mobile-title {
         display: block;
