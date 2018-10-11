@@ -200,6 +200,7 @@ p {
     }
     .bias-wrap {
         flex-direction: row;
+        align-items: center;
         width: 100%;
         background: rgba(0, 0, 0, .03);
         border-bottom: 1px solid rgba(0, 0, 0, .1);
@@ -233,6 +234,11 @@ p {
     }
     .post-content-date {
         display: none;
+    }
+}
+@media only screen and (max-width:790px) {
+    .bias-wrap .bias {
+        padding: 5px;
     }
 }
 </style>
