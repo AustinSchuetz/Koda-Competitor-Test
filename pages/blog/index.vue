@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="post-holder">
-            <nuxt-link  :to="item.slug" class="post" v-for="(item, index) in blogs" :key="index" v-if="blogs && blogs.length > 0 && index <= 10">
+            <nuxt-link  :to="item.slug + '/'" class="post" v-for="(item, index) in blogs" :key="index" v-if="blogs && blogs.length > 0 && index <= 10">
                 <div v-if="item.fi_medium" class="post-featured-background fi_medium" :style="{ 'background-image': 'url(' + item.fi_medium + ')' }">
                     <h1 v-html="item.title.rendered"></h1>
                 </div>
