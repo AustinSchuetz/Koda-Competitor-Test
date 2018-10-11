@@ -185,4 +185,48 @@
     .more:hover {
         color: #c60314;
     }
+    @media only screen and (max-width:1100px) {
+        .post, .post:first-child {
+            flex-direction: column;
+            justify-content: center;
+            height: inherit;
+            border: none;
+            border-top: 3px solid #c60314;
+        }
+        .bias-wrap {
+            flex-direction: row;
+            width: 100%;
+            background: rgba(0, 0, 0, .03);
+            border-bottom: 1px solid rgba(0, 0, 0, .1);
+        }
+        .bias-wrap .bias {
+            background: none;
+            border: none;
+            border-bottom: 3px solid transparent;
+            border-left: 1px solid rgba(0,0,0,0.1);
+        }
+        .bias-wrap .bias:last-child {
+            border-right: 1px solid rgba(0,0,0,0.1);
+        }
+        .bias-wrap .bias:hover {
+            border-left-color: rgba(0,0,0,0.1);
+            border-bottom: 3px solid #c60314;
+        }
+        .post .post-featured-background, .post:first-child .post-featured-background {
+            width: 100%;
+            max-width: 100%;
+            display: block;
+            height: 250px;
+            background-position: 50% 20%;
+        }
+        .post-text-content {
+
+        }
+        .mobile-title {
+            display: block;
+        }
+        .post-content-date {
+            display: none;
+        }
+    }
 </style>

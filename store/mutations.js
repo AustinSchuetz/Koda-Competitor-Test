@@ -18,6 +18,12 @@ export default {
       state.hideLeaderboardGlobal = !state.hideLeaderboardGlobal;
   },
   scrollStatus (state) {
-    state.scrollPosition =  window.scrollY;
+    state.scrollPosition =  window.pageYOffset;
+  },
+  leaderboardClose (state) {
+    state.hideLeaderboardGlobal = true;
+  },
+  leaderboardOpen (state) {
+    state.hideLeaderboardGlobal = false;
   }
 };

@@ -6,7 +6,7 @@
       <section class="programming-sidebar" :class="{ scrolled: this.$store.state.scrollPosition > 0 }">
           <programming-sidebar></programming-sidebar>
       </section>
-      <section class="container">
+      <section class="container" :class="{ leaderboardHidden: this.$store.state.hideLeaderboardGlobal }">
           <div class="inside-container">
               <div :class="{ leaderboardHidden: this.$store.state.hideLeaderboardGlobal }" class="content">
                   <nuxt/>
@@ -126,5 +126,27 @@ body {
     height: calc(100vh - 70px);
     top: 70px;
     z-index: 10;
+}
+@media only screen and (max-width:790px) {
+    .programming-sidebar {
+        height: calc(100vh - 70px);
+        top: 70px;
+        z-index: 7;
+    }
+    .content {
+        padding: 0 10px 30px 35px;
+        margin-right: -260px;
+        overflow-x: hidden;
+        max-width: 100%;
+        width: 100%;
+        z-index: 8;
+        position: relative;
+    }
+    .container {
+        overflow-x: hidden;
+    }
+    .leaderboardHidden.content {
+        margin: 0 auto;
+    }
 }
 </style>

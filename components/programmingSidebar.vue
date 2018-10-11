@@ -1,6 +1,6 @@
 <template>
   <div class="logo-programming-select-holder" :class="{ scrolled: this.$store.state.scrollPosition > 0, hideLeaderboard: this.$store.state.hideLeaderboardGlobal }">
-      <div class="leaderboard-button" title="Collaspe Leaderboard" @click="closeLeaderboard" :class="{ hideLeaderboardBtn: this.$store.state.hideLeaderboardGlobal }"><font-awesome-icon icon="arrow-left" /></div>
+      <div class="leaderboard-button" title="Collaspe Leaderboard" @click="switchLeaderboard" :class="{ hideLeaderboardBtn: this.$store.state.hideLeaderboardGlobal }"><font-awesome-icon icon="chevron-left" /></div>
       <div class="leaderboard-wrap">
           <Leaderboard  :leaderboardPost="leaderboardPost"></Leaderboard>
       </div>
@@ -15,16 +15,17 @@
     import axios from 'axios'
     import Leaderboard from '../components/Leaderboard.vue'
     import { library } from '@fortawesome/fontawesome-svg-core'
-    import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
+    import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
     import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-    library.add(faArrowLeft);
+    library.add(faChevronLeft);
 
     export default {
-        components: {Leaderboard, library, faArrowLeft, FontAwesomeIcon},
+        components: {Leaderboard, library, faChevronLeft, FontAwesomeIcon},
         name: "programming-sidebar",
         data() {
             return {
-                scrollPosition: null
+                scrollPosition: null,
+                windowWidth: 0
             }
         },
         props: {
@@ -34,14 +35,37 @@
             }
         },
         methods: {
-            closeLeaderboard() {
+            switchLeaderboard() {
                 this.$store.commit('leaderboardStatus');
+            },
+            closeLeaderboard() {
+                this.$store.commit('leaderboardClose');
+            },
+            openLeaderboard() {
+                this.$store.commit('leaderboardOpen');
+            },
+            getWindowWidth(event) {
+                this.windowWidth = document.documentElement.clientWidth;
+                if (this.windowWidth < 700) {
+                    return this.closeLeaderboard();
+                } if (this.windowWidth > 699) {
+                    return this.openLeaderboard();
+                }
             }
         },
         created() {
 
             return  axios.get('https://wod.kodacompetitor.com/wp-json/wp/v2/posts?categories=5&posts_per_page=1')
                 .then(res => (this.leaderboardPost = res.data))
+        },
+        mounted() {
+            this.$nextTick(function() {
+                window.addEventListener('resize', this.getWindowWidth);
+                this.windowWidth = document.documentElement.clientWidth;
+                if (this.windowWidth < 700) {
+                    return this.closeLeaderboard();
+                }
+            });
         }
     }
 </script>
@@ -108,6 +132,13 @@
     top: 70px;
     z-index: 10;
 }
+@media only screen and (max-width:790px) {
+    /*.logo-programming-select-holder {*/
+        /*height: calc(100vh - 70px);*/
+        /*top: 70px;*/
+        /*z-index: 10;*/
+    /*}*/
+}
 .logo-programming-select-holder.hideLeaderboard {
     left: -250px;
     overflow: hidden;
@@ -127,7 +158,7 @@
     background: #fff;
     color: rgba(0,0,0,0.25);
     border: 3px solid rgba(0,0,0,0.25);
-    padding: 2px;
+    padding: 2px 3px 2px 2px;
     transition: 0.25s all ease-in-out;
 }
 .leaderboard-button:hover {
@@ -136,6 +167,7 @@
 }
 .hideLeaderboardBtn {
     left: 15px;
+    padding: 2px 2px 2px 4px;
 }
 .hideLeaderboardBtn svg {
     transform: rotate(180deg);

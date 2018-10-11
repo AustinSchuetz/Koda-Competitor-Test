@@ -2,7 +2,7 @@
     <div class="leaderboard">
         <h2>Leaderboard</h2>
         <h2>{{ this.leaderboard.date | moment("MMM Do YYYY") }}</h2>
-        <div v-for="postID in leaderboardPost" ref="workoutIDdiv" id="workoutIDdiv" :load="loadLeaderboard(postID.acf.workout_id)"></div>
+        <div v-for="postID in leaderboardPostID" ref="workoutIDdiv" id="workoutIDdiv" :load="loadLeaderboard(postID.acf.workout_id)"></div>
         <div class="divider"></div>
         <h3 class="workout-title">{{ this.leaderboard.workoutTitle }}</h3>
         <div v-if="leaderboard.tests.length === 1" class="test" v-for="item in leaderboard.tests">
@@ -58,6 +58,11 @@
         //     return  axios.get('https://apis.trainheroic.com/public/leaderboard/4863904')
         //         .then(res => (this.leaderboard = res.data));
         // },
+        computed: {
+            leaderboardPostID() {
+                return this.leaderboardPost
+            }
+        },
         methods: {
             loadLeaderboard(workoutID) {
                 return  axios.get('https://apis.trainheroic.com/public/leaderboard/' + workoutID)

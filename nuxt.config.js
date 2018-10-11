@@ -7,18 +7,18 @@ module.exports = {
   plugins: [
       '~/plugins/vue-tabs-component',
       '~/plugins/firebase',
-      '~/plugins/moment.js'
+      '~/plugins/moment.js',
+      '~/plugins/vue-js-modal.js'
   ],
-  
   /*
   ** Headers of the page
   */
   head: {
-    title: "starter",
+    title: "Koda Competitor",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "Nuxt.js project" }
+      { hid: "description", name: "description", content: "Koda Competitor CrossFit Programming" }
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },

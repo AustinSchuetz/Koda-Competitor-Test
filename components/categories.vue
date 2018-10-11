@@ -9,7 +9,10 @@
         <nuxt-link to="/athlete-type/">Pick a Track</nuxt-link>
         <nuxt-link to="/blog/">Blog</nuxt-link>
         <nuxt-link to="/coaches/">Coaches</nuxt-link>
-        <nuxt-link to="/community/">Community</nuxt-link>
+        <nuxt-link to="/social/">Social</nuxt-link>
+    </div>
+    <div class="mobile-menu">
+
     </div>
 </div>
 </template>
@@ -132,9 +135,29 @@ export default {
     background: #fff;
     box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
 }
-
+.mobile-menu {
+    display: none;
+}
 @media only screen and (max-width:790px) {
-
+    .mobile-menu {
+        display: block;
+    }
+    .categories-menu {
+        background: #fff;
+        height: 60px;
+    }
+    .categories-menu.scrolled {
+        box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
+    }
+    .logo {
+        z-index: 12;
+    }
+    .categories-menu .logo img {
+        height: 35px;
+    }
+    .main-menu {
+        display: none;
+    }
 }
 
 
