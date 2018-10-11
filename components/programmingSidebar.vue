@@ -2,7 +2,7 @@
   <div class="logo-programming-select-holder" :class="{ scrolled: this.$store.state.scrollPosition > 0, hideLeaderboard: this.$store.state.hideLeaderboardGlobal }">
       <div class="leaderboard-button" title="Collaspe Leaderboard" @click="switchLeaderboard" :class="{ hideLeaderboardBtn: this.$store.state.hideLeaderboardGlobal }"><font-awesome-icon icon="chevron-left" /></div>
       <div class="leaderboard-wrap">
-          <Leaderboard  :leaderboardPost="leaderboardPost"></Leaderboard>
+          <Leaderboard></Leaderboard>
       </div>
       <div class="social">
           <a href="https://www.instagram.com/kodacompetitor/" class="fa fa-instagram" target="_blank"></a>
@@ -28,12 +28,12 @@
                 windowWidth: 0
             }
         },
-        props: {
-            leaderboardPost: {
-                type: Array,
-                required: true
-            }
-        },
+        // props: {
+        //     leaderboardPost: {
+        //         type: Array,
+        //         required: true
+        //     }
+        // },
         methods: {
             switchLeaderboard() {
                 this.$store.commit('leaderboardStatus');
@@ -56,7 +56,7 @@
         created() {
 
             return  axios.get('https://wod.kodacompetitor.com/wp-json/wp/v2/posts?categories=5&posts_per_page=1')
-                .then(res => (this.leaderboardPost = res.data))
+                .then(res => (this.$store.state.leaderboardPost = res.data))
         },
         mounted() {
             this.$nextTick(function() {

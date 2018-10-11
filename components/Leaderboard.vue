@@ -48,7 +48,7 @@
     import axios from 'axios'
     export default {
         name: "Leaderboard",
-        props: ['leaderboardPost'],
+        // props: ['leaderboardPost'],
         data() {
             return {
                 leaderboard: []
@@ -60,7 +60,7 @@
         // },
         computed: {
             leaderboardPostID() {
-                return this.leaderboardPost
+                return this.$store.state.leaderboardPost
             }
         },
         methods: {

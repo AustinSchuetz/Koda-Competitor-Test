@@ -5,28 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73810ecd-a2d9-4697-8462-e42b269b209d" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/plugins/vue-js-modal.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Leaderboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/Leaderboard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/PostListWOD.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/PostListWOD.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/categories.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/categories.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/postList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/postList.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/programmingSidebar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/programmingSidebar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/default.vue" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/default.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nuxt.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/coaches/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/coaches/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/community/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/social/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_nuxt/app.24d67dba8cf6ded2090f.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/_nuxt/app.24d67dba8cf6ded2090f.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_nuxt/layouts_default.0771ba9cc35d70295ebf.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/_nuxt/layouts_default.0771ba9cc35d70295ebf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_nuxt/pages_athlete-type_index.dd0d7852d269073ef191.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/_nuxt/pages_athlete-type_index.dd0d7852d269073ef191.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_nuxt/pages_category__slug_index.0b068e31280e78f9faa5.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/_nuxt/pages_category__slug_index.0b068e31280e78f9faa5.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_nuxt/pages_community_index.54bec7accda7c5cf1de6.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/_nuxt/pages_community_index.54bec7accda7c5cf1de6.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_nuxt/pages_index.1bc8a24d9f72eba983c5.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/_nuxt/pages_index.1bc8a24d9f72eba983c5.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_nuxt/pages_workout-of-the-day__slug_index.708b22b55f371c95dfac.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/_nuxt/pages_workout-of-the-day__slug_index.708b22b55f371c95dfac.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/_nuxt/pages_workout-of-the-day_index.3d3353f88ac2a1a4c875.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/_nuxt/pages_workout-of-the-day_index.3d3353f88ac2a1a4c875.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/mutations.js" beforeDir="false" afterPath="$PROJECT_DIR$/store/mutations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/store/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -40,8 +22,8 @@
       <file leaf-file-name="categories.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/categories.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3220">
-              <caret line="140" selection-start-line="140" selection-end-line="140" selection-end-column="42" />
+            <state relative-caret-position="23">
+              <caret line="1" column="67" selection-start-line="1" selection-start-column="49" selection-end-line="1" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -49,7 +31,7 @@
       <file leaf-file-name="mutations.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/store/mutations.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
+            <state relative-caret-position="274">
               <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
             </state>
           </provider>
@@ -63,8 +45,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/store/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
-              <caret line="33" column="6" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
+            <state relative-caret-position="299">
+              <caret line="34" column="27" lean-forward="true" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
               </folding>
@@ -85,16 +67,16 @@
         <entry file="file://$PROJECT_DIR$/components/postList.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="506">
-              <caret line="235" column="1" lean-forward="true" selection-start-line="191" selection-start-column="1" selection-end-line="235" selection-end-column="1" />
+              <caret line="235" column="1" selection-start-line="191" selection-start-column="1" selection-end-line="235" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PostListWOD.vue" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PostListWOD.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/PostListWOD.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="492">
-              <caret line="223" column="9" lean-forward="true" selection-start-line="223" selection-start-column="9" selection-end-line="223" selection-end-column="9" />
+            <state relative-caret-position="1665">
+              <caret line="223" column="9" selection-start-line="223" selection-start-column="9" selection-end-line="223" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -108,11 +90,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="programmingSidebar.vue" pinned="false" current-in-tab="false">
+      <file leaf-file-name="programmingSidebar.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/components/programmingSidebar.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-92">
-              <caret line="2" column="165" selection-start-line="2" selection-start-column="94" selection-end-line="2" selection-end-column="165" />
+            <state relative-caret-position="92">
+              <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -120,8 +102,8 @@
       <file leaf-file-name="Leaderboard.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/Leaderboard.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1403">
-              <caret line="61" column="31" selection-start-line="61" selection-start-column="31" selection-end-line="61" selection-end-column="31" />
+            <state relative-caret-position="1426">
+              <caret line="62" column="56" lean-forward="true" selection-start-line="62" selection-start-column="56" selection-end-line="62" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -159,7 +141,6 @@
         <option value="$PROJECT_DIR$/pages/index.vue" />
         <option value="$PROJECT_DIR$/pages/workout-of-the-day/index.vue" />
         <option value="$PROJECT_DIR$/components/IndividualPost.vue" />
-        <option value="$PROJECT_DIR$/store/index.js" />
         <option value="$PROJECT_DIR$/api/config/index.js" />
         <option value="$PROJECT_DIR$/api/index.js" />
         <option value="$PROJECT_DIR$/plugins/vueinstagram.js" />
@@ -170,12 +151,13 @@
         <option value="$PROJECT_DIR$/pages/coaches/index.vue" />
         <option value="$PROJECT_DIR$/pages/social/index.vue" />
         <option value="$PROJECT_DIR$/store/mutations.js" />
-        <option value="$PROJECT_DIR$/components/programmingSidebar.vue" />
         <option value="$PROJECT_DIR$/components/categories.vue" />
         <option value="$PROJECT_DIR$/layouts/default.vue" />
         <option value="$PROJECT_DIR$/components/postList.vue" />
-        <option value="$PROJECT_DIR$/components/Leaderboard.vue" />
         <option value="$PROJECT_DIR$/components/PostListWOD.vue" />
+        <option value="$PROJECT_DIR$/store/index.js" />
+        <option value="$PROJECT_DIR$/components/Leaderboard.vue" />
+        <option value="$PROJECT_DIR$/components/programmingSidebar.vue" />
       </list>
     </option>
   </component>
@@ -365,12 +347,12 @@
       <workItem from="1537553559355" duration="17771000" />
       <workItem from="1538429492546" duration="87852000" />
       <workItem from="1539116389372" duration="16297000" />
-      <workItem from="1539268371631" duration="3986000" />
+      <workItem from="1539268371631" duration="4696000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131402000" />
+    <option name="totallyTimeSpent" value="132112000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
@@ -639,10 +621,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/components/postList.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="235" column="1" selection-start-line="191" selection-start-column="1" selection-end-line="235" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/PostListWOD.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1665">
+          <caret line="223" column="9" selection-start-line="223" selection-start-column="9" selection-end-line="223" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/store/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="33" column="6" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
+        <state relative-caret-position="299">
+          <caret line="34" column="27" lean-forward="true" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
           </folding>
@@ -651,8 +647,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/store/mutations.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
+        <state relative-caret-position="274">
           <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/categories.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="67" selection-start-line="1" selection-start-column="49" selection-end-line="1" selection-end-column="67" />
         </state>
       </provider>
     </entry>
@@ -663,38 +666,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/categories.vue">
+    <entry file="file://$PROJECT_DIR$/components/Leaderboard.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3220">
-          <caret line="140" selection-start-line="140" selection-end-line="140" selection-end-column="42" />
+        <state relative-caret-position="1426">
+          <caret line="62" column="56" lean-forward="true" selection-start-line="62" selection-start-column="56" selection-end-line="62" selection-end-column="56" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/components/programmingSidebar.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-92">
-          <caret line="2" column="165" selection-start-line="2" selection-start-column="94" selection-end-line="2" selection-end-column="165" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/Leaderboard.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1403">
-          <caret line="61" column="31" selection-start-line="61" selection-start-column="31" selection-end-line="61" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/postList.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="235" column="1" lean-forward="true" selection-start-line="191" selection-start-column="1" selection-end-line="235" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/PostListWOD.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="223" column="9" lean-forward="true" selection-start-line="223" selection-start-column="9" selection-end-line="223" selection-end-column="9" />
+        <state relative-caret-position="92">
+          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
         </state>
       </provider>
     </entry>

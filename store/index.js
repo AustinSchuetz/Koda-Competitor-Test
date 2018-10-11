@@ -31,7 +31,8 @@ const store = () => {
       categories: [],
       hideLeaderboardGlobal: false,
       activeBias: 'aerobic',
-      scrollPosition: null
+      scrollPosition: null,
+      leaderboardPost: null
     },
     actions,
     mutations,
