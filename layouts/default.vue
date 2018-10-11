@@ -3,7 +3,7 @@
       <section class="header">
           <categories></categories>
         </section>
-      <section class="programming-sidebar" :class="{ scrolled: this.$store.state.scrollPosition > 0 }">
+      <section class="programming-sidebar" :class="{ scrolled: this.$store.state.scrollPosition > 0, hideLeaderboardSidebar: this.$store.state.hideLeaderboardGlobal }">
           <programming-sidebar></programming-sidebar>
       </section>
       <section class="container" :class="{ leaderboardHidden: this.$store.state.hideLeaderboardGlobal }">
@@ -126,6 +126,9 @@ body {
     height: calc(100vh - 70px);
     top: 70px;
     z-index: 10;
+}
+.hideLeaderboardSidebar.programming-sidebar {
+    left: -230px;
 }
 @media only screen and (max-width:790px) {
     .programming-sidebar {
