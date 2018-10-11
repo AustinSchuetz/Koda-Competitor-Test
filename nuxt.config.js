@@ -30,7 +30,8 @@ module.exports = {
       height: '5px'
   },
   generate: {
-    dir: 'public'
+    dir: 'public',
+    fallback: true
   },
   /*
   ** Customize manifest.json
