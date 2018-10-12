@@ -138,7 +138,7 @@ body {
         z-index: 7;
     }
     .content {
-        padding: 0 10px 30px 35px;
+        padding: 15px 10px 30px 35px;
         margin-right: -260px;
         overflow-x: hidden;
         max-width: 100%;

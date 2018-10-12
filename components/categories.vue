@@ -1,21 +1,36 @@
 <template>
-<div class="categories-menu" :class="{ scrolled: this.$store.state.scrollPosition > 0 }">
-    <nuxt-link to="/" class="logo">
-        <img src="~assets/KODACompLightRedLogo.svg">
-        <h2>Koda<span>Competitor</span></h2>
-    </nuxt-link>
-    <div class="main-menu">
-        <nuxt-link to="/workout-of-the-day/" class="sign-up">WOD</nuxt-link>
-        <nuxt-link to="/athlete-type/">Pick a Track</nuxt-link>
-        <nuxt-link to="/blog/">Blog</nuxt-link>
-        <nuxt-link to="/coaches/">Coaches</nuxt-link>
-        <nuxt-link to="/social/">Social</nuxt-link>
+    <div>
+    <div class="categories-menu" :class="{ scrolled: this.$store.state.scrollPosition > 0 }">
+        <nuxt-link to="/" class="logo">
+            <img @click="navMenuClose" src="~assets/KODACompLightRedLogo.svg">
+            <h2 @click="navMenuClose">Koda<span>Competitor</span></h2>
+        </nuxt-link>
+        <div class="main-menu">
+            <nuxt-link to="/workout-of-the-day/" class="sign-up">WOD</nuxt-link>
+            <nuxt-link to="/athlete-type/">Pick a Track</nuxt-link>
+            <nuxt-link to="/blog/">Blog</nuxt-link>
+            <nuxt-link to="/coaches/">Coaches</nuxt-link>
+            <nuxt-link to="/social/">Social</nuxt-link>
+        </div>
+        <div class="mobile-menu-btn-holder">
+            <div id="nav-icon" @click="navMenu" :class="{ open: this.navMenuOpen }">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
     </div>
-    <div class="mobile-menu mobile-menu-btn-holder">
-        <div id="nav-icon" @click="navMenu" :class="{ open: this.navMenuOpen }">
-            <span></span>
-            <span></span>
-            <span></span>
+    <div class="mobile-menu"  :class="{ 'mobile-menu-open': this.navMenuOpen }">
+        <div class="mobile-links">
+            <li @click="navMenuClose"><nuxt-link to="/workout-of-the-day/">Workout of the Day</nuxt-link></li>
+            <li @click="navMenuClose"><nuxt-link to="/athlete-type/">Pick a Track</nuxt-link></li>
+            <li @click="navMenuClose"><nuxt-link to="/blog/">Blog</nuxt-link></li>
+            <li @click="navMenuClose"><nuxt-link to="/coaches/">Coaches</nuxt-link></li>
+            <li @click="navMenuClose"><nuxt-link to="/social/">Social</nuxt-link></li>
+        </div>
+        <div class="social">
+            <a href="https://www.instagram.com/kodacompetitor/" class="fa fa-instagram" target="_blank"></a>
+            <a href="https://www.facebook.com/KodaCrossFit/" class="fa fa-facebook" target="_blank"></a>
         </div>
     </div>
 </div>
@@ -33,6 +48,9 @@ export default {
         },
         navMenu() {
             this.navMenuOpen = !this.navMenuOpen;
+        },
+        navMenuClose() {
+            this.navMenuOpen = false;
         }
     },
     mounted() {
@@ -79,8 +97,6 @@ export default {
     }
     a:hover {
         border-bottom: 3px solid rgba(198, 3, 20, 1);
-    }
-    a.nuxt-link-exact-active {
     }
     .sign-up {
         padding: 10px;
@@ -147,32 +163,54 @@ export default {
     background: #fff;
     box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
 }
-.mobile-menu {
+.mobile-menu-btn-holder {
     display: none;
 }
+.mobile-menu {
+    display: none;
+    width: 100%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 60px;
+    position: fixed;
+    opacity: 0;
+    transition: opacity 0.5s;
+    background: #fff;
+    z-index: 90;
+    overflow: auto;
+    padding: 15px 0;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
 @media only screen and (max-width:790px) {
-    .mobile-menu {
-        display: block;
-    }
     .categories-menu {
         background: #fff;
         height: 60px;
         justify-content: space-between;
+    }
+    .mobile-menu-open {
+        display: block;
+        opacity: 1;
     }
     .categories-menu.scrolled {
         box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
     }
     .categories-menu .logo {
         z-index: 12;
-        width: 220px;
+        width: calc(50% + 75px);
+        justify-content: space-between;
     }
     .categories-menu .logo img {
         height: 40px;
+        margin: 7px;
+    }
+    .categories-menu .logo h2 {
+        margin-top: -5px;
     }
     .main-menu {
         display: none;
     }
-
     .mobile-menu-btn-holder {
         display: block;
         position: absolute;
@@ -257,6 +295,46 @@ export default {
         transform: rotate(-45deg);
         top: 27px;
         left: 6px;
+    }
+    .social {
+        margin: 0 10px;
+        text-align: center;
+        padding: 15px;
+        position: absolute;
+        bottom: 0;
+        width: calc(100% - 20px);
+        border-top: 1px solid rgba(0,0,0,0.1);
+        background: #fff;
+    }
+    .fa {
+        color:#C60314;
+        font-weight: bold;
+        text-decoration:none;
+        display: inline-block;
+        transition: 0.2s ease-in-out;
+        font-size: 28px;
+        padding: 0;
+        margin: 0 10px 10px;
+        border: none;
+        text-align: center;
+    }
+    .fa:hover {
+        color: #1d1d1d;
+        border: none;
+    }
+    .mobile-menu .mobile-links li {
+        padding: 0;
+        display: block;
+        list-style: none;
+    }
+    .mobile-menu .mobile-links a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        color: #c60314;
+        text-decoration: none;
+        padding: 8px;
+        font-weight: bold;
     }
 }
 
