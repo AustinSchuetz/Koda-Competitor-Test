@@ -138,7 +138,7 @@ body {
         z-index: 7;
     }
     .content {
-        padding: 15px 10px 30px 35px;
+        padding: 15px 5px 40px 5px;
         margin-right: -260px;
         overflow-x: hidden;
         max-width: 100%;
@@ -151,6 +151,7 @@ body {
     }
     .leaderboardHidden.content {
         margin: 0 auto;
+        padding: 15px 5px 40px 45px;
     }
 }
 </style>

@@ -63,6 +63,11 @@
         margin: 50px auto 0;
         text-align: center;
     }
+    @media only screen and (max-width:790px) {
+        .home-holder {
+            padding: 0;
+        }
+    }
     /* Smartphones (portrait and landscape) ----------- */
     @media only screen
     and (min-device-width : 320px)

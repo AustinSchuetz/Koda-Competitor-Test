@@ -239,5 +239,8 @@ p {
     .bias-wrap .bias {
         padding: 5px;
     }
+    .mobile-title {
+        font-size: 1.35em;
+    }
 }
 </style>
