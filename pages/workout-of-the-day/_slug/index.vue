@@ -16,6 +16,7 @@
           <div v-if="activeItem === 'balanced'" id="balanced-athlete-content" v-html="post.acf.balanced_athlete"></div>
         </div>
     </div>
+    <div v-if="post.acf.workout_id">Is leaderboard post - need to style a leaderboard with the specific workout id here: {{ post.acf.workout_id }}</div>
 </div>
 </template>
 <script>

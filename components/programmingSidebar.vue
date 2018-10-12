@@ -56,16 +56,17 @@
             }
         },
         created() {
-
             return  axios.get('https://wod.kodacompetitor.com/wp-json/wp/v2/posts?categories=5&posts_per_page=1')
                 .then(res => (this.$store.state.leaderboardPost = res.data))
         },
         mounted() {
             this.$nextTick(function() {
-                window.addEventListener('resize', this.getWindowWidth);
+                // window.addEventListener('resize', this.getWindowWidth);
                 this.windowWidth = document.documentElement.clientWidth;
                 if (this.windowWidth < 700) {
                     return this.closeLeaderboard();
+                } if (this.windowWidth > 699) {
+                    return this.openLeaderboard();
                 }
             });
         }
