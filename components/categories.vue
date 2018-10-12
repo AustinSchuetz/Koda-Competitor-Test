@@ -11,16 +11,28 @@
         <nuxt-link to="/coaches/">Coaches</nuxt-link>
         <nuxt-link to="/social/">Social</nuxt-link>
     </div>
-    <div class="mobile-menu">
-
+    <div class="mobile-menu mobile-menu-btn-holder">
+        <div id="nav-icon" @click="navMenu" :class="{ open: this.navMenuOpen }">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </div>
 </div>
 </template>
 <script>
 export default {
+    data() {
+        return {
+            navMenuOpen: false
+        }
+    },
     methods: {
         updateScroll() {
             this.$store.commit('scrollStatus');
+        },
+        navMenu() {
+            this.navMenuOpen = !this.navMenuOpen;
         }
     },
     mounted() {
@@ -145,18 +157,106 @@ export default {
     .categories-menu {
         background: #fff;
         height: 60px;
+        justify-content: space-between;
     }
     .categories-menu.scrolled {
         box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
     }
-    .logo {
+    .categories-menu .logo {
         z-index: 12;
+        width: 220px;
     }
     .categories-menu .logo img {
-        height: 35px;
+        height: 40px;
     }
     .main-menu {
         display: none;
+    }
+
+    .mobile-menu-btn-holder {
+        display: block;
+        position: absolute;
+        right: 15px;
+        top: 8px;
+    }
+    #nav-icon {
+        width: 40px;
+        height: 30px;
+        position: relative;
+        margin: 5px auto;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: .5s ease-in-out;
+        -moz-transition: .5s ease-in-out;
+        -o-transition: .5s ease-in-out;
+        transition: .5s ease-in-out;
+        cursor: pointer;
+    }
+    #nav-icon span {
+        display: block;
+        position: absolute;
+        height: 6px;
+        width: 100%;
+        background: #c60314;
+        border-radius: 9px;
+        opacity: 1;
+        left: 0;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: .25s ease-in-out;
+        -moz-transition: .25s ease-in-out;
+        -o-transition: .25s ease-in-out;
+        transition: .25s ease-in-out;
+    }
+    #nav-icon span:nth-child(1) {
+        top: 0px;
+        -webkit-transform-origin: left center;
+        -moz-transform-origin: left center;
+        -o-transform-origin: left center;
+        transform-origin: left center;
+    }
+
+    #nav-icon span:nth-child(2) {
+        top: 12px;
+        -webkit-transform-origin: left center;
+        -moz-transform-origin: left center;
+        -o-transform-origin: left center;
+        transform-origin: left center;
+    }
+
+    #nav-icon span:nth-child(3) {
+        top: 24px;
+        -webkit-transform-origin: left center;
+        -moz-transform-origin: left center;
+        -o-transform-origin: left center;
+        transform-origin: left center;
+    }
+
+    #nav-icon.open span:nth-child(1) {
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+        top: -1px;
+        left: 6px;
+    }
+
+    #nav-icon.open span:nth-child(2) {
+        width: 0%;
+        opacity: 0;
+    }
+
+    #nav-icon.open span:nth-child(3) {
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        top: 27px;
+        left: 6px;
     }
 }
 
