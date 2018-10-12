@@ -22,6 +22,7 @@
     </div>
     <div class="mobile-menu"  :class="{ 'mobile-menu-open': this.navMenuOpen }">
         <div class="mobile-links">
+            <li @click="navMenuClose"><nuxt-link to="/">Home</nuxt-link></li>
             <li @click="navMenuClose"><nuxt-link to="/workout-of-the-day/">Workout of the Day</nuxt-link></li>
             <li @click="navMenuClose"><nuxt-link to="/athlete-type/">Pick a Track</nuxt-link></li>
             <li @click="navMenuClose"><nuxt-link to="/blog/">Blog</nuxt-link></li>
@@ -112,7 +113,6 @@ export default {
     }
     .logo img {
         height: 55px;
-        filter: drop-shadow( 0px 0px 2px rgba(0, 0, 0,0.15) );
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -231,6 +231,11 @@ export default {
         -o-transition: .5s ease-in-out;
         transition: .5s ease-in-out;
         cursor: pointer;
+        background: none;
+    }
+    #nav-icon:focus, #nav-icon:active, .mobile-menu-btn-holder:focus, .mobile-menu-btn-holder:active {
+        outline: 0px;
+        background: #fff;
     }
     #nav-icon span {
         display: block;
@@ -334,6 +339,7 @@ export default {
         color: #c60314;
         text-decoration: none;
         padding: 8px;
+        font-size: 1.5em;
         font-weight: bold;
     }
 }
