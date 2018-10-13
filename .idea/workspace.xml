@@ -4,7 +4,9 @@
     <bookmark url="file://$PROJECT_DIR$/components/postList.vue" line="202" mnemonic="5" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73810ecd-a2d9-4697-8462-e42b269b209d" name="Default" comment="" />
+    <list default="true" id="73810ecd-a2d9-4697-8462-e42b269b209d" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/pages/workout-of-the-day/_slug/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/workout-of-the-day/_slug/index.vue" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,11 +55,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.vue" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/workout-of-the-day/_slug/index.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="1" column="32" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
+            <state relative-caret-position="276">
+              <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
               <folding>
                 <element signature="e#1487#1520#0" expanded="true" />
               </folding>
@@ -65,11 +67,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="firebase.json" pinned="false" current-in-tab="false">
+      <file leaf-file-name="firebase.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/firebase.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="10" column="34" lean-forward="true" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+            <state relative-caret-position="161">
+              <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -135,7 +137,6 @@
         <option value="$PROJECT_DIR$/store/index.js" />
         <option value="$PROJECT_DIR$/components/Leaderboard.vue" />
         <option value="$PROJECT_DIR$/pages/blog/index.vue" />
-        <option value="$PROJECT_DIR$/firebase.json" />
         <option value="$PROJECT_DIR$/components/postList.vue" />
         <option value="$PROJECT_DIR$/layouts/default.vue" />
         <option value="$PROJECT_DIR$/pages/workout-of-the-day/index.vue" />
@@ -147,6 +148,7 @@
         <option value="$PROJECT_DIR$/nuxt.config.js" />
         <option value="$PROJECT_DIR$/pages/blog/_slug/index.vue" />
         <option value="$PROJECT_DIR$/pages/workout-of-the-day/_slug/index.vue" />
+        <option value="$PROJECT_DIR$/firebase.json" />
       </list>
     </option>
   </component>
@@ -318,46 +320,6 @@
               <item name="External Dependencies" type="cbb8eebc:String" user="External Dependencies" />
               <item name="C:" type="cbb8eebc:String" user="C:" />
             </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="External Dependencies" type="cbb8eebc:String" user="External Dependencies" />
-              <item name="C:" type="cbb8eebc:String" user="C:" />
-              <item name="Users" type="cbb8eebc:String" user="Users" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="External Dependencies" type="cbb8eebc:String" user="External Dependencies" />
-              <item name="C:" type="cbb8eebc:String" user="C:" />
-              <item name="Users" type="cbb8eebc:String" user="Users" />
-              <item name="ausi4" type="cbb8eebc:String" user="ausi4" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="External Dependencies" type="cbb8eebc:String" user="External Dependencies" />
-              <item name="C:" type="cbb8eebc:String" user="C:" />
-              <item name="Users" type="cbb8eebc:String" user="Users" />
-              <item name="ausi4" type="cbb8eebc:String" user="ausi4" />
-              <item name="AppData" type="cbb8eebc:String" user="AppData" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="External Dependencies" type="cbb8eebc:String" user="External Dependencies" />
-              <item name="C:" type="cbb8eebc:String" user="C:" />
-              <item name="Users" type="cbb8eebc:String" user="Users" />
-              <item name="ausi4" type="cbb8eebc:String" user="ausi4" />
-              <item name="AppData" type="cbb8eebc:String" user="AppData" />
-              <item name="Local" type="cbb8eebc:String" user="Local" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="External Dependencies" type="cbb8eebc:String" user="External Dependencies" />
-              <item name="C:" type="cbb8eebc:String" user="C:" />
-              <item name="Users" type="cbb8eebc:String" user="Users" />
-              <item name="ausi4" type="cbb8eebc:String" user="ausi4" />
-              <item name="AppData" type="cbb8eebc:String" user="AppData" />
-              <item name="Local" type="cbb8eebc:String" user="Local" />
-              <item name="Temp" type="cbb8eebc:String" user="Temp" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -415,12 +377,12 @@
       <workItem from="1537553559355" duration="17771000" />
       <workItem from="1538429492546" duration="87852000" />
       <workItem from="1539116389372" duration="16297000" />
-      <workItem from="1539268371631" duration="34312000" />
+      <workItem from="1539268371631" duration="35031000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="161728000" />
+    <option name="totallyTimeSpent" value="162447000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
@@ -730,20 +692,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/firebase.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="34" lean-forward="true" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/workout-of-the-day/_slug/index.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="32" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
+        <state relative-caret-position="276">
+          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
           <folding>
             <element signature="e#1487#1520#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/firebase.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
         </state>
       </provider>
     </entry>

@@ -1,5 +1,5 @@
 <template>
-<div class="post-container">derp
+<div class="post-container">
     <div class="post" v-for="(post, index) in post" :key="index">
         <div class="post-content">
             <h3>{{post.title.rendered}}</h3>
@@ -31,7 +31,7 @@ import programmingSidebar from '../../../components/programmingSidebar.vue'
 
 export default {
   components: { recentPosts, categories, programmingSidebar },
-    async asyncData ({ params }) {
+    asyncData ({ params }) {
         return axios.get(`https://wod.kodacompetitor.com/wp-json/wp/v2/posts?slug=${params.slug}`)
             .then((res) => {
                 return {
