@@ -38,6 +38,10 @@
                     {
                         name: 'description',
                         content: blogExcerpt
+                    },
+                    {
+                        name: 'title',
+                        content: 'Koda Competitor | ' + this.blog[0].title.rendered
                     }
                 ]
             }

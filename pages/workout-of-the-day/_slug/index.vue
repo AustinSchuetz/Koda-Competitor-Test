@@ -1,14 +1,14 @@
 <template>
 <div class="post-container">
-    <div  v-for="(post, index) in post" :key="index">
+    <div class="post" v-for="(post, index) in post" :key="index">
         <div class="post-content">
             <h3>{{post.title.rendered}}</h3>
             <div v-html="post.content.rendered"></div>
             <div class="bias-wrap">
-              <a v-if="post.acf.aerobic_bias" @click="setActive('aerobic')" :class="{ activebias: isActive('aerobic') }" href="javascript:void(0)" class="bias">Aerobic Bias</a>
-              <a v-if="post.acf.gymnastics_bias" @click="setActive('gymnastics')" :class="{ activebias: isActive('gymnastics') }" href="javascript:void(0)" class="bias">Gymnastics Bias</a>
-              <a v-if="post.acf.strength_bias" @click="setActive('strength')" :class="{ activebias: isActive('strength') }" href="javascript:void(0)" class="bias">Strength Bias</a>
-              <a v-if="post.acf.balanced_athlete" @click="setActive('balanced')" :class="{ activebias: isActive('balanced') }" href="javascript:void(0)" class="bias">Balanced Athlete</a>
+              <a v-if="post.acf.aerobic_bias" @click="setActive('aerobic_bias')" href="javascript:void(0)" class="bias">Aerobic Bias</a>
+              <a v-if="post.acf.gymnastics_bias" @click="setActive('gymnastics_bias')" href="javascript:void(0)" class="bias">Gymnastics Bias</a>
+              <a v-if="post.acf.strength_bias" @click="setActive('strength_bias')" href="javascript:void(0)" class="bias">Strength Bias</a>
+              <a v-if="post.acf.balanced_athlete" @click="setActive('balanced_athlete')" href="javascript:void(0)" class="bias">Balanced Athlete</a>
             </div>
             <div class="post-text-content">
               <div v-if="activeItem === 'aerobic'" id="aerobic-bias-content" v-html="post.acf.aerobic_bias"></div>
@@ -31,7 +31,7 @@ import programmingSidebar from '../../../components/programmingSidebar.vue'
 
 export default {
   components: { recentPosts, categories, programmingSidebar },
-    asyncData ({ params }) {
+    async asyncData ({ params }) {
         return axios.get(`https://wod.kodacompetitor.com/wp-json/wp/v2/posts?slug=${params.slug}`)
             .then((res) => {
                 return {
@@ -47,7 +47,11 @@ export default {
           meta: [
               {
                   name: 'description',
-                  content: 'Koda Competitor | Daily CrossFit Workout information for ' + this.post[0].title.rendered
+                  content: 'Daily CrossFit Workout information for ' + this.post[0].title.rendered
+              },
+              {
+                  name: 'title',
+                  content: 'Koda Competitor | ' + this.post[0].title.rendered
               }
           ]
       }
@@ -59,9 +63,6 @@ export default {
     }
   },
   methods: {
-    isActive: function (menuItem) {
-      return this.activeItem === menuItem
-    },
     setActive: function (menuItem) {
       this.activeItem = menuItem // no need for Vue.set()
     }
@@ -79,9 +80,14 @@ export default {
   text-align: left;
   margin: 0px auto;
   line-height: 150%;
-  padding: 0 30px 30px 30px;
-  width: 850px;
+  width: 1050px;
   max-width: 95%;
+}
+.post-container .post {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 .bias-wrap {
@@ -125,7 +131,7 @@ export default {
 }
 
 .post-content {
-  width: 100%;
+  width: calc(100% - 300px);
   padding: 20px 10px;
 }
 
