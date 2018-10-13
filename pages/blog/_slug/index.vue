@@ -1,10 +1,19 @@
 <template>
-    <div>
+    <div class="post-holder">
         <div class="post" v-for="(blog, index) in blog" :key="index">
             <div v-if="blog.fi_medium" class="post-featured-background fi_medium" :style="{ 'background-image': 'url(' + blog.fi_medium + ')' }">
                 <h1 v-html="blog.title.rendered"></h1>
             </div>
-            <div class="blog-content" v-html="blog.content.rendered">
+            <div class="blog-content">
+                <div class="author">
+                    <img class="author-pic" :src="blog.acf.author[0].author_pic">
+                    <div>
+                        <h3 class="author-holder">Author</h3>
+                        <h3 class="author-name">{{ blog.acf.author[0].author_name }}</h3>
+                    </div>
+                </div>
+                <div class="divider"></div>
+                <div v-html="blog.content.rendered"></div>
             </div>
         </div>
     </div>
@@ -50,6 +59,10 @@
 </script>
 
 <style scoped>
+    .post-holder {
+        width: 100%;
+        padding: 0 10px;
+    }
     .post {
         margin: 0 auto 50px;
         color: #1d1d1d;
@@ -89,6 +102,7 @@
         width: 100%;
         height: 100%;
         background: rgba(0,0,0,0.35);
+        transition: all 0.25s ease-in-out;
     }
     .post-featured-background h1 {
         font-size:2em;
@@ -102,5 +116,30 @@
         position: relative;
         z-index: 2;
         text-shadow:  0 0 5px #000;
+    }
+    .divider {
+        margin: 15px 0;
+        height: 3px;
+        width: 75px;
+        background: #c60314;
+    }
+    .author {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .author-pic {
+        width: 75px;
+        height: 75px;
+        border-radius: 100%;
+        border: 3px solid #c60314;
+        margin-right: 10px;
+    }
+    .author-holder {
+        color: #c60314;
+    }
+    .author-name {
+        color: #1d1d1d;
     }
 </style>

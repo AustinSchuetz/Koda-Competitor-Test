@@ -1,14 +1,21 @@
 <template>
-    <div>
-        <div class="post-holder">
-            <nuxt-link  :to="item.slug + '/'" class="post" v-for="(item, index) in blogs" :key="index" v-if="blogs && blogs.length > 0 && index <= 10">
-                <div v-if="item.fi_medium" class="post-featured-background fi_medium" :style="{ 'background-image': 'url(' + item.fi_medium + ')' }">
-                    <h1 v-html="item.title.rendered"></h1>
+    <div class="post-holder">
+        <nuxt-link  :to="item.slug + '/'" class="post" v-for="(item, index) in blogs" :key="index" v-if="blogs && blogs.length > 0 && index <= 10">
+            <div v-if="item.fi_medium" class="post-featured-background fi_medium" :style="{ 'background-image': 'url(' + item.fi_medium + ')' }">
+                <h1 v-html="item.title.rendered"></h1>
+                <div class="divider"></div>
+                <div v-if="item.acf.author" class="author">
+                    <img class="author-pic" :src="item.acf.author[0].author_pic">
+                    <div>
+                        <h3 class="author-name">by {{ item.acf.author[0].author_name }}</h3>
+                    </div>
                 </div>
-                <div class="excerpt" v-html="item.excerpt.rendered">
-                </div>
-            </nuxt-link>
-        </div>
+            </div>
+            <div class="excerpt">
+                <div class="divider"></div>
+                <div v-html="item.excerpt.rendered"> </div>
+            </div>
+        </nuxt-link>
     </div>
 </template>
 
@@ -29,6 +36,9 @@
 </script>
 
 <style scoped>
+    .post-holder {
+        width: 100%;
+    }
 .post-featured-background {
     padding: 125px 0;
     width: 100%;
@@ -61,27 +71,61 @@
     margin: 0 auto;
     position: relative;
     z-index: 2;
-    text-shadow:  0 0 5px #000;
 }
     a {
         margin: 0 auto 50px;
         color: #1d1d1d;
         width: 750px;
-        max-width: 100%;
+        max-width: 95%;
         border-radius: 5px;
         box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
         background: #fff;
         text-decoration: none;
         display: block;
+        border-bottom: 3px solid transparent;
+        transition: all 0.25s ease-in-out;
     }
     a:hover {
         text-decoration: none;
         background: #fff;
+        border-bottom: 3px solid #c60314;
     }
     a:hover .post-featured-background::after {
-        background: rgba(198,3,20,0.35);
+        background: linear-gradient(45deg, rgba(198, 3, 20, .55) 55%,rgba(0,0,0,0.55));
+        background-blend-mode: multiply;
     }
     .excerpt {
         padding: 15px;
+    }
+    .divider {
+        margin: 15px 0;
+        height: 3px;
+        width: 75px;
+        background: #c60314;
+    }
+
+    .author {
+        display: block;
+        text-align: center;
+        position: relative;
+        margin: 0 auto;
+        z-index: 2;
+    }
+    .author-pic {
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        border: 3px solid #c60314;
+    }
+    .author-name {
+        color: #f2f2f2;
+    }
+    .divider {
+        margin: 0 auto 15px;
+        height: 3px;
+        width: 75px;
+        background: #fff;
+        position: relative;
+        z-index: 2;
     }
 </style>
