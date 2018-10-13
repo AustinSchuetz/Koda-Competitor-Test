@@ -115,6 +115,8 @@ export default {
     position: relative;
     z-index: 1;
     background-position: 50% 20%;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .post-featured-background::after {
     position: absolute;
