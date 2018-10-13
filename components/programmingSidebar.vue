@@ -30,12 +30,6 @@
                 windowWidth: 0
             }
         },
-        // props: {
-        //     leaderboardPost: {
-        //         type: Array,
-        //         required: true
-        //     }
-        // },
         methods: {
             switchLeaderboard() {
                 this.$store.commit('leaderboardStatus');

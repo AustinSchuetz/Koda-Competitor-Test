@@ -30,7 +30,7 @@ const store = () => {
       },
       categories: [],
       hideLeaderboardGlobal: false,
-      activeBias: 'aerobic',
+      activeBias: null,
       scrollPosition: null,
       leaderboardPost: null
     },

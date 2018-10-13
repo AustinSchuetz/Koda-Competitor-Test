@@ -25,5 +25,8 @@ export default {
   },
   leaderboardOpen (state) {
     state.hideLeaderboardGlobal = false;
+  },
+  setActiveStore (state, menuItem) {
+    state.activeBias = menuItem;
   }
 };

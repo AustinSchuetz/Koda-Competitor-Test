@@ -86,12 +86,12 @@ export default {
               content: item.content.rendered,
               excerpt: item.excerpt.rendered,
               aerobic_bias: item.acf.aerobic_bias,
+              all_athletes: item.acf.all_athletes,
               gymnastics_bias: item.acf.gymnastics_bias,
               strength_bias: item.acf.strength_bias,
               balanced_athlete: item.acf.balanced_athlete,
               slug: item.slug,
-              fi_medium: item.fi_medium,
-              activeItem: 'aerobic'
+              fi_medium: item.fi_medium
             }))
           };
           resolve(filtered);
