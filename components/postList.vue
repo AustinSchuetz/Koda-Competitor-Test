@@ -34,9 +34,6 @@
 export default {
   components: {Leaderboard},
   props: ['posts', 'title', 'content'],
-    data: () => ({
-        activeItem: 'aerobic'
-    }),
   methods: {
     slugToUrl(slug) {
       return `/${slug}`
@@ -235,6 +232,11 @@ p {
         border-left-color: rgba(0,0,0,0.1);
         border-bottom: 3px solid #c60314;
     }
+    .bias-wrap .activebias {
+         border-bottom-color: #c60314;
+         color: #1d1d1d !important;
+         background: #fff !important;
+     }
     .post .post-featured-background, .post:first-child .post-featured-background {
         width: 100%;
         max-width: 100%;

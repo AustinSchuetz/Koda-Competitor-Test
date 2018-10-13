@@ -1,24 +1,26 @@
 <template>
     <div class="post-holder">
-        <div class="post" v-for="(item, index) in posts" :key="index" v-if="posts && posts.length > 0 && index <= 10">
+        <div class="post" v-for="(item, index) in posts" :key="index" v-if="posts && posts.length > 0 && index <= 10" :mounted="loadPostBias(item)">
             <h2 class="mobile-title">{{ item.title }}</h2>
             <div v-if="item.fi_medium" class="post-featured-background fi_medium" :style="{ 'background-image': 'url(' + item.fi_medium + ')' }">
             </div>
             <div class="bias-wrap">
-                <a v-if="item.aerobic_bias" href="javascript:void(0)" class="bias activebias">Aerobic Bias</a>
-                <a v-if="item.gymnastics_bias" href="javascript:void(0)" class="bias">Gymnastics Bias</a>
-                <a v-if="item.strength_bias" href="javascript:void(0)" class="bias">Strength Bias</a>
-                <a v-if="item.balanced_athlete" href="javascript:void(0)" class="bias">Balanced Athlete</a>
+                <a v-if="item.all_athletes" @click="setActive('all_athletes')" :class="{ activebias: $store.state.activeBias === 'all_athletes' }" href="javascript:void(0)" class="bias">All Athletes</a>
+                <a v-if="item.aerobic_bias" @click="setActive('aerobic_bias')" :class="{ activebias: $store.state.activeBias === 'aerobic_bias' }" href="javascript:void(0)" class="bias">Aerobic Bias</a>
+                <a v-if="item.gymnastics_bias" @click="setActive('gymnastics_bias')" :class="{ activebias: $store.state.activeBias === 'gymnastics_bias' }" href="javascript:void(0)" class="bias">Gymnastics Bias</a>
+                <a v-if="item.strength_bias" @click="setActive('strength_bias')" :class="{ activebias: $store.state.activeBias === 'strength_bias' }" href="javascript:void(0)" class="bias">Strength Bias</a>
+                <a v-if="item.balanced_athlete" @click="setActive('balanced_athlete')" :class="{ activebias: $store.state.activeBias === 'balanced_athlete' }" href="javascript:void(0)" class="bias">Balanced Athlete</a>
             </div>
             <nuxt-link :to="'/workout-of-the-day' + slugToUrl(item.slug)" class="post-content">
                 <div class="post-content-date">
                     <h2>{{ item.title }}</h2>
                 </div>
                 <div class="post-text-content">
-                    <div v-if="activeItem === 'aerobic'" id="aerobic-bias-content" v-html="item.aerobic_bias"></div>
-                    <div v-if="activeItem === 'gymnastics'" id="gymnastics-bias-content" v-html="item.gymnastics_bias"></div>
-                    <div v-if="activeItem === 'strength'" id="strength-bias-content" v-html="item.strength_bias"></div>
-                    <div v-if="activeItem === 'balanced'" id="balanced-athlete-content" v-html="item.balanced_athlete"></div>
+                    <div v-if="$store.state.activeBias === 'all_athletes'" id="all-athletes-content" v-html="item.all_athletes"></div>
+                    <div v-if="$store.state.activeBias === 'aerobic_bias'" id="aerobic-bias-content" v-html="item.aerobic_bias"></div>
+                    <div v-if="$store.state.activeBias === 'gymnastics_bias'" id="gymnastics-bias-content" v-html="item.gymnastics_bias"></div>
+                    <div v-if="$store.state.activeBias === 'strength_bias'" id="strength-bias-content" v-html="item.strength_bias"></div>
+                    <div v-if="$store.state.activeBias === 'balanced_athlete'" id="balanced-athlete-content" v-html="item.balanced_athlete"></div>
                 </div>
                 <strong class="more">View WOD</strong>
             </nuxt-link>
@@ -30,18 +32,27 @@
 
     export default {
         props: ['posts', 'title', 'content'],
-        data: () => ({
-            activeItem: 'aerobic'
-        }),
         methods: {
             slugToUrl(slug) {
                 return `/${slug}`
             },
-            isActive: function (menuItem) {
-                return this.activeItem === menuItem
-            },
             setActive: function (menuItem) {
-                this.activeItem = menuItem // no need for Vue.set()
+                this.$store.commit('setActiveStore', menuItem);
+            },
+            loadPostBias(bias) {
+                if (this.$store.state.activeBias === null) {
+                    if (bias.all_athletes) {
+                        return this.setActive('all_athletes');
+                    } else if (bias.aerobic_bias) {
+                        return this.setActive('aerobic_bias');
+                    } else if (bias.gymnastics_bias) {
+                        return this.setActive('gymnastics_bias');
+                    } else if (bias.strength_bias) {
+                        return this.setActive('strength_bias');
+                    } else if (bias.balanced_athlete) {
+                        return this.setActive('balanced_athlete');
+                    }
+                }
             }
         }
     }
@@ -224,6 +235,11 @@
             border-left-color: rgba(0,0,0,0.1);
             border-bottom: 3px solid #c60314;
         }
+        .bias-wrap .activebias {
+             border-bottom-color: #c60314;
+             color: #1d1d1d !important;
+             background: #fff !important;
+         }
         .post .post-featured-background, .post:first-child .post-featured-background {
             width: 100%;
             max-width: 100%;

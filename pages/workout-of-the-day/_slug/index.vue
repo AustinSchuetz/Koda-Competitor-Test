@@ -89,7 +89,6 @@ export default {
 </script>
 
 <style scoped>
-
 .post-container {
   font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   display: flex;
@@ -186,7 +185,6 @@ export default {
 
 .post-content {
   width: calc(100% - 300px);
-  padding: 20px 10px;
 }
 
 .post-content img {
@@ -195,10 +193,6 @@ export default {
   margin: 10px 0px;
 }
 
-.sidebar {
-  width: 180px;
-  padding: 0px 20px;
-}
 
 p {
   margin-bottom: 10px;
@@ -212,20 +206,46 @@ p {
   font-size:16px;
   line-height: 140%;
 }
+@media only screen and (max-width:790px) {
+    .post-container {
+        flex-direction: column;
+    }
+    .post-container .post {
+        flex-direction: column;
+    }
+    .post-content {
+        width: 100%;
+    }
 
-/* Smartphones (portrait and landscape) ----------- */
-@media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 480px) {
-  
-  .title {
-    font-size: 22px;
-    line-height:44px;
-  }
-
-  .sidebar {
-    display: none;
-  }
-
+    .bias-wrap {
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        background: rgba(0, 0, 0, .03);
+        border-bottom: 1px solid rgba(0, 0, 0, .1);
+    }
+    .bias-wrap .bias {
+        background: none;
+        border: none;
+        border-bottom: 3px solid transparent;
+        border-left: 1px solid rgba(0,0,0,0.1);
+        max-width: 25%;
+        text-align: center;
+        font-size: 12px;
+        line-height: 1.3;
+        padding: 5px;
+    }
+    .bias-wrap .bias:last-child {
+        border-right: 1px solid rgba(0,0,0,0.1);
+    }
+    .bias-wrap .bias:hover {
+        border-left-color: rgba(0,0,0,0.1);
+        border-bottom: 3px solid #c60314;
+    }
+    .bias-wrap .activebias {
+        border-bottom-color: #c60314;
+        color: #1d1d1d !important;
+        background: #fff !important;
+    }
 }
 </style>
