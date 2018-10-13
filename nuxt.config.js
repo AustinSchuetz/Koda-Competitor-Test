@@ -18,7 +18,11 @@ module.exports = {
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "Koda Competitor CrossFit Programming" }
+      { hid: "description", name: "description", content: "Koda Competitor CrossFit Programming" },
+        { hid: "og:description", name: "og:description", content: "Koda Competitor CrossFit Programming" },
+        { hid: "og:title", name: "og:title", content: "Koda Competitor CrossFit Programming" },
+        { hid: "author", name: "author", content: "Austin Schuetz" },
+        { hid: "og:site_name", name: "og:site_name", content: "Koda Competitor" }
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },

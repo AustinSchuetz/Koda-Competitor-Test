@@ -19,9 +19,28 @@
                 blog: []
             }
         },
-        mounted() {
-            return  axios.get('https://wod.kodacompetitor.com/wp-json/wp/v2/posts?slug=' + this.$route.params.slug)
-                .then(res => (this.blog = res.data))
+        asyncData ({ params }) {
+            return axios.get(`https://wod.kodacompetitor.com/wp-json/wp/v2/posts?slug=${params.slug}`)
+                .then((res) => {
+                    return {
+                        blog: res.data
+                    }
+                }).catch((err) => {
+                    console.log(err)
+                })
+        },
+        head() {
+            var blogExcerptPlain = this.blog[0].excerpt.rendered;
+            var blogExcerpt = blogExcerptPlain.replace(/(<([^>]+)>)/ig,"");
+            return {
+                title: 'Koda Competitor | ' + this.blog[0].title.rendered,
+                meta: [
+                    {
+                        name: 'description',
+                        content: blogExcerpt
+                    }
+                ]
+            }
         }
     }
 </script>

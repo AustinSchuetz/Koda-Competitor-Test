@@ -25,7 +25,7 @@
         },
         head() {
             return {
-                title: `Koda Competitor | Home`,
+                title: `Koda Competitor`,
                 meta: [
                     {
                         name: 'description',

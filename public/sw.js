@@ -4,16 +4,16 @@ importScripts('/_nuxt/workbox.678c6960.js')
 
 workbox.precaching.precacheAndRoute([
   {
-    "url": "/_nuxt/app.d29f2e06361deb0fd93a.js",
-    "revision": "70f116d22792a36d43ebc73b0d1822eb"
+    "url": "/_nuxt/app.d09d68d81959033c134c.js",
+    "revision": "70235fd9b22cc38e42b58622a2ecd616"
   },
   {
-    "url": "/_nuxt/layouts_default.8c58e35cb411a6dfede8.js",
-    "revision": "dded5688d922da55c65e6576d1ca7b05"
+    "url": "/_nuxt/layouts_default.3080dc5a9afc52d6b12b.js",
+    "revision": "93e8451ede5750f3250d6d7d4fc04891"
   },
   {
-    "url": "/_nuxt/manifest.b19cb1731bf64b099b5b.js",
-    "revision": "01d1172031cccfa5baf5341a1427e00c"
+    "url": "/_nuxt/manifest.e19d41ad319f14c43a78.js",
+    "revision": "4fddc21f03c9ec1541e07e34eece0638"
   },
   {
     "url": "/_nuxt/pages_about_index.f515d9cb86fdc06cc051.js",
@@ -24,8 +24,8 @@ workbox.precaching.precacheAndRoute([
     "revision": "eccdf7ccf3bdd882789b6982a2fa70a1"
   },
   {
-    "url": "/_nuxt/pages_blog__slug_index.0a772d1f7911dec7718d.js",
-    "revision": "91563ea3cbcf90f17b09811508b97577"
+    "url": "/_nuxt/pages_blog__slug_index.7d8eab81884425bae03b.js",
+    "revision": "8445df014df8cbca77dcdb9b347b820f"
   },
   {
     "url": "/_nuxt/pages_blog_index.2cd88452442a384ddfe8.js",
@@ -44,20 +44,20 @@ workbox.precaching.precacheAndRoute([
     "revision": "5cebc710a47877857dcab9aad2d62d97"
   },
   {
-    "url": "/_nuxt/pages_index.0a3e10b2a5ae862dbf42.js",
-    "revision": "b7cf996eb48647d4e29f06d37709fd1e"
+    "url": "/_nuxt/pages_index.925fb9c5c56b3789b3a2.js",
+    "revision": "b0f45430e95c41ca8d9891d06ce30872"
   },
   {
     "url": "/_nuxt/pages_social_index.54459e5cf84830786ae0.js",
     "revision": "ece5e03fd7e98c27d682dd620b85e368"
   },
   {
-    "url": "/_nuxt/pages_workout-of-the-day__slug_index.25bfe56eb19ba8571d48.js",
-    "revision": "548e05c04e0a09dbe241d0291bd5732d"
+    "url": "/_nuxt/pages_workout-of-the-day__slug_index.431f99d667a61d378879.js",
+    "revision": "b0d1229db869ff1c5c6f1340d31ea6ad"
   },
   {
-    "url": "/_nuxt/pages_workout-of-the-day_index.9d1e3478d4aebb160c0c.js",
-    "revision": "221bec5d88995e8a0910cc06ccb3dbf7"
+    "url": "/_nuxt/pages_workout-of-the-day_index.ef18108f9724eaa4e569.js",
+    "revision": "dc3986b02b585ec06090518006760c1e"
   },
   {
     "url": "/_nuxt/vendor.ff927f7e0661c2f9acee.js",

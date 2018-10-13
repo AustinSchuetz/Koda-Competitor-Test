@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="logo-programming-select-holder" :class="{ scrolled: this.$store.state.scrollPosition > 0, hideLeaderboard: this.$store.state.hideLeaderboardGlobal }">
-            <div class="leaderboard-button" title="Collaspe Leaderboard" @click="switchLeaderboard" :class="{ hideLeaderboardBtn: this.$store.state.hideLeaderboardGlobal }"><font-awesome-icon icon="chevron-left" /></div>
+            <div class="leaderboard-button" title="Expand/Collaspe Leaderboard" @click="switchLeaderboard" :class="{ hideLeaderboardBtn: this.$store.state.hideLeaderboardGlobal }"><font-awesome-icon icon="chevron-left" /></div>
             <div class="leaderboard-wrap">
                 <Leaderboard></Leaderboard>
             </div>

@@ -1,22 +1,24 @@
 <template>
 <div class="post-container">
-    <div class="post-content">
-        <h3>{{post.title.rendered}}</h3>
-        <div v-html="post.content.rendered"></div>
-        <div class="bias-wrap">
-          <a v-if="post.acf.aerobic_bias" @click="setActive('aerobic')" :class="{ activebias: isActive('aerobic') }" href="javascript:void(0)" class="bias">Aerobic Bias</a>
-          <a v-if="post.acf.gymnastics_bias" @click="setActive('gymnastics')" :class="{ activebias: isActive('gymnastics') }" href="javascript:void(0)" class="bias">Gymnastics Bias</a>
-          <a v-if="post.acf.strength_bias" @click="setActive('strength')" :class="{ activebias: isActive('strength') }" href="javascript:void(0)" class="bias">Strength Bias</a>
-          <a v-if="post.acf.balanced_athlete" @click="setActive('balanced')" :class="{ activebias: isActive('balanced') }" href="javascript:void(0)" class="bias">Balanced Athlete</a>
+    <div  v-for="(post, index) in post" :key="index">
+        <div class="post-content">
+            <h3>{{post.title.rendered}}</h3>
+            <div v-html="post.content.rendered"></div>
+            <div class="bias-wrap">
+              <a v-if="post.acf.aerobic_bias" @click="setActive('aerobic')" :class="{ activebias: isActive('aerobic') }" href="javascript:void(0)" class="bias">Aerobic Bias</a>
+              <a v-if="post.acf.gymnastics_bias" @click="setActive('gymnastics')" :class="{ activebias: isActive('gymnastics') }" href="javascript:void(0)" class="bias">Gymnastics Bias</a>
+              <a v-if="post.acf.strength_bias" @click="setActive('strength')" :class="{ activebias: isActive('strength') }" href="javascript:void(0)" class="bias">Strength Bias</a>
+              <a v-if="post.acf.balanced_athlete" @click="setActive('balanced')" :class="{ activebias: isActive('balanced') }" href="javascript:void(0)" class="bias">Balanced Athlete</a>
+            </div>
+            <div class="post-text-content">
+              <div v-if="activeItem === 'aerobic'" id="aerobic-bias-content" v-html="post.acf.aerobic_bias"></div>
+              <div v-if="activeItem === 'gymnastics'" id="gymnastics-bias-content" v-html="post.acf.gymnastics_bias"></div>
+              <div v-if="activeItem === 'strength'" id="strength-bias-content" v-html="post.acf.strength_bias"></div>
+              <div v-if="activeItem === 'balanced'" id="balanced-athlete-content" v-html="post.acf.balanced_athlete"></div>
+            </div>
         </div>
-        <div class="post-text-content">
-          <div v-if="activeItem === 'aerobic'" id="aerobic-bias-content" v-html="post.acf.aerobic_bias"></div>
-          <div v-if="activeItem === 'gymnastics'" id="gymnastics-bias-content" v-html="post.acf.gymnastics_bias"></div>
-          <div v-if="activeItem === 'strength'" id="strength-bias-content" v-html="post.acf.strength_bias"></div>
-          <div v-if="activeItem === 'balanced'" id="balanced-athlete-content" v-html="post.acf.balanced_athlete"></div>
-        </div>
+        <div v-if="post.acf.workout_id">Is leaderboard post - need to style a leaderboard with the specific workout id here: {{ post.acf.workout_id }}</div>
     </div>
-    <div v-if="post.acf.workout_id">Is leaderboard post - need to style a leaderboard with the specific workout id here: {{ post.acf.workout_id }}</div>
 </div>
 </template>
 <script>
@@ -29,49 +31,32 @@ import programmingSidebar from '../../../components/programmingSidebar.vue'
 
 export default {
   components: { recentPosts, categories, programmingSidebar },
-  async asyncData({ params }) {
-    // We can use async/await ES6 feature
-    let { data } = await axios.get(config.baseUrl + `posts?slug=${params.slug}`)
-    return {
-      post: data[0]
-    }
-  },
+    asyncData ({ params }) {
+        return axios.get(`https://wod.kodacompetitor.com/wp-json/wp/v2/posts?slug=${params.slug}`)
+            .then((res) => {
+                return {
+                    post: res.data
+                }
+            }).catch((err) => {
+                console.log(err)
+            })
+    },
   head() {
-    return {
-      title: 'Koda Competitor | ' + this.post.title.rendered,
-      meta: [
-        {
-          name: 'description',
-          content: 'Koda Competitor | Daily CrossFit Workout information for ' + this.post.title.rendered
-        }
-      ]
-    }
+      return {
+          title: 'Koda Competitor | ' + this.post[0].title.rendered,
+          meta: [
+              {
+                  name: 'description',
+                  content: 'Koda Competitor | Daily CrossFit Workout information for ' + this.post[0].title.rendered
+              }
+          ]
+      }
   },
   data() {
     return {
-      activeItem: 'aerobic',
-      title: 'default',
-      recent: [{
-        title: 'One',
-        href: '#hash'
-      },
-      {
-        title: 'Two'
-      },
-      {
-        title: 'Three'
-      }]
+      post: [],
+      activeItem: 'aerobic'
     }
-  },
-  mounted() {
-    this.$store.dispatch('getPosts')
-    this.$store.dispatch('getCategories')
-  },
-  computed: {
-    ...mapGetters([
-      'posts',
-      'categories'
-    ])
   },
   methods: {
     isActive: function (menuItem) {
