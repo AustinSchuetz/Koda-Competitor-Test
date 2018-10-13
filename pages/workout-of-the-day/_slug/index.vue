@@ -1,5 +1,5 @@
 <template>
-<div class="post-container">
+<div class="post-container">derp
     <div class="post" v-for="(post, index) in post" :key="index">
         <div class="post-content">
             <h3>{{post.title.rendered}}</h3>
