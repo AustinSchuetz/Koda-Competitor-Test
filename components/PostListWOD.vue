@@ -16,11 +16,21 @@
                     <h2>{{ item.title }}</h2>
                 </div>
                 <div class="post-text-content">
-                    <div v-if="$store.state.activeBias === 'all_athletes'" id="all-athletes-content" v-html="item.all_athletes"></div>
-                    <div v-if="$store.state.activeBias === 'aerobic_bias'" id="aerobic-bias-content" v-html="item.aerobic_bias"></div>
-                    <div v-if="$store.state.activeBias === 'gymnastics_bias'" id="gymnastics-bias-content" v-html="item.gymnastics_bias"></div>
-                    <div v-if="$store.state.activeBias === 'strength_bias'" id="strength-bias-content" v-html="item.strength_bias"></div>
-                    <div v-if="$store.state.activeBias === 'balanced_athlete'" id="balanced-athlete-content" v-html="item.balanced_athlete"></div>
+                    <transition name="slide-fade">
+                        <div v-if="$store.state.activeBias === 'all_athletes'" id="all-athletes-content" v-html="item.all_athletes"></div>
+                    </transition>
+                    <transition name="slide-fade">
+                        <div v-if="$store.state.activeBias === 'aerobic_bias'" id="aerobic-bias-content" v-html="item.aerobic_bias"></div>
+                    </transition>
+                    <transition name="slide-fade">
+                        <div v-if="$store.state.activeBias === 'gymnastics_bias'" id="gymnastics-bias-content" v-html="item.gymnastics_bias"></div>
+                    </transition>
+                    <transition name="slide-fade">
+                        <div v-if="$store.state.activeBias === 'strength_bias'" id="strength-bias-content" v-html="item.strength_bias"></div>
+                    </transition>
+                    <transition name="slide-fade">
+                        <div v-if="$store.state.activeBias === 'balanced_athlete'" id="balanced-athlete-content" v-html="item.balanced_athlete"></div>
+                    </transition>
                 </div>
                 <strong class="more">View WOD</strong>
             </nuxt-link>
@@ -260,5 +270,16 @@
         .mobile-title {
             font-size: 1.35em;
         }
+    }
+    .slide-fade-enter-active {
+        transition: all .25s ease;
+    }
+    .slide-fade-leave-active {
+        transition: all .25s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+    }
+    .slide-fade-enter, .slide-fade-leave-to
+        /* .slide-fade-leave-active below version 2.1.8 */ {
+        transform: translateX(10px);
+        opacity: 0;
     }
 </style>

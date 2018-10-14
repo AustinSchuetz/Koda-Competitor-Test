@@ -118,6 +118,7 @@ export default {
         justify-content: center;
         text-align: center;
         margin: 7px auto;
+        transition: 0s;
     }
     .logo:hover img {
         filter: drop-shadow( 0px 0px 4px rgba(0, 0, 0,0.3) );
@@ -131,6 +132,7 @@ export default {
         padding: 0;
         margin: 0;
         width: 260px;
+        transition: 0s;
         h2 {
             display: flex;
             flex-direction: column;
@@ -143,6 +145,7 @@ export default {
             line-height: 1.1;
             width: 120px;
             text-decoration: none !important;
+            transition: 0s;
         }
         h2 span {
             display: block;
@@ -216,6 +219,7 @@ export default {
         position: absolute;
         right: 15px;
         top: 8px;
+        transition: 0s;
     }
     #nav-icon {
         width: 40px;
