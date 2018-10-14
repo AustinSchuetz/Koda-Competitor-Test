@@ -250,7 +250,7 @@ p {
         text-align: center;
         font-size: 12px;
         line-height: 1.3;
-        padding: 5px;
+        padding: 3px;
     }
     .bias-wrap .bias:last-child {
         border-right: 1px solid rgba(0,0,0,0.1);

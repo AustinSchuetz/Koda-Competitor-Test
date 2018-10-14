@@ -152,7 +152,7 @@
         border-bottom: 1px solid rgba(0, 0, 0, .1);
     }
     .post-text-content {
-        padding: 0 15px 15px;
+        padding: 20px;
         max-height: 200px;
         overflow-y: hidden;
         position: relative;
