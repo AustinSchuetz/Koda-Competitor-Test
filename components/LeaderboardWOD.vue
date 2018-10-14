@@ -75,6 +75,7 @@
         border-radius: 5px;
         background: #fff;
         box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
+        margin: 0 auto;
     }
     .scrollable-leaderboard {
         overflow-y: auto;
@@ -139,5 +140,12 @@
     .lower-divider {
         margin-left: 0;
         margin-top: 8px;
+    }
+    @media only screen and (max-width:790px) {
+        .leaderboard {
+            margin: 20px auto;
+            width: 100%;
+            max-width: 100%;
+        }
     }
 </style>
