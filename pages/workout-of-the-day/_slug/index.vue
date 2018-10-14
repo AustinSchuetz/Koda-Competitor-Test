@@ -21,7 +21,9 @@
               <div v-if="$store.state.activeBias === 'balanced_athlete'" id="balanced-athlete-content" v-html="post.acf.balanced_athlete"></div>
             </div>
         </div>
-        <div v-if="post.acf.workout_id">Is leaderboard post - need to style a leaderboard with the specific workout id here: {{ post.acf.workout_id }}</div>
+        <div v-if="post.acf.workout_id">
+            <LeaderboardWOD :slugWorkoutID="post.acf.workout_id"></LeaderboardWOD>
+        </div>
     </div>
 </div>
 </template>
@@ -30,9 +32,10 @@ import axios from 'axios'
 import recentPosts from '../../../components/recentPosts.vue'
 import categories from '../../../components/categories.vue'
 import programmingSidebar from '../../../components/programmingSidebar.vue'
+import LeaderboardWOD from "../../../components/LeaderboardWOD"
 
 export default {
-  components: { recentPosts, categories, programmingSidebar },
+  components: {LeaderboardWOD, recentPosts, categories, programmingSidebar },
     asyncData ({ params }) {
         return axios.get(`https://wod.kodacompetitor.com/wp-json/wp/v2/posts?slug=${params.slug}`)
             .then((res) => {
@@ -172,7 +175,7 @@ export default {
   background: #fff !important;
 }
 .post-text-content {
-  padding: 20px 10px;
+  padding: 20px;
   background: linear-gradient(to bottom, #fff, rgba(255,255,255,0.01));
 }
 .post-container h4 {
@@ -186,7 +189,9 @@ export default {
 }
 
 .post-content {
-  width: calc(100% - 300px);
+    width: calc(100% - 300px);
+    box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
+    border-radius: 5px;
 }
 
 .post-content img {
