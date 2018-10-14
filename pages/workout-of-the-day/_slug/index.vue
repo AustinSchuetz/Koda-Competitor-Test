@@ -15,19 +15,19 @@
             </div>
             <div class="post-text-content">
                 <transition name="slide-fade">
-                    <div v-if="$store.state.activeBias === 'all_athletes'" id="all-athletes-content" v-html="item.all_athletes"></div>
+                    <div v-if="$store.state.activeBias === 'all_athletes'" id="all-athletes-content" v-html="post.acf.all_athletes"></div>
                 </transition>
                 <transition name="slide-fade">
-                    <div v-if="$store.state.activeBias === 'aerobic_bias'" id="aerobic-bias-content" v-html="item.aerobic_bias"></div>
+                    <div v-if="$store.state.activeBias === 'aerobic_bias'" id="aerobic-bias-content" v-html="post.acf.aerobic_bias"></div>
                 </transition>
                 <transition name="slide-fade">
-                    <div v-if="$store.state.activeBias === 'gymnastics_bias'" id="gymnastics-bias-content" v-html="item.gymnastics_bias"></div>
+                    <div v-if="$store.state.activeBias === 'gymnastics_bias'" id="gymnastics-bias-content" v-html="post.acf.gymnastics_bias"></div>
                 </transition>
                 <transition name="slide-fade">
-                    <div v-if="$store.state.activeBias === 'strength_bias'" id="strength-bias-content" v-html="item.strength_bias"></div>
+                    <div v-if="$store.state.activeBias === 'strength_bias'" id="strength-bias-content" v-html="post.acf.strength_bias"></div>
                 </transition>
                 <transition name="slide-fade">
-                    <div v-if="$store.state.activeBias === 'balanced_athlete'" id="balanced-athlete-content" v-html="item.balanced_athlete"></div>
+                    <div v-if="$store.state.activeBias === 'balanced_athlete'" id="balanced-athlete-content" v-html="post.acf.balanced_athlete"></div>
                 </transition>
             </div>
         </div>

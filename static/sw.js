@@ -12,8 +12,8 @@ workbox.precaching.precacheAndRoute([
     "revision": "f14585d4a0b739257d68de731b7561c0"
   },
   {
-    "url": "/_nuxt/manifest.5123e39f962820ff583d.js",
-    "revision": "3d76b9bb649d2ea387d5e6d815de9627"
+    "url": "/_nuxt/manifest.e1b9ef1646328d328756.js",
+    "revision": "b855ab7530231906e27e454ce9859b19"
   },
   {
     "url": "/_nuxt/pages_about_index.f515d9cb86fdc06cc051.js",
@@ -52,8 +52,8 @@ workbox.precaching.precacheAndRoute([
     "revision": "0f10117f8b2d797e0e5d435627de6ad0"
   },
   {
-    "url": "/_nuxt/pages_workout-of-the-day__slug_index.59ca272c86f070bf8848.js",
-    "revision": "b270d52356b1c62ad9e9600df7b2c75d"
+    "url": "/_nuxt/pages_workout-of-the-day__slug_index.d8a709f71ffc30837f9c.js",
+    "revision": "98ba75651176577a5a9a347717d20c3f"
   },
   {
     "url": "/_nuxt/pages_workout-of-the-day_index.669b2cc0251847560aac.js",
