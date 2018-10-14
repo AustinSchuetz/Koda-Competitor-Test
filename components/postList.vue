@@ -253,7 +253,7 @@ p {
 }
 @media only screen and (max-width:790px) {
     .bias-wrap .bias {
-        padding: 5px;
+        padding: 3px;
     }
     .mobile-title {
         font-size: 1.35em;

@@ -1,5 +1,29 @@
 <template>
     <div>
+        <!--<h6>Stick man lifting a Koda logo with red wristbands on and clothes and stuff - loading animation</h6>-->
+        <!--<div class="lifting-loading-holder">-->
+            <!--<div class="koda-logo"></div>-->
+            <!--<div class="koda-man">-->
+                <!--<div class="head">-->
+                    <!--<div class="hair"></div>-->
+                    <!--<div class="beard"></div>-->
+                <!--</div>-->
+                <!--<div class="torso"></div>-->
+                <!--<div class="arm left-arm">-->
+                    <!--<div class="wristband left-wristband"></div>-->
+                <!--</div>-->
+                <!--<div class="arm right-arm">-->
+                    <!--<div class="wristband right-wristband"></div>-->
+                <!--</div>-->
+                <!--<div class="leg left-leg"></div>-->
+                <!--<div class="leg right-leg"></div>-->
+                <!--<div class="shin left-shin"></div>-->
+                <!--<div class="shin right-shin"></div>-->
+                <!--<div class="shoe left-shoe"></div>-->
+                <!--<div class="shoe right-shoe"></div>-->
+            <!--</div>-->
+
+        <!--</div>-->
 
     </div>
 </template>
@@ -12,36 +36,29 @@
 </script>
 
 <style scoped>
-    .social {
+    .lifting-loading-holder {
+        width: 260px;
         margin: 0 auto;
-        text-align: center;
-        padding: 15px;
+        height: 500px;
     }
-    .fa {
-        color:#C60314;
-        font-weight: bold;
-        text-decoration:none;
-        display: inline-block;
-        transition: 0.2s ease-in-out;
-        font-size: 28px;
-        padding: 0;
-        margin: 0 10px 10px;
-        border: none;
-        text-align: center;
+    .head {
+        width: 30px;
+        height: 35px;
+        background: tan;
+        border-radius: 100%;
     }
-    .fa:hover {
-        color: #1d1d1d;
-        border: none;
+    .hair {
+        width: 32px;
+        height: 15px;
+        border-radius: 100%;
+        background: brown;
     }
-    .content {
-         font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-         display: flex;
-         justify-content: center;
-         align-items: flex-start;
-         text-align: left;
-         margin: 0 0 0 260px;
-         line-height: 150%;
-         padding: 30px;
-         width: calc(100% - 260px);
-     }
+
+
+
+
+
+
+
+
 </style>
