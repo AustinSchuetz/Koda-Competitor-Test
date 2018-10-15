@@ -86,8 +86,8 @@
     }
 
     .modal-container {
-        width: 950px;
-        max-width: 95%;
+        max-width: 950px;
+        width: 95%;
         max-height: 90%;
         overflow: auto;
         position: relative;
@@ -107,11 +107,12 @@
     }
 
     .modal-body {
-        margin: 20px auto;
+        margin: 0 auto;
         width: 100%;
         display: flex;
         flex-direction: row;
         justify-content: center;
+        text-align: left;
     }
     .modal-footer {
         padding: 10px;
@@ -131,4 +132,18 @@
         -webkit-transform: scale(1.1);
         transform: scale(1.1);
     }
+
+    @media only screen and (max-width:790px) {
+        .modal-body {
+            flex-direction: column;
+            text-align: left;
+        }
+        .modal-container {
+            width: calc(95% - 40px);
+            top: 20px;
+            left: 20px;
+            max-height: calc(95% - 70px);
+        }
+    }
+
 </style>

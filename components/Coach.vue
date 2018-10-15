@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="inline-coach">
         <div class="coach">
             <img :src="this.coachImg" />
             <div class="coach-margin">
@@ -33,6 +33,11 @@
 </script>
 
 <style scoped>
+    .inline-coach {
+        display: inline-block;
+        vertical-align: top;
+        text-align: center;
+    }
     .bio-holder h1 {
         color: #c60314;
     }
@@ -54,6 +59,7 @@
         color: #fff;
     }
     .coach-background {
+        background: #ccc;
         width: 100%;
         margin: 0 auto;
         padding: 100px;
@@ -79,5 +85,8 @@
         border-top: 3px solid #c60314;
         border-radius: 5px;
         box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);;
+    }
+    @media only screen and (max-width:790px) {
+
     }
 </style>

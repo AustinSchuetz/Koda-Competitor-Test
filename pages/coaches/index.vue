@@ -3,8 +3,8 @@
         <h1 class="clean-title">Coaches</h1>
         <div>
             <div class="coach-wrap">
-                <Coach coachName="Kevin Schuetz" coachImg="https://wod.kodacompetitor.com/wp-content/uploads/2018/10/KevinSchuetz.jpg" coachBGimg="http://wod.kodacompetitor.com/wp-content/uploads/2018/10/KevinSchuetzKodaCompetitor.jpg" :bio="KevinBio"></Coach>
-                <Coach coachName="Casey McCallister" coachImg="https://wod.kodacompetitor.com/wp-content/uploads/2018/10/CaseyMac.jpg" :bio="CaseyBio" coachBGimg="https://wod.kodacompetitor.com/wp-content/uploads/2018/10/CaseyMacKodaCompetitor.jpg"></Coach>
+                <Coach coachName="Kevin Schuetz" coachImg="https://wod.kodacompetitor.com/wp-content/uploads/2018/10/Kevin-Schuetz.jpg" coachBGimg="http://wod.kodacompetitor.com/wp-content/uploads/2018/10/KevinSchuetzKodaCompetitor.jpg" :bio="KevinBio"></Coach>
+                <Coach coachName="Casey McCallister" coachImg="https://wod.kodacompetitor.com/wp-content/uploads/2018/10/Casey-McCallister.jpg" :bio="CaseyBio" coachBGimg="https://wod.kodacompetitor.com/wp-content/uploads/2018/10/CaseyMacKodaCompetitor.jpg"></Coach>
                 <Coach coachName="Brice Collier" coachImg="https://wod.kodacompetitor.com/wp-content/uploads/2018/10/BriceCollier.jpg" :bio="BriceBio" coachBGimg="https://wod.kodacompetitor.com/wp-content/uploads/2018/10/BriceCollierKodaCompetitor.jpg"></Coach>
             </div>
         </div>
@@ -66,5 +66,11 @@ h4 {
 }
 .modal-text-content {
     padding: 15px;
+}
+@media only screen and (max-width:1100px) {
+    .coach-wrap {
+        display: block;
+        text-align: center;
+    }
 }
 </style>
