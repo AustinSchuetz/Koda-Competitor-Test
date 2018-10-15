@@ -7,7 +7,7 @@
             </div>
             <div class="social">
                 <a href="https://www.instagram.com/kodacompetitor/" class="fa fa-instagram" target="_blank"></a>
-                <a href="https://www.facebook.com/KodaCrossFit/" class="fa fa-facebook" target="_blank"></a>
+                <a href="https://www.facebook.com/groups/416882822174358/" class="fa fa-facebook" target="_blank"></a>
             </div>
         </div>
     </div>

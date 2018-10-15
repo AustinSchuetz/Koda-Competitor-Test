@@ -185,7 +185,7 @@ export default {
   background: #fff !important;
 }
 .post-text-content {
-  padding: 20px;
+  padding: 10px 20px;
   background: linear-gradient(to bottom, #fff, rgba(255,255,255,0.01));
 }
 .post-container h4 {

@@ -12,7 +12,7 @@
                 </div>
             </div>
             <div class="excerpt">
-                <div class="divider"></div>
+                <div class="lower-divider"></div>
                 <div v-html="item.excerpt.rendered"> </div>
             </div>
         </nuxt-link>
@@ -127,5 +127,11 @@
         background: #fff;
         position: relative;
         z-index: 2;
+    }
+    .lower-divider {
+        margin: 15px 0;
+        height: 3px;
+        width: 75px;
+        background: #c60314;
     }
 </style>

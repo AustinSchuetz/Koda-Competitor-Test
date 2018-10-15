@@ -48,16 +48,11 @@
     import axios from 'axios'
     export default {
         name: "Leaderboard",
-        // props: ['leaderboardPost'],
         data() {
             return {
                 leaderboard: []
             }
         },
-        // mounted() {
-        //     return  axios.get('https://apis.trainheroic.com/public/leaderboard/4863904')
-        //         .then(res => (this.leaderboard = res.data));
-        // },
         computed: {
             leaderboardPostID() {
                 return this.$store.state.leaderboardPost

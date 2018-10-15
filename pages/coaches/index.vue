@@ -2,21 +2,10 @@
     <div class="clean-page-content">
         <h1 class="clean-title">Coaches</h1>
         <div>
-            <div>
-                <modal class="modal" name="KevinSchuetz" height="auto" width="90%" :maxWidth="950" :adaptive="true" :scrollable="true">
-                    <div class="modal-content">
-                        <div class="coach-background kevin-coach-background"></div>
-                        <div class="modal-text-content">
-                            <h4>Kevin Schuetz</h4>
-                            <p>Coach Kevin is all about long term progress and accomplishing big goals with Koda athletes. He had a decent level of fitness while he played College Baseball, then became overweight and out of shape after he graduated College. He fell in love with CrossFit in 2011 and shortly after began coaching. He has personally found what it takes to go from overweight and out of shape to an Elite CrossFit competitor and loves helping others accomplish their goals. He has worked with thousands of athletes through owning and operating Koda CrossFit Norman in Norman, OK and Koda CrossFit Iron View in Lafayette, CO. Over the last few years he has individually coached over 40 athletes with a wide range of goals. His athletes include 5 Regionals Team Appearances and 2 Masters Regionals Appearances.</p>
-                            <p>As an athlete Kevin has 6 Regionals Appearances including Individual Regionals the last 5 years straight and 1 Team appearance, with his best finish so far of 7th in 2016. In 2017, he was awarded the title "Fittest in Oklahoma." He walked into the sport of CrossFit being overweight and out of shape with a decent base of strength but horrible endurance. He has used Koda Competitor Methodology to correct his weaknesses and develop his endurance through proper aerobic progressions.</p>
-                        </div>
-                    </div>
-                </modal>
-                <p>Kevin Schuetz</p>
-                <button @click="$modal.show('KevinSchuetz')">
-                    Read Bio
-                </button>
+            <div class="coach-wrap">
+                <Coach coachName="Kevin Schuetz" coachImg="https://wod.kodacompetitor.com/wp-content/uploads/2018/10/KevinSchuetz.jpg" coachBGimg="http://wod.kodacompetitor.com/wp-content/uploads/2018/10/KevinSchuetzKodaCompetitor.jpg" :bio="KevinBio"></Coach>
+                <Coach coachName="Casey McCallister" coachImg="https://wod.kodacompetitor.com/wp-content/uploads/2018/10/CaseyMac.jpg" :bio="CaseyBio" coachBGimg="https://wod.kodacompetitor.com/wp-content/uploads/2018/10/CaseyMacKodaCompetitor.jpg"></Coach>
+                <Coach coachName="Brice Collier" coachImg="https://wod.kodacompetitor.com/wp-content/uploads/2018/10/BriceCollier.jpg" :bio="BriceBio" coachBGimg="https://wod.kodacompetitor.com/wp-content/uploads/2018/10/BriceCollierKodaCompetitor.jpg"></Coach>
             </div>
         </div>
 
@@ -24,12 +13,33 @@
 </template>
 
 <script>
+    import Coach from "~/components/Coach";
     export default {
-        name: "index"
+        name: "index",
+        components: {Coach},
+        data() {
+            return {
+                showModal: false,
+                KevinBio: '<p>Coach Kevin is all about long term progress and accomplishing big goals with Koda athletes. He had a decent level of fitness while he played College Baseball, then became overweight and out of shape after he graduated College. He fell in love with CrossFit in 2011 and shortly after began coaching. He has personally found what it takes to go from overweight and out of shape to an Elite CrossFit competitor and loves helping others accomplish their goals. He has worked with thousands of athletes through owning and operating Koda CrossFit Norman in Norman, OK and Koda CrossFit Iron View in Lafayette, CO. Over the last few years he has individually coached over 40 athletes with a wide range of goals. His athletes include 5 Regionals Team Appearances and 2 Masters Regionals Appearances.</p><p>As an athlete Kevin has 6 Regionals Appearances including Individual Regionals the last 5 years straight and 1 Team appearance, with his best finish so far of 7th in 2016. In 2017, he was awarded the title "Fittest in Oklahoma." He walked into the sport of CrossFit being overweight and out of shape with a decent base of strength but horrible endurance. He has used Koda Competitor Methodology to correct his weaknesses and develop his endurance through proper aerobic progressions.</p>',
+                CaseyBio: '<p>Coach Casey is all about pushing athletes beyond what they think they are capable of. As a coach, he challenges athletes to find their limits in their physical abilities as challenging their mental toughness. He has experience with a wide range of athletes from running police academy fitness programs and supplemental military fitness programs, working with elder clients coming off knee surgery, all the way up to highly completive crossfire athletes. No matter the athlete, his focus remains constant; make people better.</p><p>As an athlete, Casey competed for several years in CrossFit and has some accomplishments to show for his hard work. He\'s completed at the CrossFit Regionals several years both on a team and as an individual. He\'s been crowned the Fittest Cop in America twice, won the World Police and Fire Games in 2017, and the title "Fittest in Oklahoma" in 2016. In the beginning he was extremely limited by his weakness in strength. He has worked hard over the years to correct his strength weakness by following Koda Competitor ideologies and programs. Casey\'s ultimate goal is to compete along side the best in the world at the CrossFit Games.</p>',
+                BriceBio: '<p>NEED BRICE BIO: Coach Casey is all about pushing athletes beyond what they think they are capable of. As a coach, he challenges athletes to find their limits in their physical abilities as challenging their mental toughness. He has experience with a wide range of athletes from running police academy fitness programs and supplemental military fitness programs, working with elder clients coming off knee surgery, all the way up to highly completive crossfire athletes. No matter the athlete, his focus remains constant; make people better.</p><p>As an athlete, Casey competed for several years in CrossFit and has some accomplishments to show for his hard work. He\'s completed at the CrossFit Regionals several years both on a team and as an individual. He\'s been crowned the Fittest Cop in America twice, won the World Police and Fire Games in 2017, and the title "Fittest in Oklahoma" in 2016. In the beginning he was extremely limited by his weakness in strength. He has worked hard over the years to correct his strength weakness by following Koda Competitor ideologies and programs. Casey\'s ultimate goal is to compete along side the best in the world at the CrossFit Games.</p>'
+            }
+        }
     }
 </script>
 
 <style scoped>
+    .clean-page-content {
+        padding-bottom: 50px;
+    }
+    .coach-wrap {
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
 .v--modal-overlay {
     background: rgba(0,0,0,0.5);
 }
