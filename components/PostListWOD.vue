@@ -119,7 +119,7 @@
     .post:first-child {
         border-left: 5px solid #c60314;
         width: 100%;
-        height: 350px;
+        height: 355px;
         margin: 0 auto;
     }
 
