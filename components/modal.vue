@@ -5,7 +5,7 @@
                 <div class="modal-container">
 
                     <div class="modal-header">
-                        <div @click="$emit('close')">X</div>
+                        <div @click="$emit('close')"><font-awesome-icon style="height: 20px;width: 20px;margin-top: 5px;" icon="times" /></div>
                     </div>
 
                     <div class="modal-body">
@@ -18,16 +18,17 @@
                             <slot name="bio">
                                 <div :bio="bio"></div>
                             </slot>
+                            <div class="modal-footer">
+                                <slot name="footer">
+                                    <div class="bio-btn" @click="$emit('close')">
+                                        Close
+                                    </div>
+                                </slot>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="modal-footer">
-                        <slot name="footer">
-                            <div class="bio-btn" @click="$emit('close')">
-                                Close
-                            </div>
-                        </slot>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -35,7 +36,12 @@
 </template>
 
 <script>
+    import { library } from '@fortawesome/fontawesome-svg-core'
+    import { faTimes } from '@fortawesome/free-solid-svg-icons'
+    import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+    library.add(faTimes);
     export default {
+        components: {library, faTimes, FontAwesomeIcon },
         name: "modal",
         props: ['coachName', 'coachImg', 'bio']
     }
@@ -43,7 +49,7 @@
 
 <style scoped>
     .bio-holder {
-        padding: 20px;
+        padding: 20px 20px 0;
     }
     .bio-btn {
         cursor: pointer;
@@ -95,15 +101,24 @@
         margin: 0px auto;
         padding: 0;
         background-color: #fff;
-        border-radius: 2px;
+        border-radius: 5px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
         transition: all .3s ease;
         font-family: Helvetica, Arial, sans-serif;
+        border-left: 3px solid #c60314;
     }
 
-    .modal-header h3 {
-        margin-top: 0;
-        color: #42b983;
+    .modal-header {
+        position: absolute;
+        color: #fff;
+        background: #c60314;
+        top: 10px;
+        left: 10px;
+        height: 30px;
+        width: 30px;
+        text-align: center;
+        border-radius: 100%;
+        cursor: pointer;
     }
 
     .modal-body {
