@@ -5,6 +5,9 @@ export default {
   POSTS: (state, posts) => {
     state.posts = posts;
   },
+  total: (state, total) => {
+    state.total = total;
+  },
   POST: (state, post) => {
     state.post = post;
   },

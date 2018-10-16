@@ -1,6 +1,6 @@
 <template>
     <div class="post-holder">
-        <div class="post" v-for="(item, index) in posts" :key="index" v-if="posts && posts.length > 0 && index <= 10" :mounted="loadPostBias(item)">
+        <div class="post" v-for="(item, index) in posts" :key="index" v-if="posts && posts.length > 0 && index >= firstPost && index <= lastPost" :mounted="loadPostBias(item)">
             <h2 class="mobile-title">{{ item.title }}</h2>
             <div v-if="item.fi_medium" class="post-featured-background fi_medium" :style="{ 'background-image': 'url(' + item.fi_medium + ')' }">
             </div>
@@ -35,6 +35,10 @@
                 <strong class="more">View WOD</strong>
             </nuxt-link>
         </div>
+        <div class="pagination-holder" :class="{ flexStart: currentPage == totalPages, flexEnd: currentPage === 1}">
+            <button class="pagination-btn" @click="pageDownClick" v-if="currentPage > 1">Previous Page</button>
+            <button class="pagination-btn" @click="pageUpClick" v-if="currentPage < totalPages" >Next Page</button>
+        </div>
     </div>
 </template>
 
@@ -43,11 +47,36 @@
 
 export default {
   components: {Leaderboard},
-  props: ['posts', 'title', 'content'],
+  props: ['posts', 'total', 'totalPages'],
+    data() {
+        return {
+            currentPage: 1
+        }
+    },
+    computed: {
+        nextPage() {
+           return this.nextPage = this.currentPage + 1;
+        },
+        previousPage() {
+            return this.previousPage = this.currentPage - 1;
+        },
+        firstPost() {
+            return this.firstPost = (this.currentPage - 1) * 9;
+        },
+        lastPost() {
+            return this.lastPost = (this.currentPage * 9) - 1;
+        }
+    },
   methods: {
     slugToUrl(slug) {
       return `/${slug}`
     },
+      pageUpClick() {
+        return this.currentPage = this.currentPage + 1;
+      },
+      pageDownClick() {
+          return this.currentPage = this.currentPage - 1;
+      },
       setActive: function (menuItem) {
           this.$store.commit('setActiveStore', menuItem);
       },
@@ -71,6 +100,38 @@ export default {
 </script>
 
 <style scoped>
+    .pagination-holder {
+        margin: 50px auto 0;
+        width: 750px;
+        max-width: 90%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .pagination-holder .pagination-btn {
+        background: #fff;
+        outline: none;
+        border: 3px solid #c60314;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        color: #c60314;
+        font-weight: bold;
+        width: 135px;
+        transition: 0.25s all ease-in-out;
+        text-decoration: none;
+        text-align: center;
+    }
+    .pagination-holder .pagination-btn:hover {
+        color: #fff;
+        background: #c60314;
+    }
+    .pagination-holder.flexStart {
+        justify-content: flex-start;
+    }
+    .pagination-holder.flexEnd {
+        justify-content: flex-end;
+    }
     .mobile-title {
         display: none;
         padding: 0 10px 0 15px;
@@ -224,7 +285,7 @@ export default {
         }
         .bias-wrap {
             flex-direction: row;
-            align-items: center;
+            align-items: stretch;
             width: 100%;
             background: rgba(0, 0, 0, .03);
             border-bottom: 1px solid rgba(0, 0, 0, .1);
@@ -232,6 +293,9 @@ export default {
         .bias-wrap .bias {
             background: none;
             border: none;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
             border-bottom: 3px solid transparent;
             border-left: 1px solid rgba(0,0,0,0.1);
             max-width: 25%;

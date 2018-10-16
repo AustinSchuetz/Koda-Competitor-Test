@@ -5,7 +5,7 @@
                 <h1 v-html="blog.title.rendered"></h1>
             </div>
             <div class="blog-content">
-                <div class="author">
+                <div class="author" v-if="blog.acf.author">
                     <img class="author-pic" :src="blog.acf.author[0].author_pic">
                     <div>
                         <h3 class="author-holder">Author</h3>
@@ -15,13 +15,23 @@
                 <div class="divider"></div>
                 <div v-html="blog.content.rendered"></div>
             </div>
+            <h2 class="other-wods-title">More Blog Posts</h2>
+            <div class="pagination-holder" :class="{flexStart: blog.next === null, flexEnd: blog.previous === null }">
+                <nuxt-link class="pagination-btn" :to="'/blog/' + blog.previous.slug" v-if="blog.previous"><font-awesome-icon icon="chevron-left" /> {{ blog.previous.title }}</nuxt-link>
+                <nuxt-link class="pagination-btn" :to="'/blog/' + blog.next.slug" v-if="blog.next">{{ blog.next.title }} <font-awesome-icon icon="chevron-left" style="transform: rotate(180deg);" /></nuxt-link>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
     import axios from 'axios'
+    import { library } from '@fortawesome/fontawesome-svg-core'
+    import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
+    import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+    library.add(faChevronLeft);
     export default {
+        components: {library, faChevronLeft, FontAwesomeIcon },
         name: "index",
         data() {
             return {
@@ -59,6 +69,43 @@
 </script>
 
 <style scoped>
+    .other-wods-title {
+        display: block;
+        margin: 30px auto;
+        text-align: center;
+    }
+    .pagination-holder {
+        margin: 30px auto;
+        width: 650px;
+        max-width: 90%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .pagination-holder .pagination-btn {
+        background: #fff;
+        outline: none;
+        border: 3px solid #c60314;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        color: #c60314;
+        font-weight: bold;
+        min-width: 150px;
+        transition: 0.25s all ease-in-out;
+        text-decoration: none;
+        text-align: center;
+    }
+    .pagination-holder .pagination-btn:hover {
+        color: #fff;
+        background: #c60314;
+    }
+    .pagination-holder.flexStart {
+        justify-content: flex-start;
+    }
+    .pagination-holder.flexEnd {
+        justify-content: flex-end;
+    }
     .post-holder {
         width: 100%;
         padding: 0 10px;
@@ -73,6 +120,7 @@
         background: #fff;
         text-decoration: none;
         display: block;
+        padding-bottom: 30px;
     }
     .blog-content {
         padding: 30px 10px;

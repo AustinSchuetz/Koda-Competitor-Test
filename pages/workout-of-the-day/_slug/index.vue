@@ -1,40 +1,51 @@
 <template>
-<div class="post-container">
-    <div class="post" v-for="(post, index) in post" :key="index" :mounted="loadPostBias(post.acf)">
-        <div class="post-content">
-            <div v-if="post.fi_medium" class="post-featured-background fi_medium" :style="{ 'background-image': 'url(' + post.fi_medium + ')' }">
-                <h3>{{post.title.rendered}}</h3>
+    <div class="full-container">
+    <div class="post-container">
+        <div class="post" v-for="(post, index) in post" :key="index" :mounted="loadPostBias(post.acf)">
+            <div class="post-flex">
+                <div class="post-content">
+                    <div v-if="post.fi_medium" class="post-featured-background fi_medium" :style="{ 'background-image': 'url(' + post.fi_medium + ')' }">
+                        <h3>{{post.title.rendered}}</h3>
+                    </div>
+                    <div v-if="post.content.rendered" v-html="post.content.rendered" class="general-content"></div>
+                    <div class="bias-wrap">
+                      <a v-if="post.acf.all_athletes" @click="setActive('all_athletes')" :class="{ activebias: $store.state.activeBias === 'all_athletes' }" href="javascript:void(0)" class="bias">All Athletes</a>
+                      <a v-if="post.acf.aerobic_bias" @click="setActive('aerobic_bias')" :class="{ activebias: $store.state.activeBias === 'aerobic_bias' }" href="javascript:void(0)" class="bias">Aerobic Bias</a>
+                      <a v-if="post.acf.gymnastics_bias" @click="setActive('gymnastics_bias')" :class="{ activebias: $store.state.activeBias === 'gymnastics_bias' }" href="javascript:void(0)" class="bias">Gymnastics Bias</a>
+                      <a v-if="post.acf.strength_bias" @click="setActive('strength_bias')" :class="{ activebias: $store.state.activeBias === 'strength_bias' }" href="javascript:void(0)" class="bias">Strength Bias</a>
+                      <a v-if="post.acf.balanced_athlete" @click="setActive('balanced_athlete')" :class="{ activebias: $store.state.activeBias === 'balanced_athlete' }" href="javascript:void(0)" class="bias">Balanced Athlete</a>
+                    </div>
+                    <div class="post-text-content">
+                        <transition name="slide-fade">
+                            <div v-if="$store.state.activeBias === 'all_athletes'" id="all-athletes-content" v-html="post.acf.all_athletes"></div>
+                        </transition>
+                        <transition name="slide-fade">
+                            <div v-if="$store.state.activeBias === 'aerobic_bias'" id="aerobic-bias-content" v-html="post.acf.aerobic_bias"></div>
+                        </transition>
+                        <transition name="slide-fade">
+                            <div v-if="$store.state.activeBias === 'gymnastics_bias'" id="gymnastics-bias-content" v-html="post.acf.gymnastics_bias"></div>
+                        </transition>
+                        <transition name="slide-fade">
+                            <div v-if="$store.state.activeBias === 'strength_bias'" id="strength-bias-content" v-html="post.acf.strength_bias"></div>
+                        </transition>
+                        <transition name="slide-fade">
+                            <div v-if="$store.state.activeBias === 'balanced_athlete'" id="balanced-athlete-content" v-html="post.acf.balanced_athlete"></div>
+                        </transition>
+                    </div>
+                </div>
+                <div v-if="post.acf.workout_id">
+                    <LeaderboardWOD :slugWorkoutID="post.acf.workout_id"></LeaderboardWOD>
+                </div>
             </div>
-            <div v-html="post.content.rendered"></div>
-            <div class="bias-wrap">
-              <a v-if="post.acf.all_athletes" @click="setActive('all_athletes')" :class="{ activebias: $store.state.activeBias === 'all_athletes' }" href="javascript:void(0)" class="bias">All Athletes</a>
-              <a v-if="post.acf.aerobic_bias" @click="setActive('aerobic_bias')" :class="{ activebias: $store.state.activeBias === 'aerobic_bias' }" href="javascript:void(0)" class="bias">Aerobic Bias</a>
-              <a v-if="post.acf.gymnastics_bias" @click="setActive('gymnastics_bias')" :class="{ activebias: $store.state.activeBias === 'gymnastics_bias' }" href="javascript:void(0)" class="bias">Gymnastics Bias</a>
-              <a v-if="post.acf.strength_bias" @click="setActive('strength_bias')" :class="{ activebias: $store.state.activeBias === 'strength_bias' }" href="javascript:void(0)" class="bias">Strength Bias</a>
-              <a v-if="post.acf.balanced_athlete" @click="setActive('balanced_athlete')" :class="{ activebias: $store.state.activeBias === 'balanced_athlete' }" href="javascript:void(0)" class="bias">Balanced Athlete</a>
+            <h2 class="other-wods-title">More Workout Posts</h2>
+            <div class="pagination-holder" :class="{flexStart: post.next === null, flexEnd: post.previous === null }">
+                <nuxt-link class="pagination-btn" :to="post.previous.slug" v-if="post.previous"><font-awesome-icon icon="chevron-left" /> {{ post.previous.title }}</nuxt-link>
+                <nuxt-link class="pagination-btn" :to="post.next.slug" v-if="post.next">{{ post.next.title }} <font-awesome-icon icon="chevron-left" style="transform: rotate(180deg);" /></nuxt-link>
             </div>
-            <div class="post-text-content">
-                <transition name="slide-fade">
-                    <div v-if="$store.state.activeBias === 'all_athletes'" id="all-athletes-content" v-html="post.acf.all_athletes"></div>
-                </transition>
-                <transition name="slide-fade">
-                    <div v-if="$store.state.activeBias === 'aerobic_bias'" id="aerobic-bias-content" v-html="post.acf.aerobic_bias"></div>
-                </transition>
-                <transition name="slide-fade">
-                    <div v-if="$store.state.activeBias === 'gymnastics_bias'" id="gymnastics-bias-content" v-html="post.acf.gymnastics_bias"></div>
-                </transition>
-                <transition name="slide-fade">
-                    <div v-if="$store.state.activeBias === 'strength_bias'" id="strength-bias-content" v-html="post.acf.strength_bias"></div>
-                </transition>
-                <transition name="slide-fade">
-                    <div v-if="$store.state.activeBias === 'balanced_athlete'" id="balanced-athlete-content" v-html="post.acf.balanced_athlete"></div>
-                </transition>
-            </div>
-        </div>
-        <div v-if="post.acf.workout_id">
-            <LeaderboardWOD :slugWorkoutID="post.acf.workout_id"></LeaderboardWOD>
         </div>
     </div>
+
+
 </div>
 </template>
 <script>
@@ -43,9 +54,13 @@ import recentPosts from '../../../components/recentPosts.vue'
 import categories from '../../../components/categories.vue'
 import programmingSidebar from '../../../components/programmingSidebar.vue'
 import LeaderboardWOD from "../../../components/LeaderboardWOD"
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+library.add(faChevronLeft);
 
 export default {
-  components: {LeaderboardWOD, recentPosts, categories, programmingSidebar },
+  components: {LeaderboardWOD, recentPosts, categories, programmingSidebar, library, faChevronLeft, FontAwesomeIcon },
     asyncData ({ params }) {
         return axios.get(`https://wod.kodacompetitor.com/wp-json/wp/v2/posts?slug=${params.slug}`)
             .then((res) => {
@@ -102,6 +117,43 @@ export default {
 </script>
 
 <style scoped>
+.other-wods-title {
+    display: block;
+    margin: 30px auto;
+    text-align: center;
+}
+.pagination-holder {
+    margin: 30px auto;
+    width: 650px;
+    max-width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.pagination-holder .pagination-btn {
+    background: #fff;
+    outline: none;
+    border: 3px solid #c60314;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #c60314;
+    font-weight: bold;
+    min-width: 150px;
+    transition: 0.25s all ease-in-out;
+    text-decoration: none;
+    text-align: center;
+}
+.pagination-holder .pagination-btn:hover {
+    color: #fff;
+    background: #c60314;
+}
+.pagination-holder.flexStart {
+    justify-content: flex-start;
+}
+.pagination-holder.flexEnd {
+    justify-content: flex-end;
+}
 .post-container {
   font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   display: flex;
@@ -113,8 +165,15 @@ export default {
   width: 1050px;
   max-width: 95%;
 }
+.full-container {
+    margin: 0px auto;
+    width: 1050px;
+    max-width: 95%;
+}
 .post-container .post {
     width: 100%;
+}
+.post-container .post-flex {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -223,6 +282,9 @@ p {
   font-size:16px;
   line-height: 140%;
 }
+.general-content {
+    padding: 20px;
+}
 @media only screen and (max-width:790px) {
     .post-container {
         flex-direction: column;
@@ -236,7 +298,6 @@ p {
 
     .bias-wrap {
         flex-direction: row;
-        align-items: center;
         width: 100%;
         background: rgba(0, 0, 0, .03);
         border-bottom: 1px solid rgba(0, 0, 0, .1);

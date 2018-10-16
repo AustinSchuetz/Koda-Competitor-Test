@@ -1,6 +1,6 @@
 <template>
     <div class="post-holder">
-        <nuxt-link  :to="item.slug + '/'" class="post" v-for="(item, index) in blogs" :key="index" v-if="blogs && blogs.length > 0 && index <= 10">
+        <nuxt-link  :to="item.slug + '/'" class="post" v-for="(item, index) in blogs" :key="index" v-if="blogs && blogs.length > 0 && index >= firstPost && index <= lastPost">
             <div v-if="item.fi_medium" class="post-featured-background fi_medium" :style="{ 'background-image': 'url(' + item.fi_medium + ')' }">
                 <h1 v-html="item.title.rendered"></h1>
                 <div class="divider"></div>
@@ -16,6 +16,10 @@
                 <div v-html="item.excerpt.rendered"> </div>
             </div>
         </nuxt-link>
+        <div class="pagination-holder" :class="{ flexStart: currentPage == totalPages, flexEnd: currentPage === 1}">
+            <button class="pagination-btn" @click="pageDownClick" v-if="currentPage > 1">Previous Page</button>
+            <button class="pagination-btn" @click="pageUpClick" v-if="currentPage < totalPages" >Next Page</button>
+        </div>
     </div>
 </template>
 
@@ -25,7 +29,30 @@
         name: "index",
         data() {
             return {
-                blogs: null
+                blogs: null,
+                currentPage: 1
+            }
+        },
+        computed: {
+            nextPage() {
+                return this.nextPage = this.currentPage + 1;
+            },
+            previousPage() {
+                return this.previousPage = this.currentPage - 1;
+            },
+            firstPost() {
+                return this.firstPost = (this.currentPage - 1) * 9;
+            },
+            lastPost() {
+                return this.lastPost = (this.currentPage * 9) - 1;
+            }
+        },
+        methods: {
+            pageUpClick() {
+                return this.currentPage = this.currentPage + 1;
+            },
+            pageDownClick() {
+                return this.currentPage = this.currentPage - 1;
             }
         },
         mounted() {
@@ -36,6 +63,38 @@
 </script>
 
 <style scoped>
+    .pagination-holder {
+        margin: 50px auto 0;
+        width: 750px;
+        max-width: 90%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .pagination-holder .pagination-btn {
+        background: #fff;
+        outline: none;
+        border: 3px solid #c60314;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        color: #c60314;
+        font-weight: bold;
+        width: 135px;
+        transition: 0.25s all ease-in-out;
+        text-decoration: none;
+        text-align: center;
+    }
+    .pagination-holder .pagination-btn:hover {
+        color: #fff;
+        background: #c60314;
+    }
+    .pagination-holder.flexStart {
+        justify-content: flex-start;
+    }
+    .pagination-holder.flexEnd {
+        justify-content: flex-end;
+    }
     .post-holder {
         width: 100%;
     }

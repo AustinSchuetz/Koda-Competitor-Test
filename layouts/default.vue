@@ -126,6 +126,7 @@ body {
     height: calc(100vh - 70px);
     top: 70px;
     z-index: 10;
+    position: fixed;
 }
 .hideLeaderboardSidebar.programming-sidebar {
     left: -230px;

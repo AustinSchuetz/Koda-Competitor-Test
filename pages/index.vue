@@ -1,6 +1,6 @@
 <template>
     <div class="home-holder">
-        <post-list v-if="posts" :posts="posts" title="Recent Posts"></post-list>
+        <post-list v-if="posts" :posts="posts" :total="total" :totalPages="totalPages"></post-list>
     </div>
 </template>
 
@@ -17,10 +17,12 @@
         components: { postList, categories, recentPosts, programmingSidebar },
         async asyncData({ params }) {
             // We can use async/await ES6 feature
-            let { data } = await api.getPosts()
+            let { data, total, totalPages } = await api.getPosts()
 
             return {
-                posts: data
+                posts: data,
+                total: total,
+                totalPages: totalPages
             }
         },
         head() {

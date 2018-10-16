@@ -1,6 +1,6 @@
 <template>
     <div class="home-holder">
-        <post-list-w-o-d v-if="posts" :posts="posts" title="Recent Posts"></post-list-w-o-d>
+        <post-list v-if="posts" :posts="posts" :total="total" :totalPages="totalPages"></post-list>
     </div>
 </template>
 
@@ -8,19 +8,21 @@
 
     import { mapGetters } from 'vuex'
     import api from "~/api/index";
-    import postListWOD from '~/components/postListWOD.vue'
+    import postList from '~/components/postList.vue'
     import recentPosts from '~/components/recentPosts.vue'
     import categories from '~/components/categories.vue'
     import programmingSidebar from '~/components/programmingSidebar.vue'
 
     export default {
-        components: { postListWOD, categories, recentPosts, programmingSidebar },
+        components: { postList, categories, recentPosts, programmingSidebar },
         async asyncData({ params }) {
             // We can use async/await ES6 feature
-            let { data } = await api.getPosts()
+            let { data, total, totalPages } = await api.getPosts()
 
             return {
-                posts: data
+                posts: data,
+                total: total,
+                totalPages: totalPages
             }
         },
         head() {

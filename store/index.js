@@ -32,7 +32,9 @@ const store = () => {
       hideLeaderboardGlobal: false,
       activeBias: null,
       scrollPosition: null,
-      leaderboardPost: null
+      leaderboardPost: null,
+      total: null,
+      totalPages: null
     },
     actions,
     mutations,
