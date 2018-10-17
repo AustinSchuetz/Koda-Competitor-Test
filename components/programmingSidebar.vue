@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="logo-programming-select-holder" :class="{ scrolled: this.$store.state.scrollPosition > 0, hideLeaderboard: this.$store.state.hideLeaderboardGlobal }">
-            <div class="leaderboard-button" title="Expand/Collaspe Leaderboard" @click="switchLeaderboard" :class="{ hideLeaderboardBtn: this.$store.state.hideLeaderboardGlobal }"><font-awesome-icon icon="chevron-left" /></div>
+            <div class="leaderboard-button hide-on-load" title="Expand/Collaspe Leaderboard" @click="switchLeaderboard" :class="{ hideLeaderboardBtn: this.$store.state.hideLeaderboardGlobal, showOnLoad: this.showOn }"><font-awesome-icon icon="chevron-left" /></div>
             <div class="leaderboard-wrap">
                 <Leaderboard></Leaderboard>
             </div>
@@ -27,7 +27,8 @@
         data() {
             return {
                 scrollPosition: null,
-                windowWidth: 0
+                windowWidth: 0,
+                showOn: false
             }
         },
         methods: {
@@ -57,6 +58,7 @@
             this.$nextTick(function() {
                 // window.addEventListener('resize', this.getWindowWidth);
                 this.windowWidth = document.documentElement.clientWidth;
+                this.showOn = true;
                 if (this.windowWidth < 700) {
                     return this.closeLeaderboard();
                 } if (this.windowWidth > 699) {
@@ -68,6 +70,12 @@
 </script>
 
 <style lang="scss" scoped>
+.hide-on-load {
+    display: none;
+}
+.showOnLoad {
+     display: block;
+ }
 .logo-programming-select-holder {
     position: fixed;
     z-index: 2;
