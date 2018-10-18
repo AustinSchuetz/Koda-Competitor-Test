@@ -10,7 +10,7 @@
             <nuxt-link to="/athlete-type/">Pick a Track</nuxt-link>
             <nuxt-link to="/blog/">Blog</nuxt-link>
             <nuxt-link to="/coaches/">Coaches</nuxt-link>
-            <nuxt-link to="/social/">Social</nuxt-link>
+            <nuxt-link to="/workout-library/">Workout Library</nuxt-link>
         </div>
         <div class="mobile-menu-btn-holder">
             <div id="nav-icon" @click="navMenu" :class="{ open: this.navMenuOpen }">
@@ -27,7 +27,7 @@
             <li @click="navMenuClose"><nuxt-link to="/athlete-type/">Pick a Track</nuxt-link></li>
             <li @click="navMenuClose"><nuxt-link to="/blog/">Blog</nuxt-link></li>
             <li @click="navMenuClose"><nuxt-link to="/coaches/">Coaches</nuxt-link></li>
-            <li @click="navMenuClose"><nuxt-link to="/social/">Social</nuxt-link></li>
+            <li @click="navMenuClose"><nuxt-link to="/workout-library/">Workout Library</nuxt-link></li>
         </div>
         <div class="social">
             <a href="https://www.instagram.com/kodacompetitor/" class="fa fa-instagram" target="_blank"></a>

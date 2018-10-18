@@ -6,7 +6,7 @@
             <div class="search-holder">
                 <h1>Search: {{ search }}</h1>
                 <div class="search-flex">
-                    <input class="fa" placeholder="Search for movement, date, keyword, etc." v-model.lazy="search">
+                    <input class="fa" placeholder="Search for movement, date, keyword, etc." :value.lazy="search" v-model.lazy="search">
                     <div class="pseudo-search-btn">Search</div>
                 </div>
             </div>
@@ -29,37 +29,43 @@
                     <div v-if="this.total == 0">
                         <h1 class="no-workouts">No workouts match your filter</h1>
                     </div>
-                    <div v-for="post in workouts" class="individual-workout">
-                        <nuxt-link :to="'/workout-of-the-day/' + post.slug">
+                    <div v-for="post in workouts" class="individual-workout" :mounted="loadPostBias(post.acf)">
+                        <nuxt-link :to="'/workout-of-the-day/' + post.slug" class="post">
                             <div class="post-featured-background" :style="{ 'background-image': 'url(' + post.fi_medium + ')' }">
                                 <h1>{{ post.title.rendered }}</h1>
                             </div>
-                            <!--<div class="bias-wrap">-->
-                                <!--<a v-if="post.acf.all_athletes" @click="setActive('all_athletes')" :class="{ activebias: $store.state.activeBias === 'all_athletes' }" href="javascript:void(0)" class="bias">All Athletes</a>-->
-                                <!--<a v-if="post.acf.aerobic_bias" @click="setActive('aerobic_bias')" :class="{ activebias: $store.state.activeBias === 'aerobic_bias' }" href="javascript:void(0)" class="bias">Aerobic Bias</a>-->
-                                <!--<a v-if="post.gymnastics_bias" @click="setActive('gymnastics_bias')" :class="{ activebias: $store.state.activeBias === 'gymnastics_bias' }" href="javascript:void(0)" class="bias">Gymnastics Bias</a>-->
-                                <!--<a v-if="post.strength_bias" @click="setActive('strength_bias')" :class="{ activebias: $store.state.activeBias === 'strength_bias' }" href="javascript:void(0)" class="bias">Strength Bias</a>-->
-                                <!--<a v-if="post.balanced_athlete" @click="setActive('balanced_athlete')" :class="{ activebias: $store.state.activeBias === 'balanced_athlete' }" href="javascript:void(0)" class="bias">Balanced Athlete</a>-->
-                            <!--</div>-->
-                            <!--<div class="post-text-content">-->
-                                <!--<transition name="slide-fade">-->
-                                    <!--<div v-if="$store.state.activeBias === 'all_athletes'" id="all-athletes-content" v-html="post.all_athletes"></div>-->
-                                <!--</transition>-->
-                                <!--<transition name="slide-fade">-->
-                                    <!--<div v-if="$store.state.activeBias === 'aerobic_bias'" id="aerobic-bias-content" v-html="post.aerobic_bias"></div>-->
-                                <!--</transition>-->
-                                <!--<transition name="slide-fade">-->
-                                    <!--<div v-if="$store.state.activeBias === 'gymnastics_bias'" id="gymnastics-bias-content" v-html="post.gymnastics_bias"></div>-->
-                                <!--</transition>-->
-                                <!--<transition name="slide-fade">-->
-                                    <!--<div v-if="$store.state.activeBias === 'strength_bias'" id="strength-bias-content" v-html="post.strength_bias"></div>-->
-                                <!--</transition>-->
-                                <!--<transition name="slide-fade">-->
-                                    <!--<div v-if="$store.state.activeBias === 'balanced_athlete'" id="balanced-athlete-content" v-html="post.balanced_athlete"></div>-->
-                                <!--</transition>-->
-                            <!--</div>-->
-                            <!--<strong class="more">View WOD</strong>-->
                         </nuxt-link>
+                            <div class="bias-wrap">
+                                <a v-if="post.acf.all_athletes" @click="setActive('all_athletes')" :class="{ activebias: $store.state.activeBias === 'all_athletes' }" href="javascript:void(0)" class="bias">All Athletes</a>
+                                <a v-if="post.acf.aerobic_bias" @click="setActive('aerobic_bias')" :class="{ activebias: $store.state.activeBias === 'aerobic_bias' }" href="javascript:void(0)" class="bias">Aerobic Bias</a>
+                                <a v-if="post.acf.gymnastics_bias" @click="setActive('gymnastics_bias')" :class="{ activebias: $store.state.activeBias === 'gymnastics_bias' }" href="javascript:void(0)" class="bias">Gymnastics Bias</a>
+                                <a v-if="post.acf.strength_bias" @click="setActive('strength_bias')" :class="{ activebias: $store.state.activeBias === 'strength_bias' }" href="javascript:void(0)" class="bias">Strength Bias</a>
+                                <a v-if="post.acf.balanced_athlete" @click="setActive('balanced_athlete')" :class="{ activebias: $store.state.activeBias === 'balanced_athlete' }" href="javascript:void(0)" class="bias">Balanced Athlete</a>
+                            </div>
+                        <nuxt-link :to="'/workout-of-the-day/' + post.slug">
+                            <div class="post-text-content">
+                                <transition name="slide-fade">
+                                    <div v-if="$store.state.activeBias === 'all_athletes'" id="all-athletes-content" v-html="post.acf.all_athletes"></div>
+                                </transition>
+                                <transition name="slide-fade">
+                                    <div v-if="$store.state.activeBias === 'aerobic_bias'" id="aerobic-bias-content" v-html="post.acf.aerobic_bias"></div>
+                                </transition>
+                                <transition name="slide-fade">
+                                    <div v-if="$store.state.activeBias === 'gymnastics_bias'" id="gymnastics-bias-content" v-html="post.acf.gymnastics_bias"></div>
+                                </transition>
+                                <transition name="slide-fade">
+                                    <div v-if="$store.state.activeBias === 'strength_bias'" id="strength-bias-content" v-html="post.acf.strength_bias"></div>
+                                </transition>
+                                <transition name="slide-fade">
+                                    <div v-if="$store.state.activeBias === 'balanced_athlete'" id="balanced-athlete-content" v-html="post.acf.balanced_athlete"></div>
+                                </transition>
+                            </div>
+                            <strong class="more">View Workout</strong>
+                        </nuxt-link>
+                    </div>
+                    <div class="pagination-holder" :class="{ flexStart: currentPage == totalPages, flexEnd: currentPage === 1}">
+                        <button class="pagination-btn" @click="pageDownClick" v-if="currentPage > 1">Previous Page</button>
+                        <button class="pagination-btn" @click="pageUpClick" v-if="currentPage < totalPages" >Next Page</button>
                     </div>
                 </div>
 
@@ -92,24 +98,34 @@
                 questionMark: ''
             }
         },
+        computed: {
+            nextPage() {
+                return this.nextPage = this.currentPage + 1;
+            },
+            previousPage() {
+                return this.previousPage = this.currentPage - 1;
+            },
+            firstPost() {
+                return this.firstPost = (this.currentPage - 1) * 9;
+            },
+            lastPost() {
+                return this.lastPost = (this.currentPage * 9) - 1;
+            }
+        },
         mounted() {
-            // method here that checks params in url bar
             let params = new URLSearchParams(document.location.search.substring(1));
             if(params.get("search")) {
                 this.search = params.get("search");
             }
-            console.log(params.get("tags"));
+            if(params.get("tags")) {
+                this.checkedTags = params.get("tags").split(',');
+            }
+            this.getWorkouts();
             return axios.get('https://wod.kodacompetitor.com/wp-json/wp/v2/tags').then(
                     response => this.tags = response.data
                 ).catch(error => console.log(error)).then(() => this.initialLoading = false).then(() => this.loading = false);
-            this.getWorkouts();
         },
         methods: {
-            // getWorkouts() {
-            //     axios.get('https://wod.kodacompetitor.com/wp-json/wp/v2/posts?categories=2' + this.buildTagsString() + this.buildSearchString())
-            //         .then(res => (this.workouts = res.data));
-            //         this.loading = false;
-            // },
             getWorkouts() {
                 axios.get('https://wod.kodacompetitor.com/wp-json/wp/v2/posts?categories=2' + this.buildTagsString() + this.buildSearchString())
                     .then(res => {
@@ -120,9 +136,36 @@
                     this.buildURL();
                     this.loading = false;
             },
+            routeChanged(routeto) {
+                console.log(routeto);
+                if(routeto.query.search) {
+                    this.search = routeto.query.search;
+                }
+                if (!routeto.query.search) {
+                    this.search = "";
+                }
+                if(routeto.query.tags) {
+                    this.checkedTags = routeto.query.tags.split(',');
+                }
+                if (!routeto.query.tags) {
+                    this.checkedTags = [];
+                }
+                if (!routeto.query.search && !routeto.query.tags) {
+                    Object.assign(this.$data,this.$options.data.call(this));
+                    this.tagRemount();
+                    this.loading = false;
+                }
+            },
+            tagRemount() {
+                return axios.get('https://wod.kodacompetitor.com/wp-json/wp/v2/tags').then(
+                    response => this.tags = response.data
+                ).catch(error => console.log(error)).then(() => this.initialLoading = false).then(() => this.loading = false);
+            },
             buildURL() {
+                this.buildSearchString();
+                this.buildTagsString();
                 this.toURL = this.questionMark + this.buildTagsString() + this.buildSearchString();
-                this.$router.push(this.toURL)
+                this.$router.push(this.toURL);
             },
             // define search function that appends to the wp api url
             buildSearchString() {
@@ -159,6 +202,13 @@
                         return this.setActive('balanced_athlete');
                     }
                 }
+            },
+            pageUpClick() {
+                return this.currentPage = this.currentPage + 1;
+                // add &page=currentPage to url if it is not the 1st page
+            },
+            pageDownClick() {
+                return this.currentPage = this.currentPage - 1;
             }
         },
         watch: {
@@ -171,6 +221,11 @@
                 this.loading = true;
                 this.buildSearchString();
                 this.getWorkouts();
+            },
+            $route(routeto) {
+                this.loading = true;
+                this.routeChanged(routeto);
+                this.loading = false;
             }
         },
         head() {
@@ -188,6 +243,50 @@
 </script>
 
 <style scoped>
+
+    .pagination-holder {
+        margin: 50px auto 0;
+        width: 750px;
+        max-width: 90%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .pagination-holder .pagination-btn {
+        background: #fff;
+        outline: none;
+        border: 3px solid #c60314;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        color: #c60314;
+        font-weight: bold;
+        width: 135px;
+        transition: 0.25s all ease-in-out;
+        text-decoration: none;
+        text-align: center;
+    }
+    .pagination-holder .pagination-btn:hover {
+        color: #fff;
+        background: #c60314;
+    }
+    .pagination-holder.flexStart {
+        justify-content: flex-start;
+    }
+    .pagination-holder.flexEnd {
+        justify-content: flex-end;
+    }
+
+
+a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+.post-text-content h4, a h4 {
+}
+.individual-workout .post-text-content p, a:visited p {
+    color: #1d1d1d;
+}
 .workout-library-wrap {
     max-width: 95%;
 }
@@ -286,30 +385,35 @@ input[type="checkbox"]:checked + label {
 
 
 /*** workout ***/
+
 .individual-workout {
     display: inline-block;
     width: 300px;
     margin: 10px;
+    box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
+    border-radius: 5px;
+    border-top: 3px solid #c60314;
+    background: #fff;
+    text-decoration: none;
 }
 .individual-workout a {
-    display: block;
-    text-align: center;
-    background: #f2f2f2;
-    border-radius: 5px;
     text-decoration: none;
-    border-top: 3px solid #c60314;
-    transition: 0.25s all ease-in-out;
-    box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
 }
-.individual-workout a .post-featured-background {
+.individual-workout .post {
+    display: block;
+    text-decoration: none;
+    transition: 0.25s all ease-in-out;
+}
+.individual-workout .post .post-featured-background {
     padding: 50px;
     background-size: cover;
     position: relative;
     border-radius: 3px;
 }
-.individual-workout a .post-featured-background h1 {
+.individual-workout .post .post-featured-background h1 {
     position: relative;
     z-index: 2;
+    text-align: center;
 }
 .individual-workout a .post-featured-background::after {
     position: absolute;
@@ -321,6 +425,8 @@ input[type="checkbox"]:checked + label {
     left: 0;
     right: 0;
     border-radius: 3px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
     background: rgba(0,0,0,0.55);
 }
 .individual-workout a:hover .post-featured-background::after {
@@ -335,33 +441,25 @@ input[type="checkbox"]:checked + label {
     flex-direction: column;
     justify-content: flex-start;
 }
-.bias-wrap .bias {
-    padding: 10px;
-    background: rgba(0,0,0,0.03);
-    border-left: 3px solid transparent;
-    font-weight: bold;
-    color: #646464;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-    transition: 0.15s all ease-in-out;
-}
-.bias-wrap .bias:hover {
-    border-left-color: #c60314;
-    color: #1d1d1d;
-    background: rgba(0,0,0,0.02);
-}
-.bias-wrap .activebias {
-    border-left-color: #c60314;
-    color: #1d1d1d !important;
-    background: #fff !important;
-}
 
-.individual-workout a .post-text-content {
+.individual-workout .post-text-content {
     padding: 10px 20px;
-    max-height: 200px;
+    height: 200px;
     overflow-y: hidden;
     position: relative;
+    text-decoration: none;
+    color: #1d1d1d;
 }
-.individual-workout a .post-text-content::after {
+.individual-workout .post-text-content div h4 {
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #c60314;
+    font-weight: 800;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #c60314;
+}
+.individual-workout .post-text-content::after {
     content: '';
     position: absolute;
     left: 0;
@@ -370,5 +468,66 @@ input[type="checkbox"]:checked + label {
     width: 100%;
     height: 20%;
     background: linear-gradient(to bottom, rgba(255,255,255,0.01), #fff);
+}
+.more {
+    color: #1d1d1d;
+    line-height: 1.5;
+    border: 1px solid;
+    border-radius: 5px;
+    margin: 15px;
+    padding: 5px 10px 7px;
+    display: inline-block;
+}
+.more:hover {
+    color: #c60314;
+}
+.bias-wrap {
+    flex-direction: row;
+    align-items: stretch;
+    width: 100%;
+    background: rgba(0, 0, 0, .03);
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+.bias-wrap .bias {
+    background: none;
+    border: none;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 3px solid transparent;
+    border-left: 1px solid rgba(0,0,0,0.1);
+    max-width: 25%;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.3;
+    text-decoration: none;
+    transition: 0.15s all ease-in-out;
+    padding: 3px;
+    font-weight: bold;
+    color: #646464;
+    background: rgba(0,0,0,0.03);
+}
+.bias-wrap .bias:first-child {
+    border-left: 0;
+}
+.bias-wrap .bias:hover {
+    border-left-color: rgba(0,0,0,0.1);
+    border-bottom: 3px solid #c60314;
+}
+.bias-wrap .activebias {
+    border-bottom-color: #c60314;
+    color: #1d1d1d !important;
+    background: #fff !important;
+}
+.slide-fade-enter-active {
+    transition: all .25s ease;
+}
+.slide-fade-leave-active {
+    transition: all .25s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+    /* .slide-fade-leave-active below version 2.1.8 */ {
+    transform: translateX(10px);
+    opacity: 0;
 }
 </style>
