@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/components/modal.vue" line="83" mnemonic="5" />
+    <bookmark url="file://$PROJECT_DIR$/pages/workout-library/index.vue" line="317" mnemonic="5" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73810ecd-a2d9-4697-8462-e42b269b209d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/components/programmingSidebar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/programmingSidebar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/coaches/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/coaches/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/workout-library/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Leaderboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/Leaderboard.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,45 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="postList.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/postList.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="133" column="5" selection-start-line="101" selection-start-column="14" selection-end-line="133" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/blog/_slug/index.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="19" column="148" selection-start-line="19" selection-start-column="107" selection-end-line="19" selection-end-column="148" />
-              <folding>
-                <element signature="n#style#0;n#font-awesome-icon#0;n#nuxt-link#1;n#div#2;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="e#1489#1514#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/blog/index.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="20" column="64" selection-start-line="20" selection-start-column="64" selection-end-line="20" selection-end-column="64" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="default.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/layouts/default.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="124" column="31" selection-start-line="124" selection-start-column="31" selection-end-line="124" selection-end-column="31" />
-              <folding>
-                <element signature="e#716#749#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="92">
+              <caret line="151" column="46" lean-forward="true" selection-start-line="151" selection-start-column="46" selection-end-line="153" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -69,46 +36,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Coach.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/Coach.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="652">
-              <caret line="89" selection-start-line="89" selection-end-line="89" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="modal.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/modal.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2369">
-              <caret line="103" column="24" selection-start-line="103" selection-start-column="24" selection-end-line="103" selection-end-column="24" />
-              <folding>
-                <element signature="n#style#0;n#font-awesome-icon#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#transition#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="e#1266#1325#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/workout-of-the-day/_slug/index.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="463">
+            <state relative-caret-position="430">
               <caret line="62" column="2" selection-start-line="62" selection-start-column="2" selection-end-line="62" selection-end-column="118" />
               <folding>
                 <element signature="n#style#0;n#font-awesome-icon#0;n#nuxt-link#1;n#div#1;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="e#3810#3835#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="programmingSidebar.vue" pinned="false" current-in-tab="true">
+      <file leaf-file-name="programmingSidebar.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/programmingSidebar.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="1" column="8" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
+            <state relative-caret-position="-414">
+              <caret line="3" column="214" selection-start-line="3" selection-start-column="189" selection-end-line="3" selection-end-column="214" />
               <folding>
                 <element signature="e#862#887#0" expanded="true" />
               </folding>
@@ -116,11 +60,59 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="index.vue" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pages/workout-library/index.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="100" column="44" selection-start-line="100" selection-start-column="44" selection-end-line="100" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="138">
+              <caret line="81" column="12" selection-start-line="81" selection-start-column="12" selection-end-line="81" selection-end-column="59" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/workout-of-the-day/index.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1150">
+              <caret line="10" column="47" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="postList.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/components/postList.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="690">
+              <caret line="249" column="5" lean-forward="true" selection-start-line="215" selection-start-column="5" selection-end-line="249" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/athlete-type/index.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="46">
+              <caret line="2" column="56" selection-start-line="1" selection-start-column="4" selection-end-line="2" selection-end-column="56" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Leaderboard.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/Leaderboard.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1127">
-              <caret line="49" column="28" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="28" />
+            <state relative-caret-position="-2277">
+              <caret line="3" column="97" selection-start-line="3" selection-start-column="97" selection-end-line="3" selection-end-column="97" />
             </state>
           </provider>
         </entry>
@@ -143,7 +135,12 @@
       <find>padding: 5px;</find>
       <find>padding: 5px</find>
       <find>.post-text-</find>
+      <find>.programming-sidebar.scrolled</find>
+      <find>item.</find>
     </findStrings>
+    <replaceStrings>
+      <replace>post.</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -171,7 +168,6 @@
         <option value="$PROJECT_DIR$/pages/social/index.vue" />
         <option value="$PROJECT_DIR$/components/LeaderboardWOD.vue" />
         <option value="$PROJECT_DIR$/components/categories.vue" />
-        <option value="$PROJECT_DIR$/components/Leaderboard.vue" />
         <option value="$PROJECT_DIR$/components/Coach.vue" />
         <option value="$PROJECT_DIR$/api/config/index.js" />
         <option value="$PROJECT_DIR$/.travis.yml" />
@@ -189,6 +185,8 @@
         <option value="$PROJECT_DIR$/components/modal.vue" />
         <option value="$PROJECT_DIR$/pages/coaches/index.vue" />
         <option value="$PROJECT_DIR$/components/programmingSidebar.vue" />
+        <option value="$PROJECT_DIR$/components/Leaderboard.vue" />
+        <option value="$PROJECT_DIR$/pages/workout-library/index.vue" />
       </list>
     </option>
   </component>
@@ -309,6 +307,12 @@
               <item name="Root" type="cbb8eebc:String" user="Root" />
               <item name="Koda-Competitor-Test" type="cbb8eebc:String" user="Koda-Competitor-Test" />
               <item name="pages" type="cbb8eebc:String" user="pages" />
+              <item name="workout-library" type="cbb8eebc:String" user="workout-library" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="Koda-Competitor-Test" type="cbb8eebc:String" user="Koda-Competitor-Test" />
+              <item name="pages" type="cbb8eebc:String" user="pages" />
               <item name="workout-of-the-day" type="cbb8eebc:String" user="workout-of-the-day" />
             </path>
             <path>
@@ -418,18 +422,18 @@
       <workItem from="1537553559355" duration="17771000" />
       <workItem from="1538429492546" duration="87852000" />
       <workItem from="1539116389372" duration="16297000" />
-      <workItem from="1539268371631" duration="95023000" />
+      <workItem from="1539268371631" duration="120648000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="222439000" />
+    <option name="totallyTimeSpent" value="248064000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18976545" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18976545" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5003903" side_tool="true" weight="0.3298969" />
@@ -438,7 +442,7 @@
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49960968" weight="0.3290441" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3290441" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.18050942" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.22148395" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -470,9 +474,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.firebase/hosting.cHVibGlj.cache">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/.firebaserc">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -585,13 +586,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/athlete-type/index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="63" column="4" selection-start-line="63" selection-start-column="4" selection-end-line="68" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/social/index.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
@@ -654,16 +648,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="81" column="60" selection-start-line="81" selection-start-column="60" selection-end-line="81" selection-end-column="60" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/index.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
@@ -678,38 +662,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-115">
           <caret line="14" column="47" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/workout-of-the-day/index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-943">
-          <caret line="10" column="47" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/workout-of-the-day/_slug/index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="463">
-          <caret line="62" column="2" selection-start-line="62" selection-start-column="2" selection-end-line="62" selection-end-column="118" />
-          <folding>
-            <element signature="n#style#0;n#font-awesome-icon#0;n#nuxt-link#1;n#div#1;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="e#3810#3835#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/postList.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="133" column="5" selection-start-line="101" selection-start-column="14" selection-end-line="133" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/blog/index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="20" column="64" selection-start-line="20" selection-start-column="64" selection-end-line="20" selection-end-column="64" />
         </state>
       </provider>
     </entry>
@@ -745,13 +697,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/Leaderboard.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1127">
-          <caret line="49" column="28" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/Coach.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="652">
@@ -766,13 +711,75 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pages/athlete-type/index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="56" selection-start-line="1" selection-start-column="4" selection-end-line="2" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/components/programmingSidebar.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="8" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
+        <state relative-caret-position="-414">
+          <caret line="3" column="214" selection-start-line="3" selection-start-column="189" selection-end-line="3" selection-end-column="214" />
           <folding>
             <element signature="e#862#887#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/blog/index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="151" column="46" lean-forward="true" selection-start-line="151" selection-start-column="46" selection-end-line="153" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/workout-of-the-day/index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1150">
+          <caret line="10" column="47" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/workout-of-the-day/_slug/index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="62" column="2" selection-start-line="62" selection-start-column="2" selection-end-line="62" selection-end-column="118" />
+          <folding>
+            <element signature="n#style#0;n#font-awesome-icon#0;n#nuxt-link#1;n#div#1;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/Leaderboard.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2277">
+          <caret line="3" column="97" selection-start-line="3" selection-start-column="97" selection-end-line="3" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/postList.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="249" column="5" lean-forward="true" selection-start-line="215" selection-start-column="5" selection-end-line="249" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="81" column="12" selection-start-line="81" selection-start-column="12" selection-end-line="81" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/workout-library/index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="100" column="44" selection-start-line="100" selection-start-column="44" selection-end-line="100" selection-end-column="44" />
         </state>
       </provider>
     </entry>

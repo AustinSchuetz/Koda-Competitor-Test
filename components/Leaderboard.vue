@@ -1,7 +1,7 @@
 <template>
     <div class="leaderboard">
         <h2>Leaderboard</h2>
-        <h2>{{ this.leaderboard.date | moment("MMM Do YYYY") }}</h2>
+        <h2 v-if="this.leaderboard.date">{{ this.leaderboard.date | moment("MMM Do YYYY") }}</h2>
         <div v-for="postID in leaderboardPostID" ref="workoutIDdiv" id="workoutIDdiv" :load="loadLeaderboard(postID.acf.workout_id)"></div>
         <div class="divider"></div>
         <h3 class="workout-title">{{ this.leaderboard.workoutTitle }}</h3>
