@@ -224,7 +224,6 @@
                 if (this.currentPage > 1) {
                     this.buildPagination();
                 }
-                // add &page=currentPage to url if it is not the 1st page
             },
             pageDownClick() {
                 return this.currentPage = this.currentPage - 1;
@@ -258,7 +257,7 @@
                 meta: [
                     {
                         name: 'description',
-                        content: 'View all archived workouts, sort and filter by CrossFit movements or workout type.'
+                        content: 'View all archived workouts. Search, sort and filter by CrossFit movements or workout type.'
                     }
                 ]
             }
@@ -336,6 +335,7 @@ a:visited {
     flex-direction: row;
     justify-content: flex-start;
     margin: 10px 0;
+    width: 100%;
 }
 .results-pages-holder {
     margin: 0 15px;
@@ -461,12 +461,6 @@ input[type="checkbox"]:checked + label {
 .individual-workout a .post-featured-background h1 {
     color: #fff;
 }
-.bias-wrap {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-
 .individual-workout .post-text-content {
     padding: 10px 20px;
     height: 200px;
@@ -507,6 +501,7 @@ input[type="checkbox"]:checked + label {
     color: #c60314;
 }
 .bias-wrap {
+    display: flex;
     flex-direction: row;
     align-items: stretch;
     width: 100%;
@@ -523,7 +518,7 @@ input[type="checkbox"]:checked + label {
     border-left: 1px solid rgba(0,0,0,0.1);
     max-width: 25%;
     text-align: center;
-    font-size: 12px;
+    font-size: 0.76em;
     line-height: 1.3;
     text-decoration: none;
     transition: 0.15s all ease-in-out;

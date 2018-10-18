@@ -289,7 +289,7 @@ p {
     .post-container {
         flex-direction: column;
     }
-    .post-container .post {
+    .post-container .post .post-flex {
         flex-direction: column;
     }
     .post-content {

@@ -32,7 +32,7 @@
                         <div v-if="$store.state.activeBias === 'balanced_athlete'" id="balanced-athlete-content" v-html="item.balanced_athlete"></div>
                     </transition>
                 </div>
-                <strong class="more">View WOD</strong>
+                <strong class="more">View Workout</strong>
             </nuxt-link>
         </div>
         <div class="pagination-holder" :class="{ flexStart: currentPage == totalPages, flexEnd: currentPage === 1}">
