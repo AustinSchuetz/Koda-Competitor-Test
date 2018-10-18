@@ -7,10 +7,10 @@
         </nuxt-link>
         <div class="main-menu">
             <nuxt-link to="/workout-of-the-day/" class="sign-up">WOD</nuxt-link>
+            <nuxt-link to="/workout-library/">Workout Library</nuxt-link>
             <nuxt-link to="/athlete-type/">Pick a Track</nuxt-link>
             <nuxt-link to="/blog/">Blog</nuxt-link>
             <nuxt-link to="/coaches/">Coaches</nuxt-link>
-            <nuxt-link to="/workout-library/">Workout Library</nuxt-link>
         </div>
         <div class="mobile-menu-btn-holder">
             <div id="nav-icon" @click="navMenu" :class="{ open: this.navMenuOpen }">
@@ -24,10 +24,10 @@
         <div class="mobile-links">
             <li @click="navMenuClose"><nuxt-link to="/">Home</nuxt-link></li>
             <li @click="navMenuClose"><nuxt-link to="/workout-of-the-day/">Workout of the Day</nuxt-link></li>
+            <li @click="navMenuClose"><nuxt-link to="/workout-library/">Workout Library</nuxt-link></li>
             <li @click="navMenuClose"><nuxt-link to="/athlete-type/">Pick a Track</nuxt-link></li>
             <li @click="navMenuClose"><nuxt-link to="/blog/">Blog</nuxt-link></li>
             <li @click="navMenuClose"><nuxt-link to="/coaches/">Coaches</nuxt-link></li>
-            <li @click="navMenuClose"><nuxt-link to="/workout-library/">Workout Library</nuxt-link></li>
         </div>
         <div class="social">
             <a href="https://www.instagram.com/kodacompetitor/" class="fa fa-instagram" target="_blank"></a>
@@ -185,6 +185,11 @@ export default {
     overflow: auto;
     padding: 15px 0;
     border-top: 1px solid rgba(0,0,0,0.1);
+}
+@media only screen and (max-width:870px) {
+    .categories-menu a {
+        padding: 20px 8px;
+    }
 }
 @media only screen and (max-width:790px) {
     .categories-menu {

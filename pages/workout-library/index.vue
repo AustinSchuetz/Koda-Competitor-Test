@@ -29,7 +29,10 @@
                     <div v-if="this.total == 0">
                         <h1 class="no-workouts">No workouts match your filter</h1>
                     </div>
-                    <div v-for="post in workouts" class="individual-workout" :mounted="loadPostBias(post.acf)">
+                    <div v-else-if="this.currentPage > this.totalPages">
+                        <h1 class="no-workouts">No workouts match your filter</h1>
+                    </div>
+                    <div v-for="(post, index) in workouts" class="individual-workout" :mounted="loadPostBias(post.acf)" :key="index" v-if="index >= firstPost && index <= lastPost">
                         <nuxt-link :to="'/workout-of-the-day/' + post.slug" class="post">
                             <div class="post-featured-background" :style="{ 'background-image': 'url(' + post.fi_medium + ')' }">
                                 <h1>{{ post.title.rendered }}</h1>
@@ -120,6 +123,9 @@
             if(params.get("tags")) {
                 this.checkedTags = params.get("tags").split(',');
             }
+            if(params.get("page")) {
+                this.currentPage = params.get("page");
+            }
             this.getWorkouts();
             return axios.get('https://wod.kodacompetitor.com/wp-json/wp/v2/tags').then(
                     response => this.tags = response.data
@@ -127,7 +133,7 @@
         },
         methods: {
             getWorkouts() {
-                axios.get('https://wod.kodacompetitor.com/wp-json/wp/v2/posts?categories=2' + this.buildTagsString() + this.buildSearchString())
+                axios.get('https://wod.kodacompetitor.com/wp-json/wp/v2/posts?categories=2' + this.buildTagsString() + this.buildSearchString() + this.buildPagination())
                     .then(res => {
                         this.total = res.headers["x-wp-total"];
                         this.totalPages = res.headers["x-wp-totalpages"];
@@ -137,7 +143,6 @@
                     this.loading = false;
             },
             routeChanged(routeto) {
-                console.log(routeto);
                 if(routeto.query.search) {
                     this.search = routeto.query.search;
                 }
@@ -150,7 +155,10 @@
                 if (!routeto.query.tags) {
                     this.checkedTags = [];
                 }
-                if (!routeto.query.search && !routeto.query.tags) {
+                if(!routeto.query.page) {
+                    this.currentPage = 1;
+                }
+                if (!routeto.query.search && !routeto.query.tags && !routeto.query.page) {
                     Object.assign(this.$data,this.$options.data.call(this));
                     this.tagRemount();
                     this.loading = false;
@@ -164,7 +172,7 @@
             buildURL() {
                 this.buildSearchString();
                 this.buildTagsString();
-                this.toURL = this.questionMark + this.buildTagsString() + this.buildSearchString();
+                this.toURL = this.questionMark + this.buildTagsString() + this.buildSearchString() + this.buildPagination();
                 this.$router.push(this.toURL);
             },
             // define search function that appends to the wp api url
@@ -181,6 +189,14 @@
                 if (this.checkedTags.length !== 0) {
                     this.questionMark = '?';
                     return '&tags=' + this.checkedTags.join(",");
+                } else {
+                    return '';
+                }
+            },
+            buildPagination() {
+                if (this.currentPage > 1) {
+                    this.questionMark = '?';
+                    return '&page=' + this.currentPage;
                 } else {
                     return '';
                 }
@@ -205,6 +221,9 @@
             },
             pageUpClick() {
                 return this.currentPage = this.currentPage + 1;
+                if (this.currentPage > 1) {
+                    this.buildPagination();
+                }
                 // add &page=currentPage to url if it is not the 1st page
             },
             pageDownClick() {
@@ -220,6 +239,11 @@
             search() {
                 this.loading = true;
                 this.buildSearchString();
+                this.getWorkouts();
+            },
+            currentPage() {
+                this.loading = true;
+                this.buildPagination();
                 this.getWorkouts();
             },
             $route(routeto) {
@@ -389,6 +413,7 @@ input[type="checkbox"]:checked + label {
 .individual-workout {
     display: inline-block;
     width: 300px;
+    max-width: 95%;
     margin: 10px;
     box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
     border-radius: 5px;
