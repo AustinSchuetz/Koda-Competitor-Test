@@ -587,7 +587,7 @@ input[type="checkbox"]:checked + label {
     flex-direction: column;
     border-bottom: 3px solid transparent;
     border-left: 1px solid rgba(0,0,0,0.1);
-    max-width: 25%;
+    width: 25%;
     text-align: center;
     font-size: 0.76em;
     line-height: 1.3;

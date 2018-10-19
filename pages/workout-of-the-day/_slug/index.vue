@@ -38,8 +38,9 @@
                 </div>
             </div>
             <h2 class="other-wods-title">More Workout Posts</h2>
-            <div class="pagination-holder" :class="{flexStart: post.next === null, flexEnd: post.previous === null }">
+            <div class="pagination-holder">
                 <nuxt-link class="pagination-btn" :to="post.previous.slug" v-if="post.previous"><font-awesome-icon icon="chevron-left" /> {{ post.previous.title }}</nuxt-link>
+                <nuxt-link class="pagination-btn" :to="'/workout-library/'">Full Workout Library</nuxt-link>
                 <nuxt-link class="pagination-btn" :to="post.next.slug" v-if="post.next">{{ post.next.title }} <font-awesome-icon icon="chevron-left" style="transform: rotate(180deg);" /></nuxt-link>
             </div>
         </div>
@@ -124,11 +125,11 @@ export default {
 }
 .pagination-holder {
     margin: 30px auto;
-    width: 650px;
-    max-width: 90%;
+    width: 850px;
+    max-width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 .pagination-holder .pagination-btn {
     background: #fff;
@@ -140,6 +141,7 @@ export default {
     color: #c60314;
     font-weight: bold;
     min-width: 150px;
+    max-width: 30%;
     transition: 0.25s all ease-in-out;
     text-decoration: none;
     text-align: center;
@@ -147,12 +149,6 @@ export default {
 .pagination-holder .pagination-btn:hover {
     color: #fff;
     background: #c60314;
-}
-.pagination-holder.flexStart {
-    justify-content: flex-start;
-}
-.pagination-holder.flexEnd {
-    justify-content: flex-end;
 }
 .post-container {
   font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;

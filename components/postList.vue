@@ -35,9 +35,10 @@
                 <strong class="more">View Workout</strong>
             </nuxt-link>
         </div>
-        <div class="pagination-holder" :class="{ flexStart: currentPage == totalPages, flexEnd: currentPage === 1}">
+        <div class="pagination-holder">
             <button class="pagination-btn" @click="pageDownClick" v-if="currentPage > 1">Previous Page</button>
-            <button class="pagination-btn" @click="pageUpClick" v-if="currentPage < totalPages" >Next Page</button>
+            <nuxt-link class="pagination-btn" :to="'/workout-library/'">Full Workout Library</nuxt-link>
+            <button class="pagination-btn" @click="pageUpClick" v-if="currentPage < totalPages">Next Page</button>
         </div>
     </div>
 </template>
@@ -106,7 +107,7 @@ export default {
         max-width: 90%;
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-around;
     }
     .pagination-holder .pagination-btn {
         background: #fff;
@@ -117,10 +118,11 @@ export default {
         cursor: pointer;
         color: #c60314;
         font-weight: bold;
-        width: 135px;
+        width: 170px;
         transition: 0.25s all ease-in-out;
         text-decoration: none;
         text-align: center;
+        max-width: 30%;
     }
     .pagination-holder .pagination-btn:hover {
         color: #fff;

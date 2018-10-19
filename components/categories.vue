@@ -72,6 +72,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+input,
+textarea,
+button,
+select,
+a, a:active, #nav-icon {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    tap-highlight-color: rgba(0,0,0,0);
+}
 .categories-menu {
     border-top: 3px solid #C60314;
     width:100%;
@@ -83,7 +91,6 @@ export default {
     z-index: 10;
     padding: 0 20px 0 0;
     height: 70px;
-    transition: 0.2s background-color ease-in-out;
     .category-item {
         width: inherit;
     }
