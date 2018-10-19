@@ -6,18 +6,19 @@
             <div class="search-holder">
                 <h1>Search: {{ search }}</h1>
                 <div class="search-flex">
-                    <input class="fa" placeholder="Search for movement, date, keyword, etc." :value.lazy="search" v-model.lazy="search">
+                    <input class="fa" placeholder="Search for movement, date, keyword, etc." v-model.lazy="search">
                     <div class="pseudo-search-btn">Search</div>
                 </div>
             </div>
-            <div class="tag-holder">
+            <div class="tag-holder" :class="{tagcut: tags.length > 49, tagcutexpand: tagCutSwitch === false }">
                 <h1 class="tag-title">By Movement</h1>
-                    <div v-for="tag in tags" class="individual-tag" v-if="tag.count > 0">
-                        <input type="checkbox" v-model="checkedTags" :id="tag.name" :value="tag.id">
-                        <label class="tag-label-inline-p" :for="tag.name">
-                            <p v-html="tag.name"></p>
-                        </label>
-                    </div>
+                <div v-for="tag in tags" class="individual-tag" v-if="tag.count > 0">
+                    <input type="checkbox" v-model="checkedTags" :id="tag.name" :value="tag.id">
+                    <label class="tag-label-inline-p" :for="tag.name">
+                        <p v-html="tag.name"></p>
+                    </label>
+                </div>
+                <button @click="tagCutSwitcher" class="expand-tags">See all movements <i class="fa fa-chevron-down"></i></button>
             </div>
             <div v-show="loading" class="loading"><i class="loader-spin fa fa-spin fa-circle-o-notch"></i> Loading...</div>
             <div v-if="loading === false">
@@ -98,7 +99,8 @@
                 checkedTags: [],
                 currentPage: 1,
                 toURL: null,
-                questionMark: ''
+                questionMark: '',
+                tagCutSwitch: true
             }
         },
         computed: {
@@ -227,6 +229,9 @@
             },
             pageDownClick() {
                 return this.currentPage = this.currentPage - 1;
+            },
+            tagCutSwitcher() {
+                return this.tagCutSwitch = !this.tagCutSwitch;
             }
         },
         watch: {
@@ -266,7 +271,15 @@
 </script>
 
 <style scoped>
-
+    .tracks .bias {
+        padding: 10px;
+        margin: 10px;
+        background: #f2f2f2;
+        border-radius: 5px;
+        color: #c60314;
+        cursor: pointer;
+        display: inline-block;
+    }
     .pagination-holder {
         margin: 50px auto 0;
         width: 750px;
@@ -377,7 +390,65 @@ a:visited {
     margin: 0 0 20px;
     padding-bottom: 20px;
     border-bottom: 3px solid rgba(0,0,0,0.1);
+    min-height: 0;
 }
+    .tag-holder.tagcut {
+        position: relative;
+        min-height: 290px;
+        max-height: 290px;
+        padding-bottom: 80px;
+        margin: 0 0 40px;
+        overflow: hidden;
+        transition: 0.5s all ease-in-out;
+    }
+    .tag-holder.tagcut::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 80px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to bottom, rgba(255,255,255,0.6)0%, #fff);
+    }
+    .tag-holder .expand-tags {
+        display: none;
+    }
+    .tag-holder.tagcut .expand-tags {
+        width: 95%;
+        display: block;
+        bottom: 20px;
+        left: 2.5%;
+        position: absolute;
+        z-index: 2;
+        padding: 7px 20px;
+        margin: 0 auto;
+        text-align: center;
+        background: #fff;
+        border-radius: 5px;
+        border: 0;
+        color: #c60314;
+        cursor: pointer;
+        box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
+        outline: none;
+        transition: 0.5s all ease-in-out;
+    }
+    .tag-holder.tagcut .expand-tags i {
+        display: block;
+        transition: 0.25s all ease-in-out;
+    }
+    .tag-holder.tagcutexpand {
+        min-height: 0;
+        max-height: 3500px;
+        height: auto;
+        transition: 0.5s all ease-in-out;
+    }
+    .tag-holder.tagcutexpand::after {
+        height: 0;
+    }
+    .tag-holder.tagcutexpand .expand-tags i {
+        transform: rotate(180deg);
+    }
 .individual-tag {
     display: inline-block;
     margin: 4px;
@@ -388,7 +459,7 @@ input[type="checkbox"] {
     display: none;
 }
 input[type="checkbox"] + label {
-    display:inline-block; /* or block */
+    display:inline-block;
     line-height:normal;
     cursor:pointer;
     padding: 3px 5px;
@@ -549,5 +620,10 @@ input[type="checkbox"]:checked + label {
     /* .slide-fade-leave-active below version 2.1.8 */ {
     transform: translateX(10px);
     opacity: 0;
+}
+@media only screen and (max-width:465px) {
+    .search-holder input {
+        width: 215px;
+    }
 }
 </style>

@@ -295,7 +295,10 @@ p {
     .post-content {
         width: 100%;
     }
-
+    .pagination-holder .pagination-btn {
+        min-width: 100px;
+        max-width: 40%;
+    }
     .bias-wrap {
         flex-direction: row;
         width: 100%;
@@ -309,7 +312,7 @@ p {
         border-left: 1px solid rgba(0,0,0,0.1);
         max-width: 25%;
         text-align: center;
-        font-size: 12px;
+        font-size: 0.76em;
         line-height: 1.3;
         padding: 3px;
     }
