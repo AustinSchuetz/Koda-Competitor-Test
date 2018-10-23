@@ -51,7 +51,15 @@ export default {
   props: ['posts', 'total', 'totalPages'],
     data() {
         return {
-            currentPage: 1
+            currentPage: 1,
+            firstPost: 0,
+            lastPost: 8
+        }
+    },
+    watch: {
+        currentPage() {
+                this.firstPost = (this.currentPage - 1) * 9;
+                this.lastPost = (this.currentPage * 9) - 1;
         }
     },
     computed: {
@@ -60,12 +68,6 @@ export default {
         },
         previousPage() {
             return this.previousPage = this.currentPage - 1;
-        },
-        firstPost() {
-            return this.firstPost = (this.currentPage - 1) * 9;
-        },
-        lastPost() {
-            return this.lastPost = (this.currentPage * 9) - 1;
         }
     },
   methods: {

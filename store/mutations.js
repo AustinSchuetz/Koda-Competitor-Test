@@ -31,5 +31,8 @@ export default {
   },
   setActiveStore (state, menuItem) {
     state.activeBias = menuItem;
+  },
+  setActiveLeaderboard (state, menuItem) {
+    state.activeLeaderboard = menuItem;
   }
 };

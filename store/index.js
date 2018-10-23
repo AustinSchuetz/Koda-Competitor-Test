@@ -34,7 +34,8 @@ const store = () => {
       scrollPosition: null,
       leaderboardPost: null,
       total: null,
-      totalPages: null
+      totalPages: null,
+      activeLeaderboard: 'menrx'
     },
     actions,
     mutations,
