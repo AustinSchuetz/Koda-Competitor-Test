@@ -34,7 +34,7 @@
                     </div>
                 </div>
                 <div v-if="post.acf.workout_id">
-                    <LeaderboardWOD :slugWorkoutID="post.acf.workout_id"></LeaderboardWOD>
+                    <LeaderboardWOD :slugWorkoutID="post.acf.workout_id" :slugWorkoutTitle="post.acf.workout_title" :slugWorkoutDate="post.date"></LeaderboardWOD>
                 </div>
             </div>
             <h2 class="other-wods-title">More Workout Posts</h2>

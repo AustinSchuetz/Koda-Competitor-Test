@@ -3,11 +3,12 @@
         <div class="logo-programming-select-holder" :class="{ scrolled: this.$store.state.scrollPosition > 0, hideLeaderboard: this.$store.state.hideLeaderboardGlobal }">
             <div class="leaderboard-button hide-on-load" title="Expand/Collaspe Leaderboard" @click="switchLeaderboard" :class="{ hideLeaderboardBtn: this.$store.state.hideLeaderboardGlobal, showOnLoad: this.showOn }"><font-awesome-icon icon="chevron-left" /></div>
             <div class="leaderboard-wrap">
-                <Leaderboard></Leaderboard>
+                <LeaderboardSugarWod></LeaderboardSugarWod>
             </div>
             <div class="social">
                 <a href="https://www.instagram.com/kodacompetitor/" class="fa fa-instagram" target="_blank"></a>
                 <a href="https://www.facebook.com/groups/416882822174358/" class="fa fa-facebook" target="_blank"></a>
+                <a href="mailto:contact@kodacompetitor.com" class="contact-email" target="_blank">contact@kodacompetitor.com</a>
             </div>
         </div>
     </div>
@@ -15,14 +16,14 @@
 
 <script>
     import axios from 'axios'
-    import Leaderboard from '../components/Leaderboard.vue'
+    import LeaderboardSugarWod from '~/components/LeaderboardSugarWod.vue'
     import { library } from '@fortawesome/fontawesome-svg-core'
     import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
     import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
     library.add(faChevronLeft);
 
     export default {
-        components: {Leaderboard, library, faChevronLeft, FontAwesomeIcon},
+        components: {LeaderboardSugarWod, library, faChevronLeft, FontAwesomeIcon},
         name: "programming-sidebar",
         data() {
             return {
@@ -129,6 +130,22 @@
     text-align: center;
 }
 .fa:hover {
+    color: #1d1d1d;
+    border: none;
+}
+.contact-email {
+    color:#C60314;
+    font-weight: bold;
+    text-decoration:none;
+    display: inline-block;
+    transition: 0.2s ease-in-out;
+    font-size: 14px;
+    padding: 0;
+    margin: 0 auto;
+    border: none;
+    text-align: center;
+}
+.contact-email:hover {
     color: #1d1d1d;
     border: none;
 }
