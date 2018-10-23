@@ -74,11 +74,5 @@
     @media only screen
     and (min-device-width : 320px)
     and (max-device-width : 480px) {
-        h3 {
-            font-size: 1.5em;
-            font-weight: 700;
-            line-height: 44px;
-        }
-
     }
 </style>
