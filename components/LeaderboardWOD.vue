@@ -30,7 +30,6 @@
             </transition>
             <transition name="slide-fade">
                 <div v-if="$store.state.activeLeaderboard === 'womenrx'">
-                    Women RX
                     <div class="leader" v-for="(result, index) in leaderboard.data.womenrx">
                         <div class="score-wrap">
                             <p>{{ (index + 1) }}</p>
@@ -65,7 +64,6 @@
             </transition>
             <transition name="slide-fade">
                 <div v-if="$store.state.activeLeaderboard === 'womenscaled'">
-                    Women Scaled
                     <div class="leader" v-for="(result, index) in leaderboard.data.womenscaled">
                         <div class="score-wrap">
                             <p>{{ (index + 1) }}</p>
@@ -155,7 +153,7 @@
         justify-content: flex-start;
         align-items: center;
         color: #717171;
-        padding: 8px 0;
+        padding: 10px 0 0;
     }
 
     .leader .score-wrap h5 {
@@ -262,14 +260,14 @@
         transform: translateX(10px);
         opacity: 0;
     }
+    .score p {
+        line-height: 1;
+    }
     @media only screen and (max-width:790px) {
         .leaderboard {
             margin: 20px auto;
             width: 100%;
             max-width: 100%;
-        }
-        .score p {
-            line-height: 1;
         }
     }
 </style>

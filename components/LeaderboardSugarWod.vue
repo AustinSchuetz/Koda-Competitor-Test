@@ -7,84 +7,86 @@
             <h3 class="workout-title">{{ this.workoutTitle }}</h3>
 
             <!--<div v-if="loading" class="loading"><i class="loader-spin fa fa-spin fa-circle-o-notch"></i> Loading...</div>-->
-            <div v-if="loadLeaderboardPost" class="scrollable-leaderboard">
+            <div v-if="loadLeaderboardPost">
                 <div class="bias-wrap">
                     <a v-if="leaderboard.data.menrx" @click="setActive('menrx')" :class="{ activebias: $store.state.activeLeaderboard === 'menrx' }" href="javascript:void(0)" class="bias">Men</br>RX</a>
                     <a v-if="leaderboard.data.womenrx" @click="setActive('womenrx')" :class="{ activebias: $store.state.activeLeaderboard === 'womenrx' }" href="javascript:void(0)" class="bias">Women RX</a>
                     <a v-if="leaderboard.data.menscaled" @click="setActive('menscaled')" :class="{ activebias: $store.state.activeLeaderboard === 'menscaled' }" href="javascript:void(0)" class="bias">Men Scaled</a>
                     <a v-if="leaderboard.data.womenscaled" @click="setActive('womenscaled')" :class="{ activebias: $store.state.activeLeaderboard === 'womenscaled' }" href="javascript:void(0)" class="bias">Women Scaled</a>
-
                 </div>
-                <transition name="slide-fade">
-                    <div v-if="$store.state.activeLeaderboard === 'menrx'">
-                        <div class="leader" v-for="(result, index) in leaderboard.data.menrx">
-                            <div class="score-wrap">
-                                <p>{{ (index + 1) }}</p>
-                                <div v-if="result.athleteProfileURL" class="profile-pic" :style="{ 'background-image': 'url(' + result.athleteProfileURL + ')' }"></div>
-                                <div v-else class="no-profile-pic-bg">
-                                    <img src="~/assets/KODAXLogo.svg">
-                                </div>
-                                <div class="score">
-                                    <p>{{ result.athleteName }}</p>
-                                    <h5>({{ result.result }})</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </transition>
-                <transition name="slide-fade">
-                    <div v-if="$store.state.activeLeaderboard === 'womenrx'">
-                        Women RX
-                        <div class="leader" v-for="(result, index) in leaderboard.data.womenrx">
-                            <div class="score-wrap">
-                                <p>{{ (index + 1) }}</p>
-                                <div v-if="result.athleteProfileURL" class="profile-pic" :style="{ 'background-image': 'url(' + result.athleteProfileURL + ')' }"></div>
-                                <div v-else class="no-profile-pic-bg">
-                                    <img src="~/assets/KODAXLogo.svg">
-                                </div>
-                                <div class="score">
-                                    <p>{{ result.athleteName }}</p>
-                                    <h5>({{ result.result }})</h5>
+
+                <div class="scrollable-leaderboard">
+                    <transition name="slide-fade">
+                        <div v-if="$store.state.activeLeaderboard === 'menrx'">
+                            <div class="leader" v-for="(result, index) in leaderboard.data.menrx">
+                                <div class="score-wrap">
+                                    <p>{{ (index + 1) }}</p>
+                                    <div v-if="result.athleteProfileURL" class="profile-pic" :style="{ 'background-image': 'url(' + result.athleteProfileURL + ')' }"></div>
+                                    <div v-else class="no-profile-pic-bg">
+                                        <img src="~/assets/KODAXLogo.svg">
+                                    </div>
+                                    <div class="score">
+                                        <p>{{ result.athleteName }}</p>
+                                        <h5>({{ result.result }})</h5>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </transition>
-                <transition name="slide-fade">
-                    <div v-if="$store.state.activeLeaderboard === 'menscaled'">
-                        <div class="leader" v-for="(result, index) in leaderboard.data.menscaled">
-                            <div class="score-wrap">
-                                <p>{{ (index + 1) }}</p>
-                                <div v-if="result.athleteProfileURL" class="profile-pic" :style="{ 'background-image': 'url(' + result.athleteProfileURL + ')' }"></div>
-                                <div v-else class="no-profile-pic-bg">
-                                    <img src="~/assets/KODAXLogo.svg">
-                                </div>
-                                <div class="score">
-                                    <p>{{ result.athleteName }}</p>
-                                    <h5>({{ result.result }})</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </transition>
-                <transition name="slide-fade">
-                    <div v-if="$store.state.activeLeaderboard === 'womenscaled'">
-                        Women Scaled
-                        <div class="leader" v-for="(result, index) in leaderboard.data.womenscaled">
-                            <div class="score-wrap">
-                                <p>{{ (index + 1) }}</p>
-                                <div v-if="result.athleteProfileURL" class="profile-pic" :style="{ 'background-image': 'url(' + result.athleteProfileURL + ')' }"></div>
-                                <div v-else class="no-profile-pic-bg">
-                                    <img src="~/assets/KODAXLogo.svg">
-                                </div>
-                                <div class="score">
-                                    <p>{{ result.athleteName }}</p>
-                                    <h5>({{ result.result }})</h5>
+                    </transition>
+                    <transition name="slide-fade">
+                        <div v-if="$store.state.activeLeaderboard === 'womenrx'">
+                            Women RX
+                            <div class="leader" v-for="(result, index) in leaderboard.data.womenrx">
+                                <div class="score-wrap">
+                                    <p>{{ (index + 1) }}</p>
+                                    <div v-if="result.athleteProfileURL" class="profile-pic" :style="{ 'background-image': 'url(' + result.athleteProfileURL + ')' }"></div>
+                                    <div v-else class="no-profile-pic-bg">
+                                        <img src="~/assets/KODAXLogo.svg">
+                                    </div>
+                                    <div class="score">
+                                        <p>{{ result.athleteName }}</p>
+                                        <h5>({{ result.result }})</h5>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </transition>
+                    </transition>
+                    <transition name="slide-fade">
+                        <div v-if="$store.state.activeLeaderboard === 'menscaled'">
+                            <div class="leader" v-for="(result, index) in leaderboard.data.menscaled">
+                                <div class="score-wrap">
+                                    <p>{{ (index + 1) }}</p>
+                                    <div v-if="result.athleteProfileURL" class="profile-pic" :style="{ 'background-image': 'url(' + result.athleteProfileURL + ')' }"></div>
+                                    <div v-else class="no-profile-pic-bg">
+                                        <img src="~/assets/KODAXLogo.svg">
+                                    </div>
+                                    <div class="score">
+                                        <p>{{ result.athleteName }}</p>
+                                        <h5>({{ result.result }})</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </transition>
+                    <transition name="slide-fade">
+                        <div v-if="$store.state.activeLeaderboard === 'womenscaled'">
+                            Women Scaled
+                            <div class="leader" v-for="(result, index) in leaderboard.data.womenscaled">
+                                <div class="score-wrap">
+                                    <p>{{ (index + 1) }}</p>
+                                    <div v-if="result.athleteProfileURL" class="profile-pic" :style="{ 'background-image': 'url(' + result.athleteProfileURL + ')' }"></div>
+                                    <div v-else class="no-profile-pic-bg">
+                                        <img src="~/assets/KODAXLogo.svg">
+                                    </div>
+                                    <div class="score">
+                                        <p>{{ result.athleteName }}</p>
+                                        <h5>({{ result.result }})</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </transition>
+                </div>
             </div>
         </div>
     </div>
@@ -153,7 +155,7 @@
     }
     .scrollable-leaderboard {
         overflow-y: auto;
-        max-height: calc(100vh - 276px);
+        max-height: calc(100vh - 330px);
         padding: 0 10px;
     }
     .logo-programming-select-holder.hideLeaderboard .scrollable-leaderboard {
@@ -178,7 +180,7 @@
         justify-content: flex-start;
         align-items: center;
         color: #717171;
-        padding: 8px 0;
+        padding: 10px 0 0;
     }
 
     .leader .score-wrap h5 {
