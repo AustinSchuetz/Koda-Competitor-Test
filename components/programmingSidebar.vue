@@ -3,7 +3,7 @@
         <div class="logo-programming-select-holder" :class="{ scrolled: this.$store.state.scrollPosition > 0, hideLeaderboard: this.$store.state.hideLeaderboardGlobal }">
             <div class="leaderboard-button hide-on-load" title="Expand/Collaspe Leaderboard" @click="switchLeaderboard" :class="{ hideLeaderboardBtn: this.$store.state.hideLeaderboardGlobal, showOnLoad: this.showOn }"><font-awesome-icon icon="chevron-left" /></div>
             <div class="leaderboard-wrap">
-                <!--<LeaderboardSugarWod></LeaderboardSugarWod>-->
+                <LeaderboardSugarWod></LeaderboardSugarWod>
             </div>
             <div class="social">
                 <a href="https://www.instagram.com/kodacompetitor/" class="fa fa-instagram" target="_blank"></a>
@@ -44,6 +44,7 @@
             },
             getWindowWidth(event) {
                 this.windowWidth = document.documentElement.clientWidth;
+                this.showOn = true;
                 if (this.windowWidth < 700) {
                     return this.closeLeaderboard();
                 } if (this.windowWidth > 699) {
@@ -57,7 +58,6 @@
         },
         mounted() {
             this.$nextTick(function() {
-                // window.addEventListener('resize', this.getWindowWidth);
                 this.windowWidth = document.documentElement.clientWidth;
                 this.showOn = true;
                 if (this.windowWidth < 700) {

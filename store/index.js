@@ -29,7 +29,7 @@ const store = () => {
         slug: null
       },
       categories: [],
-      hideLeaderboardGlobal: false,
+      hideLeaderboardGlobal: true,
       activeBias: null,
       scrollPosition: null,
       leaderboardPost: null,
