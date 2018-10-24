@@ -1,17 +1,12 @@
 <template>
     <div class="leaderboard">
         <h2>Leaderboard</h2>
-        <!--<div v-if="loading" class="loading"><i class="loader-spin fa fa-spin fa-circle-o-notch"></i> Loading...</div>-->
         <div v-if="$store.state.hideLeaderboardGlobal === false">
             <h2 v-if="workoutDate !== null">{{ this.workoutDate | moment("MMM Do YYYY") }}</h2>
-            <!--<div v-for="postID in leaderboardPostID" ref="workoutIDdiv" id="workoutIDdiv" :mounted="loadLeaderboard(postID.acf.workout_id)">-->
-                <!--<div :mounted="loadLeaderboardDate(postID.date)"></div>-->
-                <!--<div class="divider"></div>-->
-                <!--<h3 class="workout-title">{{ postID.acf.workout_title }}</h3>-->
-            <!--</div>-->
             <div class="divider"></div>
             <h3 class="workout-title">{{ this.workoutTitle }}</h3>
 
+            <!--<div v-if="loading" class="loading"><i class="loader-spin fa fa-spin fa-circle-o-notch"></i> Loading...</div>-->
             <div v-if="loadLeaderboardPost" class="scrollable-leaderboard">
                 <div class="bias-wrap">
                     <a v-if="leaderboard.data.menrx" @click="setActive('menrx')" :class="{ activebias: $store.state.activeLeaderboard === 'menrx' }" href="javascript:void(0)" class="bias">Men</br>RX</a>
@@ -120,54 +115,16 @@
         },
         mounted() {
             this.$store.dispatch('getLeaderboard');
-            console.log(this.$store.state.leaderboardWorkout);
-            // var workout_id = this.$store.state.leaderboardWorkout[0].acf.workout_id;
-            // console.log(this.$store.state.leaderboardWorkout[0].acf.workout_id);
-            // return  axios.get('https://app.sugarwod.com/public/api/v1/affiliates/73VzW8aW2l/workouts/' + this.$store.state.leaderboardWorkout[0].acf.workout_id + '/results?gender=both&resultType=0&grouped=true&sort=score')
-            //     .then(res => {
-            //         this.leaderboard = res.data;
-            //     });
         },
         methods: {
-            // loadLeaderboard(workoutID) {
-            //     return  axios.get('https://app.sugarwod.com/public/api/v1/affiliates/73VzW8aW2l/workouts/' + workoutID + '/results?gender=both&resultType=0&grouped=true&sort=score')
-            //         .then(res => {
-            //             this.leaderboard = res.data;
-            //             return axios.get('https://api.sugarwod.com/v2/workouts/qTnEeFyURi/', {
-            //                 headers: {
-            //                     'Authorization': 'e0f6f247-4231-49e2-824a-d19640794f24';
-            //                 }
-            //             });
-            //         })
-            //         .then(res => (this.workoutInfo = res.data));
-            // }
-
-
-
             loadLeaderboard(workoutID) {
                 return  axios.get('https://app.sugarwod.com/public/api/v1/affiliates/73VzW8aW2l/workouts/' + workoutID + '/results?gender=both&resultType=0&grouped=true&sort=score')
                     .then(res => {
                         this.leaderboard = res.data;
                     })
             },
-            // loadLeaderboard(workoutID) {
-            //     return  axios.get('https://app.sugarwod.com/public/api/v1/affiliates/73VzW8aW2l/workouts/' + workoutID + '/results?gender=both&resultType=0&grouped=true&sort=score')
-            //         .then(res => {
-            //             this.leaderboard = res.data;
-            //             return
-            //         });
-            // },
             loadLeaderboardDate(LeaderboardDate) {
                 this.workoutDate = LeaderboardDate;
-                // return  axios.get('https://api.sugarwod.com/v2/workouts/qTnEeFyURi/', {
-                //     headers: {
-                //         'Authorization': 'e0f6f247-4231-49e2-824a-d19640794f24',
-                //         'Access-Control-Allow-Origin': '*'
-                //     }
-                // })
-                // return  axios.get('https://app.sugarwod.com/public/api/v1/affiliates/73VzW8aW2l/workouts/days/1/html')
-                //     .then(res => (this.workoutInfo = res.data));
-                //     // change the end to be the formatted workout date LeaderboardDate | moment('YYYYMMDD')
             },
             setActive: function (menuItem) {
                 this.$store.commit('setActiveLeaderboard', menuItem);
@@ -183,7 +140,8 @@
                 this.workoutDate = newValue[0].date;
             },
             workoutID() {
-                this.loadLeaderboard(this.workoutID)
+                this.loadLeaderboard(this.workoutID);
+                this.loading = false;
             }
         }
     }

@@ -71,7 +71,6 @@ export default {
    * @return Promise Filtered response
    */
   getPosts() {
-    console.log("Request to posts");
     return new Promise((resolve, reject) => {
       request.defaults.baseURL = this.baseUrl;
       request.get(`posts?categories=2`).then(response => {

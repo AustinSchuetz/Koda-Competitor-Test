@@ -268,5 +268,8 @@
             width: 100%;
             max-width: 100%;
         }
+        .score p {
+            line-height: 1;
+        }
     }
 </style>
