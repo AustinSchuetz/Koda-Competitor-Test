@@ -2,9 +2,9 @@
     <div class="leaderboard">
         <h2>Leaderboard</h2>
         <!--<div v-if="loading" class="loading"><i class="loader-spin fa fa-spin fa-circle-o-notch"></i> Loading...</div>-->
-        <div>
+        <div v-if="$store.state.hideLeaderboardGlobal === false">
             <h2 v-if="workoutDate !== null">{{ this.workoutDate | moment("MMM Do YYYY") }}</h2>
-            <div v-for="postID in leaderboardPostID" ref="workoutIDdiv" id="workoutIDdiv" :load="loadLeaderboard(postID.acf.workout_id)">
+            <div v-for="postID in leaderboardPostID" ref="workoutIDdiv" id="workoutIDdiv" :mounted="loadLeaderboard(postID.acf.workout_id)">
                 <div :load="loadLeaderboardDate(postID.date)"></div>
                 <div class="divider"></div>
                 <h3 class="workout-title">{{ postID.acf.workout_title }}</h3>
@@ -134,6 +134,7 @@
                 return  axios.get('https://app.sugarwod.com/public/api/v1/affiliates/73VzW8aW2l/workouts/' + workoutID + '/results?gender=both&resultType=0&grouped=true&sort=score')
                     .then(res => {
                         this.leaderboard = res.data;
+                        console.log('derp');
                     })
             },
             // loadLeaderboard(workoutID) {
