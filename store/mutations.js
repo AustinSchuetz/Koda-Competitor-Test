@@ -1,3 +1,4 @@
+import axios from 'axios'
 export default {
   PAGE: (state, page) => {
     state.page = page;
@@ -34,5 +35,8 @@ export default {
   },
   setActiveLeaderboard (state, menuItem) {
     state.activeLeaderboard = menuItem;
-  }
+  },
+    LEADERBOARD: (state, leaderboardWorkout) => {
+        state.leaderboardWorkout = leaderboardWorkout;
+    }
 };

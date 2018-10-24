@@ -4,11 +4,13 @@
         <!--<div v-if="loading" class="loading"><i class="loader-spin fa fa-spin fa-circle-o-notch"></i> Loading...</div>-->
         <div v-if="$store.state.hideLeaderboardGlobal === false">
             <h2 v-if="workoutDate !== null">{{ this.workoutDate | moment("MMM Do YYYY") }}</h2>
-            <div v-for="postID in leaderboardPostID" ref="workoutIDdiv" id="workoutIDdiv" :mounted="loadLeaderboard(postID.acf.workout_id)">
-                <div :load="loadLeaderboardDate(postID.date)"></div>
-                <div class="divider"></div>
-                <h3 class="workout-title">{{ postID.acf.workout_title }}</h3>
-            </div>
+            <!--<div v-for="postID in leaderboardPostID" ref="workoutIDdiv" id="workoutIDdiv" :mounted="loadLeaderboard(postID.acf.workout_id)">-->
+                <!--<div :mounted="loadLeaderboardDate(postID.date)"></div>-->
+                <!--<div class="divider"></div>-->
+                <!--<h3 class="workout-title">{{ postID.acf.workout_title }}</h3>-->
+            <!--</div>-->
+            <div class="divider"></div>
+            <h3 class="workout-title">{{ this.workoutTitle }}</h3>
 
             <div v-if="loadLeaderboardPost" class="scrollable-leaderboard">
                 <div class="bias-wrap">
@@ -102,17 +104,29 @@
             return {
                 leaderboard: [],
                 workoutInfo: [],
+                workoutID: null,
                 workoutDate: null,
                 workoutTitle: '',
-                loadLeaderboardPost: false,
-                dateForSugarWod: null
-                // athletePics: null
+                loadLeaderboardPost: false
             }
         },
         computed: {
             leaderboardPostID() {
                 return this.$store.state.leaderboardPost
+            },
+            leaderboardWorkoutID() {
+                return this.$store.state.leaderboardWorkout;
             }
+        },
+        mounted() {
+            this.$store.dispatch('getLeaderboard');
+            console.log(this.$store.state.leaderboardWorkout);
+            // var workout_id = this.$store.state.leaderboardWorkout[0].acf.workout_id;
+            // console.log(this.$store.state.leaderboardWorkout[0].acf.workout_id);
+            // return  axios.get('https://app.sugarwod.com/public/api/v1/affiliates/73VzW8aW2l/workouts/' + this.$store.state.leaderboardWorkout[0].acf.workout_id + '/results?gender=both&resultType=0&grouped=true&sort=score')
+            //     .then(res => {
+            //         this.leaderboard = res.data;
+            //     });
         },
         methods: {
             // loadLeaderboard(workoutID) {
@@ -134,7 +148,6 @@
                 return  axios.get('https://app.sugarwod.com/public/api/v1/affiliates/73VzW8aW2l/workouts/' + workoutID + '/results?gender=both&resultType=0&grouped=true&sort=score')
                     .then(res => {
                         this.leaderboard = res.data;
-                        console.log('derp');
                     })
             },
             // loadLeaderboard(workoutID) {
@@ -163,6 +176,14 @@
         watch: {
             leaderboard() {
                 this.loadLeaderboardPost = true;
+            },
+            leaderboardWorkoutID(newValue) {
+                this.workoutID = newValue[0].acf.workout_id;
+                this.workoutTitle = newValue[0].acf.workout_title;
+                this.workoutDate = newValue[0].date;
+            },
+            workoutID() {
+                this.loadLeaderboard(this.workoutID)
             }
         }
     }

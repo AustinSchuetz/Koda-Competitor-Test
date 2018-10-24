@@ -35,6 +35,9 @@ const store = () => {
       leaderboardPost: null,
       total: null,
       totalPages: null,
+      leaderboard: [],
+      leaderboardWorkout: [],
+      leaderboardWorkoutID: null,
       activeLeaderboard: 'menrx'
     },
     actions,
