@@ -120,7 +120,7 @@
         },
         methods: {
             loadLeaderboard(workoutID) {
-                return  axios.get('https://app.sugarwod.com/public/api/v1/affiliates/73VzW8aW2l/workouts/' + workoutID + '/results?gender=both&resultType=0&grouped=true&sort=score')
+                return  axios.get('https://app.sugarwod.com/public/api/v1/affiliates/60y0CEIXCy/workouts/' + workoutID + '/results?gender=both&resultType=0&grouped=true&sort=score')
                     .then(res => {
                         this.leaderboard = res.data;
                     })
