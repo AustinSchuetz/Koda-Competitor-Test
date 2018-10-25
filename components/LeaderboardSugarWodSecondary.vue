@@ -1,10 +1,8 @@
 <template>
-    <div class="leaderboard">
-        <h2>Leaderboard</h2>
+    <div class="leaderboard secondary-leaderboard">
+        <div class="divider"></div>
         <div v-if="$store.state.hideLeaderboardGlobal === false">
-            <h2 v-if="workoutDate !== null">{{ this.workoutDate | moment("MMM Do YYYY") }}</h2>
-            <div class="divider"></div>
-            <h3 class="workout-title">{{ this.workoutTitle }}</h3>
+            <h3 class="workout-title">{{ this.multiWorkoutTitle }}</h3>
 
             <!--<div v-if="loading" class="loading"><i class="loader-spin fa fa-spin fa-circle-o-notch"></i> Loading...</div>-->
             <div v-if="loadLeaderboardPost">
@@ -15,7 +13,6 @@
                     <a v-if="leaderboard.data.womenscaled" @click="setActive('womenscaled')" :class="{ activebias: $store.state.activeLeaderboard === 'womenscaled' }" href="javascript:void(0)" class="bias">Women Scaled</a>
                 </div>
 
-                <div class="scrollable-leaderboard">
                     <transition name="slide-fade">
                         <div v-if="$store.state.activeLeaderboard === 'menrx'">
                             <div class="leader" v-for="(result, index) in leaderboard.data.menrx">
@@ -84,10 +81,6 @@
                             </div>
                         </div>
                     </transition>
-                    <div v-if="this.loadSecondaryLeaderboard === true">
-                        <LeaderboardSugarWodSecondary v-for="leaderboard in $store.state.leaderboardWorkout[0].acf.multiple_scored_workouts_repeater"  :key="leaderboard.scored_workout_id" :multiWorkoutID="leaderboard.scored_workout_id" :multiWorkoutTitle="leaderboard.scored_workout_title"></LeaderboardSugarWodSecondary>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -95,11 +88,10 @@
 
 <script>
 
-    import LeaderboardSugarWodSecondary from '~/components/LeaderboardSugarWodSecondary.vue'
     import axios from 'axios'
     export default {
         name: "Leaderboard",
-        components: {LeaderboardSugarWodSecondary},
+        props: ['multiWorkoutID', 'multiWorkoutTitle'],
         data() {
             return {
                 leaderboard: [],
@@ -107,49 +99,22 @@
                 workoutID: null,
                 workoutDate: null,
                 workoutTitle: '',
-                loadLeaderboardPost: false,
-                loadSecondaryLeaderboard: false
-            }
-        },
-        computed: {
-            leaderboardPostID() {
-                return this.$store.state.leaderboardPost
-            },
-            leaderboardWorkoutID() {
-                return this.$store.state.leaderboardWorkout;
+                loadLeaderboardPost: false
             }
         },
         mounted() {
-            this.$store.dispatch('getLeaderboard');
+            return this.loadLeaderboard();
         },
         methods: {
-            loadLeaderboard(workoutID) {
-                return  axios.get('https://app.sugarwod.com/public/api/v1/affiliates/60y0CEIXCy/workouts/' + workoutID + '/results?gender=both&resultType=0&grouped=true&sort=score')
+            loadLeaderboard() {
+                return  axios.get('https://app.sugarwod.com/public/api/v1/affiliates/60y0CEIXCy/workouts/' + this.multiWorkoutID + '/results?gender=both&resultType=0&grouped=true&sort=score')
                     .then(res => {
                         this.leaderboard = res.data;
+                        this.loadLeaderboardPost = true;
                     })
-            },
-            loadLeaderboardDate(LeaderboardDate) {
-                this.workoutDate = LeaderboardDate;
             },
             setActive: function (menuItem) {
                 this.$store.commit('setActiveLeaderboard', menuItem);
-            }
-        },
-        watch: {
-            leaderboard() {
-                this.loadLeaderboardPost = true;
-                console.log(this.$store.state.leaderboardWorkout[0].acf.multiple_scored_workouts_repeater);
-                this.loadSecondaryLeaderboard = true;
-            },
-            leaderboardWorkoutID(newValue) {
-                this.workoutID = newValue[0].acf.workout_id;
-                this.workoutTitle = newValue[0].acf.workout_title;
-                this.workoutDate = newValue[0].title.rendered;
-            },
-            workoutID() {
-                this.loadLeaderboard(this.workoutID);
-                this.loading = false;
             }
         }
     }
@@ -158,6 +123,9 @@
 <style scoped>
     .leaderboard {
         width: 100%;
+    }
+    .secondary-leaderboard {
+        margin-top: 20px;
     }
     .scrollable-leaderboard {
         overflow-y: auto;

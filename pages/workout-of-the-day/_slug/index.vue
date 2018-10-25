@@ -34,7 +34,7 @@
                     </div>
                 </div>
                 <div v-if="post.acf.workout_id">
-                    <LeaderboardWOD :slugWorkoutID="post.acf.workout_id" :slugWorkoutTitle="post.acf.workout_title" :slugWorkoutDate="post.date"></LeaderboardWOD>
+                    <LeaderboardWOD :slugWorkoutID="post.acf.workout_id" :slugWorkoutTitle="post.acf.workout_title" :slugWorkoutDate="post.title.rendered"></LeaderboardWOD>
                     <LeaderboardWOD class="secondary-leaderboard" v-for="leaderboard in post.acf.multiple_scored_workouts_repeater" :key="leaderboard.scored_workout_id" :slugWorkoutID="leaderboard.scored_workout_id" :slugWorkoutTitle="leaderboard.scored_workout_title" :slugWorkoutDate="post.date"></LeaderboardWOD>
                 </div>
             </div>
