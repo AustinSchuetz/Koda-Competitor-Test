@@ -41,12 +41,12 @@ html {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
 }
-.post h4, .post-content h4 {
+.post h4, .post-content h4, .post-text-content h4 {
   text-transform: uppercase;
   letter-spacing: 0.5px;
   color: #c60314;
   font-weight: 800;
-  padding: 10px;
+  padding: 5px;
   margin-bottom: 10px;
   border-bottom: 2px solid #c60314;
 }

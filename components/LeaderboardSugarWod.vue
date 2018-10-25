@@ -35,7 +35,6 @@
                     </transition>
                     <transition name="slide-fade">
                         <div v-if="$store.state.activeLeaderboard === 'womenrx'">
-                            Women RX
                             <div class="leader" v-for="(result, index) in leaderboard.data.womenrx">
                                 <div class="score-wrap">
                                     <p>{{ (index + 1) }}</p>
@@ -70,7 +69,6 @@
                     </transition>
                     <transition name="slide-fade">
                         <div v-if="$store.state.activeLeaderboard === 'womenscaled'">
-                            Women Scaled
                             <div class="leader" v-for="(result, index) in leaderboard.data.womenscaled">
                                 <div class="score-wrap">
                                     <p>{{ (index + 1) }}</p>
