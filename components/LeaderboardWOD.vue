@@ -124,7 +124,7 @@
         border-radius: 5px;
         background: #fff;
         box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
-        margin: 0 auto;
+        margin: 0 auto 15px;
     }
     .scrollable-leaderboard {
         overflow-y: auto;
@@ -262,6 +262,9 @@
     }
     .score p {
         line-height: 1;
+    }
+    .secondary-leaderboard h2, .secondary-leaderboard .divider {
+        display: none;
     }
     @media only screen and (max-width:790px) {
         .leaderboard {
