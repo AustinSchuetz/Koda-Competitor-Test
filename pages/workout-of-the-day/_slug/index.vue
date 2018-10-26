@@ -40,9 +40,9 @@
             </div>
             <h2 class="other-wods-title">More Workout Posts</h2>
             <div class="pagination-holder">
-                <nuxt-link class="pagination-btn" :to="post.previous.slug" v-if="post.previous"><font-awesome-icon icon="chevron-left" /> {{ post.previous.title }}</nuxt-link>
+                <nuxt-link class="pagination-btn" :to="post.previous.slug" v-if="post.previous"><font-awesome-icon icon="chevron-left" /> <span class="more-workouts-title">{{ post.previous.title }}</span></nuxt-link>
                 <nuxt-link class="pagination-btn" :to="'/workout-library/'">Full Workout Library</nuxt-link>
-                <nuxt-link class="pagination-btn" :to="post.next.slug" v-if="post.next">{{ post.next.title }} <font-awesome-icon icon="chevron-left" style="transform: rotate(180deg);" /></nuxt-link>
+                <nuxt-link class="pagination-btn" :to="post.next.slug" v-if="post.next"><span class="more-workouts-title">{{ post.next.title }}</span> <font-awesome-icon icon="chevron-left" style="transform: rotate(180deg);" /></nuxt-link>
             </div>
         </div>
     </div>
@@ -131,6 +131,7 @@ export default {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
 }
 .pagination-holder .pagination-btn {
     background: #fff;
@@ -283,6 +284,13 @@ p {
     padding: 20px;
 }
 @media only screen and (max-width:790px) {
+    .more-workouts-title {
+        display: none;
+    }
+    .pagination-holder .pagination-btn {
+        min-width: 50px;
+        max-width: 80%;
+    }
     .post-container {
         flex-direction: column;
     }
@@ -291,10 +299,6 @@ p {
     }
     .post-content {
         width: 100%;
-    }
-    .pagination-holder .pagination-btn {
-        min-width: 100px;
-        max-width: 40%;
     }
     .bias-wrap {
         flex-direction: row;

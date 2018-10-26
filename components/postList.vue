@@ -36,18 +36,22 @@
             </nuxt-link>
         </div>
         <div class="pagination-holder">
-            <button class="pagination-btn" @click="pageDownClick" v-if="currentPage > 1">Previous Page</button>
+            <button class="pagination-btn" @click="pageDownClick" v-if="currentPage > 1"><font-awesome-icon icon="chevron-left" /> <span class="more-workouts-title">Previous Page</span></button>
             <nuxt-link class="pagination-btn" :to="'/workout-library/'">Full Workout Library</nuxt-link>
-            <button class="pagination-btn" @click="pageUpClick" v-if="currentPage < totalPages">Next Page</button>
+            <button class="pagination-btn" @click="pageUpClick" v-if="currentPage < totalPages"><span class="more-workouts-title">Next Page</span> <font-awesome-icon icon="chevron-left" style="transform: rotate(180deg);" /></button>
         </div>
     </div>
 </template>
 
 <script>
     import Leaderboard from '../components/Leaderboard.vue'
+    import { library } from '@fortawesome/fontawesome-svg-core'
+    import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
+    import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+    library.add(faChevronLeft);
 
 export default {
-  components: {Leaderboard},
+  components: {Leaderboard, library, faChevronLeft, FontAwesomeIcon},
   props: ['posts', 'total', 'totalPages'],
     data() {
         return {
@@ -339,6 +343,13 @@ export default {
         }
         .mobile-title {
             font-size: 1.35em;
+        }
+        .more-workouts-title {
+            display: none;
+        }
+        .pagination-holder .pagination-btn {
+            min-width: 50px;
+            max-width: 80%;
         }
     }
     .slide-fade-enter-active {

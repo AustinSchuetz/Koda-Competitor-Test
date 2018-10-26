@@ -68,8 +68,8 @@
                         </nuxt-link>
                     </div>
                     <div class="pagination-holder" :class="{ flexStart: currentPage == totalPages, flexEnd: currentPage === 1}">
-                        <button class="pagination-btn" @click="pageDownClick" v-if="currentPage > 1">Previous Page</button>
-                        <button class="pagination-btn" @click="pageUpClick" v-if="currentPage < totalPages" >Next Page</button>
+                        <button class="pagination-btn" @click="pageDownClick" v-if="currentPage > 1"><font-awesome-icon icon="chevron-left" /> <span class="more-workouts-title">Previous Page</span></button>
+                        <button class="pagination-btn" @click="pageUpClick" v-if="currentPage < totalPages"><span class="more-workouts-title">Next Page</span> <font-awesome-icon icon="chevron-left" style="transform: rotate(180deg);" /></button>
                     </div>
                 </div>
 
@@ -85,8 +85,13 @@
 
 <script>
     import axios from 'axios'
+    import { library } from '@fortawesome/fontawesome-svg-core'
+    import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
+    import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+    library.add(faChevronLeft);
     export default {
         name: "index",
+        components: { library, faChevronLeft, FontAwesomeIcon },
         data() {
             return {
                 workouts: null,
@@ -129,7 +134,7 @@
                 this.currentPage = params.get("page");
             }
             this.getWorkouts();
-            return axios.get('https://wod.kodacompetitor.com/wp-json/wp/v2/tags').then(
+            return axios.get('https://wod.kodacompetitor.com/wp-json/wp/v2/tags?per_page=500').then(
                     response => this.tags = response.data
                 ).catch(error => console.log(error)).then(() => this.initialLoading = false).then(() => this.loading = false);
         },
@@ -167,7 +172,7 @@
                 }
             },
             tagRemount() {
-                return axios.get('https://wod.kodacompetitor.com/wp-json/wp/v2/tags').then(
+                return axios.get('https://wod.kodacompetitor.com/wp-json/wp/v2/tags?per_page=500').then(
                     response => this.tags = response.data
                 ).catch(error => console.log(error)).then(() => this.initialLoading = false).then(() => this.loading = false);
             },
@@ -483,14 +488,15 @@ input[type="checkbox"]:checked + label {
 
 .individual-workout {
     display: inline-block;
-    width: 300px;
+    width: 280px;
     max-width: 95%;
-    margin: 10px;
+    margin: 8px;
     box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
     border-radius: 5px;
     border-top: 3px solid #c60314;
     background: #fff;
     text-decoration: none;
+    vertical-align: top;
 }
 .individual-workout a {
     text-decoration: none;
