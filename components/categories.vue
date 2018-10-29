@@ -195,9 +195,9 @@ a, a:active, #nav-icon {
     padding: 15px 0;
     border-top: 1px solid rgba(0,0,0,0.1);
 }
-@media only screen and (max-width:870px) {
+@media only screen and (max-width:920px) {
     .categories-menu a {
-        padding: 20px 8px;
+        padding: 20px 6px;
     }
 }
 @media only screen and (max-width:790px) {

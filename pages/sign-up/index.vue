@@ -16,8 +16,6 @@
                 </div>
 
             </div>
-            First Name</br>
-            Last Name</br>
             E-mail</br>
             Preferred Bias: aerobic, gymnastics, strength, balanced athlete, not sure</br>
 
