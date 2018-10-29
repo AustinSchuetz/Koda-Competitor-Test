@@ -40,9 +40,9 @@
             </div>
             <h2 class="other-wods-title">More Workout Posts</h2>
             <div class="pagination-holder">
-                <nuxt-link class="pagination-btn" :to="post.previous.slug" v-if="post.previous"><font-awesome-icon icon="chevron-left" /> <span class="more-workouts-title">{{ post.previous.title }}</span></nuxt-link>
+                <nuxt-link class="pagination-btn" :to="post.previous.slug" v-if="post.previous"><font-awesome-icon icon="chevron-left" /> <span class="more-workouts-title"> {{ post.previous.title }}</span></nuxt-link>
                 <nuxt-link class="pagination-btn" :to="'/workout-library/'">Full Workout Library</nuxt-link>
-                <nuxt-link class="pagination-btn" :to="post.next.slug" v-if="post.next"><span class="more-workouts-title">{{ post.next.title }}</span> <font-awesome-icon icon="chevron-left" style="transform: rotate(180deg);" /></nuxt-link>
+                <nuxt-link class="pagination-btn" :to="post.next.slug" v-if="post.next"><span class="more-workouts-title">{{ post.next.title }} </span> <font-awesome-icon icon="chevron-left" style="transform: rotate(180deg);" /></nuxt-link>
             </div>
         </div>
     </div>

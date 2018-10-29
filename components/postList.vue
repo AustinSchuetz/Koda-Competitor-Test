@@ -53,6 +53,16 @@
 export default {
   components: {Leaderboard, library, faChevronLeft, FontAwesomeIcon},
   props: ['posts', 'total', 'totalPages'],
+    async asyncData({ params }) {
+        // We can use async/await ES6 feature
+        let { data, total, totalPages } = await api.getPosts()
+
+        return {
+            posts: data,
+            total: total,
+            totalPages: totalPages
+        }
+    },
     data() {
         return {
             currentPage: 1,
