@@ -1,6 +1,6 @@
 <template>
     <div class="post-holder">
-        <div class="post" v-for="(item, index) in posts" :key="index" v-if="posts && posts.length > 0 && index >= firstPost && index <= lastPost" :mounted="loadPostBias(item)">
+        <div class="post" v-for="(item, index) in $store.state.posts.data" :key="index" v-if="$store.state.posts.data && $store.state.posts.data.length > 0 && index >= firstPost && index <= lastPost" :mounted="loadPostBias(item)">
             <h2 class="mobile-title">{{ item.title }}</h2>
             <div v-if="item.fi_medium" class="post-featured-background fi_medium" :style="{ 'background-image': 'url(' + item.fi_medium + ')' }">
             </div>
@@ -54,9 +54,6 @@
 export default {
   components: {Leaderboard, library, faChevronLeft, FontAwesomeIcon},
   props: ['posts', 'total', 'totalPages'],
-    mounted() {
-        return this.$store.dispatch('getPosts')
-    },
     data() {
         return {
             currentPage: 1,

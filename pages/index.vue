@@ -1,13 +1,12 @@
 <template>
     <div class="home-holder">
-        <post-list v-if="posts" :posts="posts" :total="total" :totalPages="totalPages"></post-list>
+        <post-list v-if="$store.state.posts" :posts="$store.state.posts" :total="$store.state.posts.total" :totalPages="$store.state.posts.totalPages"></post-list>
     </div>
 </template>
 
 <script>
 
     import { mapGetters } from 'vuex'
-    import api from "~/api/index";
     import postList from '~/components/postList.vue'
     import recentPosts from '~/components/recentPosts.vue'
     import categories from '~/components/categories.vue'
@@ -15,16 +14,6 @@
 
     export default {
         components: { postList, categories, recentPosts, programmingSidebar },
-        async asyncData({ params }) {
-            // We can use async/await ES6 feature
-            let { data, total, totalPages } = await api.getPosts()
-
-            return {
-                posts: data,
-                total: total,
-                totalPages: totalPages
-            }
-        },
         head() {
             return {
                 title: `Koda Competitor`,
@@ -37,6 +26,7 @@
             }
         },
         mounted() {
+            this.$store.dispatch('getPosts');
             this.$nextTick(() => {
                 this.$nuxt.$loading.start()
 
