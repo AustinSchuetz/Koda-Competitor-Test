@@ -139,7 +139,6 @@
         watch: {
             leaderboard() {
                 this.loadLeaderboardPost = true;
-                console.log(this.$store.state.leaderboardWorkout[0].acf.multiple_scored_workouts_repeater);
                 this.loadSecondaryLeaderboard = true;
             },
             leaderboardWorkoutID(newValue) {

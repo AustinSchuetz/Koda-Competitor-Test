@@ -35,6 +35,7 @@ export const getPosts = ({ commit, state }) => {
       response => {
         commit("POSTS", response);
         resolve(response);
+        console.log('dispatched posts');
       },
       response => {
         reject(response);

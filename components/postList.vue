@@ -44,6 +44,7 @@
 </template>
 
 <script>
+    import api from "~/api/index"
     import Leaderboard from '../components/Leaderboard.vue'
     import { library } from '@fortawesome/fontawesome-svg-core'
     import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
@@ -53,15 +54,8 @@
 export default {
   components: {Leaderboard, library, faChevronLeft, FontAwesomeIcon},
   props: ['posts', 'total', 'totalPages'],
-    async asyncData({ params }) {
-        // We can use async/await ES6 feature
-        let { data, total, totalPages } = await api.getPosts()
-
-        return {
-            posts: data,
-            total: total,
-            totalPages: totalPages
-        }
+    mounted() {
+        return this.$store.dispatch('getPosts')
     },
     data() {
         return {
