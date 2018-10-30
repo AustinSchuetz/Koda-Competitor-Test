@@ -3,7 +3,14 @@ module.exports = {
   ** Extend nuxt using nuxt modules system (Alpha)
   ** Learn more: https://github.com/nuxt/nuxt-modules
   */
-  modules: [{ src: '@nuxtjs/pwa', options: { icon: { sizes: [512, 192, 380 ] } } }],
+  modules: [
+      { src: '@nuxtjs/pwa', options: { icon: { sizes: [512, 192, 380 ] } } },
+      'nuxt-stripe-module'
+  ],
+  stripe: {
+    version: 'v3',
+    publishableKey: 'pk_test_q18g70gNaRpri7661jkdHXfP',
+  },
   plugins: [
       '~/plugins/vue-tabs-component',
       '~/plugins/firebase',

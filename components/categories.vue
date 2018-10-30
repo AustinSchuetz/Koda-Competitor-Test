@@ -11,7 +11,9 @@
             <nuxt-link to="/athlete-type/">Pick a Track</nuxt-link>
             <nuxt-link to="/blog/">Blog</nuxt-link>
             <nuxt-link to="/coaches/">Coaches</nuxt-link>
+            <!--if logged in show profile and logout instead of sign up and login-->
             <nuxt-link to="/sign-up/" class="sign-up">Sign Up</nuxt-link>
+            <nuxt-link to="/login/">Login</nuxt-link>
         </div>
         <div class="mobile-menu-btn-holder">
             <div id="nav-icon" @click="navMenu" :class="{ open: this.navMenuOpen }">
@@ -30,6 +32,7 @@
             <li @click="navMenuClose"><nuxt-link to="/blog/">Blog</nuxt-link></li>
             <li @click="navMenuClose"><nuxt-link to="/coaches/">Coaches</nuxt-link></li>
             <li @click="navMenuClose"><nuxt-link to="/sign-up/">Sign Up</nuxt-link></li>
+            <li @click="navMenuClose"><nuxt-link to="/login/">Login</nuxt-link></li>
         </div>
         <div class="social">
             <a href="https://www.instagram.com/kodacompetitor/" class="fa fa-instagram" target="_blank"></a>
@@ -195,9 +198,25 @@ a, a:active, #nav-icon {
     padding: 15px 0;
     border-top: 1px solid rgba(0,0,0,0.1);
 }
+@media only screen and (max-width:995px) {
+    .categories-menu a {
+        padding: 20px 10px;
+    }
+}
 @media only screen and (max-width:920px) {
     .categories-menu a {
         padding: 20px 6px;
+    }
+    .categories-menu .sign-up {
+        margin: 15px 5px;
+    }
+}
+@media only screen and (max-width:826px) {
+    .categories-menu a {
+        padding: 20px 4px;
+    }
+    .categories-menu .sign-up {
+        margin: 15px 2px;
     }
 }
 @media only screen and (max-width:790px) {
