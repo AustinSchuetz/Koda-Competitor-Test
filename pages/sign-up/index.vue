@@ -64,6 +64,13 @@
 
 <script>
     export default {
+        head() {
+            return {
+                script: [
+                    { src: 'https://js.stripe.com/v3/' }
+                ]
+            }
+        },
         name: "index",
         mounted() {
             const elements = this.$stripe.import().elements();
