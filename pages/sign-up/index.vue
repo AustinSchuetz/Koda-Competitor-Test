@@ -21,6 +21,13 @@
                             <input type="email" name="email" placeholder="mat@example.com" v-model="email" required>
                         </div>
                         <div class="form-item">
+                            <label for="password">Password <span>*</span></label>
+                            <input type="text" name="password" placeholder="" v-model="password" required>
+                            <p class="small">Creates account for future use</p>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-item">
                             <label for="bias">Preferred Bias <span>*</span></label>
                             <select type="select" name="bias" v-model="preferred_bias" required>
                                 <option></option>
@@ -49,6 +56,18 @@
             <div class="what-you-get-wrap">
                 <h1><span class="dollar-sign">$ </span>25<span class="month"> / month</span></h1>
                 <p style="margin-left: 30px;"><em>Billed once monthly,</br>cancel anytime.</em></p>
+                <div class="benefits">
+                    <ul>
+                        <li><i class="fa fa-check"></i> Benefit number 1</li>
+                        <li><i class="fa fa-check"></i> Benefit number 2</li>
+                        <li><i class="fa fa-check"></i> Benefit number 3, but this one is longer and hopefully two lines</li>
+                        <li><i class="fa fa-check"></i> Benefit number 4</li>
+                    </ul>
+                </div>
+                <div class="testimonial">
+                    <p class="quote">"I'm getting sick gainz with Koda Competitor, I'd trust Kevin with my life."</p>
+                    <p class="quotee"><img src="~/assets/TonySilvaQuote.jpg" /> Tony Silva</p>
+                </div>
             </div>
         </div>
         <div>
@@ -84,6 +103,11 @@
                 last_name: '',
                 email: '',
                 preferred_bias: null
+            }
+        },
+        methods: {
+            signUp() {
+
             }
         }
     }
@@ -131,7 +155,7 @@
     font-weight: 300;
     vertical-align: top;
     line-height: 0.6;
-    margin-bottom: 35px;
+    margin-bottom: 40px;
 }
 .what-you-get-wrap h1 span {
     font-size: 32px;
@@ -169,6 +193,12 @@
     .form-row .form-item {
         display: inline-block;
         margin: 5px 20px 5px 0;
+        vertical-align: top;
+    }
+    .form-row .form-item .small {
+        color: #979797;
+        font-size: 12px;
+        margin: 0 0 -15px 3px;
     }
     .form-item label, .form-item input {
         display: block;
@@ -212,4 +242,43 @@
     background: #fff;
     color: #c60314;
 }
+    .benefits ul {
+        margin: 25px 0;
+        padding-inline-start: 0px;
+    }
+    .benefits ul li {
+        list-style: none;
+        line-height: 20px;
+        margin: 10px 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+    .benefits ul li i {
+        font-size: 20px;
+        vertical-align: top;
+        margin-right: 8px;
+    }
+    .testimonial {
+        margin-left: 30px;
+        padding-top: 25px;
+        border-top: 1px solid rgba(255,255,255,0.4);
+    }
+    .testimonial .quote {
+        font-style: italic;
+        margin-bottom: 20px;
+    }
+    .testimonial .quotee {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        height: 35px;
+    }
+    .testimonial .quotee img {
+        height: 35px;
+        width: 35px;
+        margin-right: 10px;
+        border-radius: 100%;
+    }
 </style>
