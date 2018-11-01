@@ -2,50 +2,52 @@
     <div class="main-wrap">
         <div class="sign-up-wrap">
             <div class="sign-up-info">
-                <h2>Sign Up</h2>
+                <div class="sign-up-title"><h2>Sign Up</h2><nuxt-link to="/login/">Login <i class="fa fa-sign-in"></i></nuxt-link></div>
                 <div class="basic-info">
-                    <h3><span>1</span> Your Basic Information</h3>
-                    <div class="form-row">
-                        <div class="form-item">
-                            <label for="first_name">First Name <span>*</span></label>
-                            <input type="text" name="first_name" placeholder="Mat" v-model="first_name" required>
+                    <form>
+                        <h3><span>1</span> Your Basic Information</h3>
+                        <div class="form-row">
+                            <div class="form-item">
+                                <label for="first_name">First Name <span>*</span></label>
+                                <input type="text" name="first_name" placeholder="Mat" v-model="first_name" required>
+                            </div>
+                            <div class="form-item">
+                                <label for="last_name">Last Name <span>*</span></label>
+                                <input type="text" name="last_name" placeholder="Fraser" v-model="last_name" required>
+                            </div>
                         </div>
-                        <div class="form-item">
-                            <label for="last_name">Last Name <span>*</span></label>
-                            <input type="text" name="last_name" placeholder="Fraser" v-model="last_name" required>
+                        <div class="form-row">
+                            <div class="form-item">
+                                <label for="email">Email <span>*</span></label>
+                                <input type="email" name="email" placeholder="mat@example.com" v-model="email" required>
+                            </div>
+                            <div class="form-item">
+                                <label for="password">Password <span>*</span></label>
+                                <input type="text" name="password" placeholder="" v-model="password" required>
+                                <p class="small">Creates account for future use</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-item">
-                            <label for="email">Email <span>*</span></label>
-                            <input type="email" name="email" placeholder="mat@example.com" v-model="email" required>
+                        <div class="form-row">
+                            <div class="form-item">
+                                <label for="bias">Preferred Bias <span>*</span></label>
+                                <select type="select" name="bias" v-model="preferred_bias" required>
+                                    <option></option>
+                                    <option value="Aerobic Bias">Aerobic Bias</option>
+                                    <option value="Gymnastics Bias">Gymnastics Bias</option>
+                                    <option value="Strength Bias">Strength Bias</option>
+                                    <option value="Balanced Athlete">Balanced Athlete</option>
+                                    <option value="Not Sure">Not Sure</option>
+                                </select>
+                            </div>
                         </div>
-                        <div class="form-item">
-                            <label for="password">Password <span>*</span></label>
-                            <input type="text" name="password" placeholder="" v-model="password" required>
-                            <p class="small">Creates account for future use</p>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-item">
-                            <label for="bias">Preferred Bias <span>*</span></label>
-                            <select type="select" name="bias" v-model="preferred_bias" required>
-                                <option></option>
-                                <option value="Aerobic Bias">Aerobic Bias</option>
-                                <option value="Gymnastics Bias">Gymnastics Bias</option>
-                                <option value="Strength Bias">Strength Bias</option>
-                                <option value="Balanced Athlete">Balanced Athlete</option>
-                                <option value="Not Sure">Not Sure</option>
-                            </select>
-                        </div>
-                    </div>
-                    <h3><span>2</span> Your Payment Information</h3>
+                        <h3><span>2</span> Your Payment Information</h3>
 
-                    <div id="card-element"></div>
+                        <div id="card-element"></div>
 
-                    <div>
-                        <button class="complete-sign-up-btn">Purchase Subscription</button>
-                    </div>
+                        <div>
+                            <button class="complete-sign-up-btn">Purchase Subscription</button>
+                        </div>
+                    </form>
                     <p><em>(it doesn't actually do anything at the moment)</em></p>
                     <div>
                         <a href="https://stripe.com" style="display: inline-block;" target="_blank"><img class="powered_by_stripe" src="~/assets/powered_by_stripe.svg" alt="Powered by Stripe Payment Processing" /></a>
@@ -70,13 +72,18 @@
                 </div>
             </div>
         </div>
-        <div>
-            --> adds account in firebase, accepts payment, email notifying koda, email notifying customer of sugarwod details / accepting them into private track</br>
-            --> Sign in page</br>
-            --(if signed in) profile page based on firebase user id, name or email</br>
-            --ability to update profile information and password / password reset</br>
-            --ability to update payment information</br>
-            --ability to cancel with form fill out?</br>
+        <div class="already-have">
+            <p>Already have an account? <nuxt-link to="/login/">Login <i class="fa fa-sign-in"></i></nuxt-link></p>
+        </div>
+
+
+        <div style="margin-top: 100px;">
+        --> adds account in firebase, accepts payment, email notifying koda, email notifying customer of sugarwod details / accepting them into private track</br>
+        --> Sign in page</br>
+        --(if signed in) profile page based on firebase user id, name or email</br>
+        --ability to update profile information and password / password reset</br>
+        --ability to update payment information</br>
+        --ability to cancel with form fill out?</br>
         </div>
     </div>
 </template>
@@ -102,11 +109,15 @@
                 first_name: '',
                 last_name: '',
                 email: '',
+                password: '',
                 preferred_bias: null
             }
         },
         methods: {
             signUp() {
+                // sign up with firebase email + pass
+
+                // send stripe token to somewhere else?
 
             }
         }
@@ -137,10 +148,23 @@
         background: #fff;
         color: #1d1d1d;
     }
-.sign-up-info h2 {
-    padding-bottom: 25px;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-}
+    .sign-up-title {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+    .sign-up-title a {
+        color: #979797;
+        text-decoration: none;
+        border-bottom: 2px solid transparent;
+        padding-bottom: 5px;
+    }
+    .sign-up-title a:hover {
+        border-bottom: 2px solid #c60314;
+        color: #c60314;
+    }
     .what-you-get-wrap {
         border-top-right-radius: 10px;
         border-bottom-right-radius: 10px;
@@ -280,5 +304,18 @@
         width: 35px;
         margin-right: 10px;
         border-radius: 100%;
+    }
+    .already-have p {
+        color: #666;
+        text-align: center;
+    }
+    .already-have p a {
+        color: #c60314;
+        border-bottom: 2px solid transparent;
+        padding-bottom: 5px;
+        text-decoration: none;
+    }
+    .already-have p a:hover {
+        border-bottom: 2px solid #c60314;
     }
 </style>
