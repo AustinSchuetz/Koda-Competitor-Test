@@ -1,3 +1,5 @@
+const bodyParser = require('body-parser');
+const session = require('express-session');
 module.exports = {
   /*
   ** Extend nuxt using nuxt modules system (Alpha)
@@ -5,17 +7,32 @@ module.exports = {
   */
   modules: [
       { src: '@nuxtjs/pwa', options: { icon: { sizes: [512, 192, 380 ] } } },
-      'nuxt-stripe-module'
+      'nuxt-stripe-module',
+      '@nuxtjs/axios'
   ],
   stripe: {
     version: 'v3',
-    publishableKey: 'pk_test_q18g70gNaRpri7661jkdHXfP',
+    publishableKey: 'pk_test_q18g70gNaRpri7661jkdHXfP'
   },
   plugins: [
       '~/plugins/vue-tabs-component',
       '~/plugins/firebase',
       '~/plugins/moment.js',
-      '~/plugins/vue-js-modal.js'
+      '~/plugins/vue-js-modal.js',
+      '~/plugins/auth.js'
+  ],
+  router: {
+    middleware: 'check-auth'
+  },
+  serverMiddleware: [
+    bodyParser.json(),
+    session({
+        secret: 'amdskfmdlkfdklfndfmdfndsmfndfnejnjheheuewytwgssa',
+        resave: false,
+        saveUninitialized: false,
+        cookie: { maxAge: 60000, secure: false }
+    }),
+    '~/auth'
   ],
   /*
   ** Headers of the page
@@ -51,10 +68,20 @@ module.exports = {
     name: "Nuxt.js",
     theme_color: "#C60314"
   },
+  axios: {
+    debug: true
+  },
   /*
   ** Build configuration
   */
   build: {
+      extend (config, { isDev, isClient }) {
+          if (isDev) {
+              config.resolve.alias['config'] = '~/config/development'
+          } else {
+              config.resolve.alias['config'] = '~/config/production'
+          }
+      }
     /*
     ** Run ESLINT on save
     */

@@ -38,7 +38,9 @@ const store = () => {
       leaderboard: [],
       leaderboardWorkout: [],
       leaderboardWorkoutID: null,
-      activeLeaderboard: 'menrx'
+      activeLeaderboard: 'menrx',
+      uid: null,
+      profileData: []
     },
     actions,
     mutations,

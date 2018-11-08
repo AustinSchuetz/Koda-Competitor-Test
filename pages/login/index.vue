@@ -2,7 +2,7 @@
     <div class="main-wrap">
         <div class="login-wrap">
             <div class="login">Login to your account</div>
-            <form>
+            <form @submit.prevent="submit">
                 <div class="form-row">
                     <div class="form-item">
                         <label for="email">Email</label>
@@ -10,11 +10,11 @@
                     </div>
                     <div class="form-item">
                         <label for="password">Password</label>
-                        <input style="margin-bottom: 0;" type="text" name="password" placeholder="" v-model="password" required>
+                        <input style="margin-bottom: 0;" type="password" name="password" placeholder="" v-model="password" required>
                         <div class="forgot"><a href="#">Forgot password?</a></div>
                     </div>
                 </div>
-                <button class="complete-sign-in-btn">Login <i class="fa fa-sign-in"></i></button>
+                <button class="complete-sign-in-btn" type="submit">Login <i class="fa fa-sign-in"></i></button>
             </form>
 
         </div>
@@ -23,12 +23,32 @@
 </template>
 
 <script>
+    import { mapActions } from 'vuex'
+    import { mapGetters } from 'vuex'
+    import firebaseApp from '~/firebase/app'
+
     export default {
         name: "index",
         data() {
             return {
                 email: '',
                 password: ''
+            }
+        },
+        computed: {
+            ...mapGetters(['uid'])
+        },
+        methods: {
+            ...mapActions([ 'login', 'logout', 'saveUID' ]),
+            submit () {
+                firebaseApp.auth().signInWithEmailAndPassword(this.email, this.password)
+                    .then((firebaseUser) => {
+                    return this.login(firebaseUser.user.uid);
+                }).then(() => {
+                    this.$router.push('/profile/' + this.$store.state.uid + '/');
+                }).catch((error) => {
+                    console.log(error.message)
+                })
             }
         }
     }

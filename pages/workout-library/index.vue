@@ -68,8 +68,8 @@
                         </nuxt-link>
                     </div>
                     <div class="pagination-holder" :class="{ flexStart: currentPage == totalPages, flexEnd: currentPage === 1}">
-                        <button class="pagination-btn" @click="pageDownClick" v-if="currentPage > 1"><font-awesome-icon icon="chevron-left" /> <span class="more-workouts-title">Previous Page</span></button>
-                        <button class="pagination-btn" @click="pageUpClick" v-if="currentPage < totalPages"><span class="more-workouts-title">Next Page</span> <font-awesome-icon icon="chevron-left" style="transform: rotate(180deg);" /></button>
+                        <button class="pagination-btn" @click="pageDownClick" v-if="currentPage > 1"><font-awesome-icon icon="chevron-left" /> <span class="more-workouts-title"> Previous Page</span></button>
+                        <button class="pagination-btn" @click="pageUpClick" v-if="currentPage < totalPages"><span class="more-workouts-title">Next Page </span> <font-awesome-icon icon="chevron-left" style="transform: rotate(180deg);" /></button>
                     </div>
                 </div>
 

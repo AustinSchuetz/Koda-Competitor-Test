@@ -4,7 +4,7 @@
             <div class="sign-up-info">
                 <div class="sign-up-title"><h2>Sign Up</h2><nuxt-link to="/login/">Login <i class="fa fa-sign-in"></i></nuxt-link></div>
                 <div class="basic-info">
-                    <form>
+                    <form @submit.prevent="signUp">
                         <h3><span>1</span> Your Basic Information</h3>
                         <div class="form-row">
                             <div class="form-item">
@@ -23,7 +23,7 @@
                             </div>
                             <div class="form-item">
                                 <label for="password">Password <span>*</span></label>
-                                <input type="text" name="password" placeholder="" v-model="password" required>
+                                <input type="password" name="password" placeholder="" v-model="password" required>
                                 <p class="small">Creates account for future use</p>
                             </div>
                         </div>
@@ -40,12 +40,16 @@
                                 </select>
                             </div>
                         </div>
+                        <div class="error-message" v-if="error">
+                            <p>{{ this.error }}</p>
+                            <div class="error-divider"></div>
+                        </div>
                         <h3><span>2</span> Your Payment Information</h3>
 
                         <div id="card-element"></div>
 
                         <div>
-                            <button class="complete-sign-up-btn">Purchase Subscription</button>
+                            <button type="submit" class="complete-sign-up-btn">Purchase Subscription</button>
                         </div>
                     </form>
                     <p><em>(it doesn't actually do anything at the moment)</em></p>
@@ -89,6 +93,8 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+import firebaseApp from '~/firebase/app'
     export default {
         head() {
             return {
@@ -110,21 +116,58 @@
                 last_name: '',
                 email: '',
                 password: '',
-                preferred_bias: null
+                preferred_bias: null,
+                error: null
             }
         },
         methods: {
-            signUp() {
-                // sign up with firebase email + pass
+            ...mapActions([ 'login' ]),
+            async signUp () {
 
                 // send stripe token to somewhere else?
 
+                //maybe set all actions in a single function then call that function here
+
+                // sign up with firebase email + pass
+                try {
+                    const firebaseUser = await firebaseApp.auth().createUserWithEmailAndPassword(this.email, this.password);
+                    await this.writeUserData(firebaseUser.user.uid, this.email, this.first_name, this.last_name, this.preferred_bias);
+                    await this.login(firebaseUser.user.uid);
+                    this.$router.push('/profile/' + firebaseUser.user.uid + '/');
+                } catch (error) {
+                    console.log(error.message);
+                    return this.error = error.message;
+                }
+            },
+            writeUserData (userId, email, first_name, last_name, bias) {
+                return firebaseApp.database().ref('users/' + userId).set({
+                    email: email,
+                    displayName: first_name + ' ' + last_name,
+                    bias: bias
+                    // can send lots of data for profile here and adjust how the users page id is based and pulled
+                })
             }
         }
     }
 </script>
 
 <style scoped>
+    .error-divider {
+        display: block;
+        width: 100px;
+        margin: 20px 0;
+        height: 2px;
+        background: #c60314;
+    }
+    .error-message {
+        color: #c60314;
+        font-style: italic;
+        font-size: 18px;
+        padding: 10px;
+        border-radius: 5px;
+        background: #f5deb3;
+        display: block;
+    }
     .main-wrap {
         width: 100%;
     }
@@ -243,6 +286,8 @@
 }
     #card-element {
         margin: 30px 0 40px;
+        padding: 10px;
+        border-radius: 5px;
     }
 .powered_by_stripe {
     display: inline-block;

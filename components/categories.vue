@@ -11,9 +11,10 @@
             <nuxt-link to="/athlete-type/">Pick a Track</nuxt-link>
             <nuxt-link to="/blog/">Blog</nuxt-link>
             <nuxt-link to="/coaches/">Coaches</nuxt-link>
-            <!--if logged in show profile and logout instead of sign up and login-->
-            <nuxt-link to="/sign-up/" class="sign-up">Sign Up</nuxt-link>
-            <nuxt-link to="/login/">Login</nuxt-link>
+            <nuxt-link v-if="this.$store.state.uid === null" to="/sign-up/" class="sign-up">Sign Up</nuxt-link>
+            <nuxt-link v-if="this.$store.state.uid === null" to="/login/">Login</nuxt-link>
+            <nuxt-link v-if="this.$store.state.uid !== null" :to="profileLink" class="sign-up">Profile</nuxt-link>
+            <a v-if="this.$store.state.uid !== null" href="#logout" @click="signout">Logout</a>
         </div>
         <div class="mobile-menu-btn-holder">
             <div id="nav-icon" @click="navMenu" :class="{ open: this.navMenuOpen }">
@@ -31,8 +32,10 @@
             <li @click="navMenuClose"><nuxt-link to="/athlete-type/">Pick a Track</nuxt-link></li>
             <li @click="navMenuClose"><nuxt-link to="/blog/">Blog</nuxt-link></li>
             <li @click="navMenuClose"><nuxt-link to="/coaches/">Coaches</nuxt-link></li>
-            <li @click="navMenuClose"><nuxt-link to="/sign-up/">Sign Up</nuxt-link></li>
-            <li @click="navMenuClose"><nuxt-link to="/login/">Login</nuxt-link></li>
+            <li v-if="this.$store.state.uid === null" @click="navMenuClose"><nuxt-link to="/sign-up/">Sign Up</nuxt-link></li>
+            <li v-if="this.$store.state.uid === null" @click="navMenuClose"><nuxt-link to="/login/">Login</nuxt-link></li>
+            <li v-if="this.$store.state.uid !== null" @click="navMenuClose"><nuxt-link :to="profileLink" class="sign-up">Profile</nuxt-link></li>
+            <li v-if="this.$store.state.uid !== null" @click="navMenuClose"><a href="#logout" @click="signout">Logout</a></li>
         </div>
         <div class="social">
             <a href="https://www.instagram.com/kodacompetitor/" class="fa fa-instagram" target="_blank"></a>
@@ -42,6 +45,7 @@
 </div>
 </template>
 <script>
+import { mapActions } from 'vuex'
 export default {
     data() {
         return {
@@ -49,6 +53,14 @@ export default {
         }
     },
     methods: {
+        ...mapActions([ 'logout' ]),
+        signout () {
+            this.logout().then(() => {
+                this.$router.push('/')
+            }).catch((error) => {
+                console.log(error.message)
+            })
+        },
         updateScroll() {
             this.$store.commit('scrollStatus');
         },
@@ -57,6 +69,11 @@ export default {
         },
         navMenuClose() {
             this.navMenuOpen = false;
+        }
+    },
+    computed: {
+        profileLink() {
+            return '/profile/' + this.$store.state.uid + '/'
         }
     },
     mounted() {
