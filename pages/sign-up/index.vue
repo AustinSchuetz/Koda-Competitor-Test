@@ -93,6 +93,9 @@
 </template>
 
 <script>
+let stripe = Stripe(`YOUR_STRIPE_PUBLISHABLE_KEY`),
+    elements = stripe.elements(),
+    card = undefined;
 import { mapActions } from 'vuex'
 import firebaseApp from '~/firebase/app'
     export default {
@@ -123,8 +126,29 @@ import firebaseApp from '~/firebase/app'
         methods: {
             ...mapActions([ 'login' ]),
             async signUp () {
+                // set the input fields as global vux variables
+
+            // <h1>Name: {{ this.$store.state.profileData.displayName }}</h1>
+            //     <h1>Email: {{ this.$store.state.profileData.email }}</h1>
+            //     <h1>Bias: {{ this.$store.state.profileData.bias }}</h1>
+            //     <p>Route params uid: {{ this.$route.params.uid }}</p>
+            //     <p>Store uid: {{ this.$store.state.uid }}</p>
 
                 // send stripe token to somewhere else?
+
+                let self = this;
+
+                this.stripe.createToken(card).then(function(result) {
+                    // if errors
+                    if (result.error) {
+                        self.hasCardErrors = true;
+                        self.$forceUpdate(); // Forcing the DOM to update so the Stripe Element can update.
+                        return;
+                    }
+                    // Access the token with result.token
+                    console.log(result.token);
+                    alert(result.token);
+                });
 
                 //maybe set all actions in a single function then call that function here
 

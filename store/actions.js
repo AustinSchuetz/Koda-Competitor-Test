@@ -1,7 +1,7 @@
 import api from "../api/index";
 import firebaseApp from '~/firebase/app';
 import axios from 'axios'
-
+import env from 'config'
 // set env = dev axios url = localhost:3000 or get site url????????
 
 export const getPage = ({ commit, state }, slug) => {
@@ -106,22 +106,22 @@ export const nuxtServerInit = async ({ dispatch }, { req }) => {
     }
 };
 export const login = async ({dispatch, state}, uid) => {
-    var homeURL = document.location.origin;
-    console.log(homeURL);
+    axios.defaults.baseURL = 'http://localhost:3000';
     console.log('[STORE ACTIONS] - login');
     const token = await firebaseApp.auth().currentUser.getIdToken(true);
-    const {status} = await axios.post('http://localhost:3000/auth/login', { uid: uid, token: token });
+    const {status} = await axios.post('/auth/login', { uid: uid, token: token });
 
     await dispatch('saveUID', uid);
     console.log('[STORE ACTIONS] - in login, response:', status);
 };
+
 export const logout = async ({dispatch}) => {
+    axios.defaults.baseURL = 'http://localhost:3000';
     console.log('[STORE ACTIONS] - logout');
     await firebaseApp.auth().signOut();
 
     await dispatch('saveUID', null);
-    console.log('route: ' + this.$route);
 
-    const {status} = await axios.post('http://localhost:3000/auth/logout');
+    const {status} = await axios.post('/auth/logout');
     console.log('[STORE ACTIONS] - in logout, response:', status);
 };

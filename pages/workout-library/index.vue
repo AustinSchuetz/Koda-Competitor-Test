@@ -33,7 +33,7 @@
                     <div v-else-if="this.currentPage > this.totalPages">
                         <h1 class="no-workouts">No workouts match your filter</h1>
                     </div>
-                    <div v-for="(post, index) in workouts" class="individual-workout" :mounted="loadPostBias(post.acf)" :key="index" v-if="index >= firstPost && index <= lastPost">
+                    <div v-for="(post, index) in workouts" class="individual-workout" :mounted="loadPostBias(post.acf)" :key="index">
                         <nuxt-link :to="'/workout-of-the-day/' + post.slug" class="post">
                             <div class="post-featured-background" :style="{ 'background-image': 'url(' + post.fi_medium + ')' }">
                                 <h1>{{ post.title.rendered }}</h1>
@@ -140,12 +140,12 @@
         },
         methods: {
             getWorkouts() {
-                axios.get('https://wod.kodacompetitor.com/wp-json/wp/v2/posts?categories=2' + this.buildTagsString() + this.buildSearchString() + this.buildPagination())
+                axios.get('https://wod.kodacompetitor.com/wp-json/wp/v2/posts?categories=2&per_page=9' + this.buildTagsString() + this.buildSearchString() + this.buildPagination())
                     .then(res => {
                         this.total = res.headers["x-wp-total"];
                         this.totalPages = res.headers["x-wp-totalpages"];
                         this.workouts = res.data;
-                    });
+                    }).catch(error => this.$router.go());
                     this.buildURL();
                     this.loading = false;
             },
@@ -186,7 +186,11 @@
             buildSearchString() {
                 if (this.search !== '') {
                     this.questionMark = '?';
+                    if (this.totalPages == 1){
+                        this.currentPage = 1;
+                    }
                     return '&search=' + this.search;
+                    return this.buildURL();
                 } else {
                     return '';
                 }
@@ -195,15 +199,23 @@
             buildTagsString() {
                 if (this.checkedTags.length !== 0) {
                     this.questionMark = '?';
+                    if (this.totalPages == 1){
+                        this.currentPage = 1;
+                    }
                     return '&tags=' + this.checkedTags.join(",");
+                    return this.currentPage = 1;
                 } else {
                     return '';
                 }
             },
             buildPagination() {
-                if (this.currentPage > 1) {
+                if (this.totalPages > 1 && this.currentPage > 1) {
                     this.questionMark = '?';
-                    return '&page=' + this.currentPage;
+                    if (this.totalPages > 1) {
+                        return '&page=' + this.currentPage;
+                    } else {
+                        return '';
+                    }
                 } else {
                     return '';
                 }

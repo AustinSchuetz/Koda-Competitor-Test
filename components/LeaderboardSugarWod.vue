@@ -4,7 +4,7 @@
         <div v-if="$store.state.hideLeaderboardGlobal === false">
             <h2 v-if="workoutDate !== null">{{ this.workoutDate | moment("MMM Do YYYY") }}</h2>
             <div class="divider"></div>
-            <h3 class="workout-title">{{ this.workoutTitle }}</h3>
+            <h3 class="workout-title" id="workout_title" ref="workout_title">{{ this.workoutTitle }}</h3>
 
             <!--<div v-if="loading" class="loading"><i class="loader-spin fa fa-spin fa-circle-o-notch"></i> Loading...</div>-->
             <div v-if="loadLeaderboardPost">
