@@ -122,7 +122,8 @@
 .post-featured-background h1 {
     font-size:2em;
     font-weight:bold;
-    line-height: 64px;
+    line-height: 1.4;
+    padding-bottom: 20px;
     color: #fff;
     text-align: center;
     width: 550px;

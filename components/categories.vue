@@ -10,11 +10,17 @@
             <nuxt-link to="/workout-library/">Workout Library</nuxt-link>
             <nuxt-link to="/athlete-type/">Pick a Track</nuxt-link>
             <nuxt-link to="/blog/">Blog</nuxt-link>
-            <nuxt-link to="/coaches/">Coaches</nuxt-link>
-            <nuxt-link v-if="this.$store.state.uid === null" to="/sign-up/" class="sign-up">Sign Up</nuxt-link>
-            <nuxt-link v-if="this.$store.state.uid === null" to="/login/">Login</nuxt-link>
-            <nuxt-link v-if="this.$store.state.uid !== null" :to="profileLink" class="sign-up">Profile</nuxt-link>
-            <a v-if="this.$store.state.uid !== null" href="#logout" @click="signout">Logout</a>
+            <nuxt-link class="coach-dropdown-btn" to="/coaches/">Coaching <font-awesome-icon class="hide-on-load" :class="{ showOnLoad: this.showOn }" icon="chevron-down" /></nuxt-link>
+            <div class="coaching-dropdown">
+                <nuxt-link to="/individual-crossfit-programming/">Individual Programming</nuxt-link>
+                <nuxt-link to="/crossfit-gym-programming/">Gym Programming</nuxt-link>
+                <nuxt-link to="/coaches/">Coaches</nuxt-link>
+            </div>
+            <nuxt-link to="/contact-us/">Contact Us</nuxt-link>
+            <!--<nuxt-link v-if="this.$store.state.uid === null" to="/sign-up/" class="sign-up">Sign Up</nuxt-link>-->
+            <!--<nuxt-link v-if="this.$store.state.uid === null" to="/login/">Login</nuxt-link>-->
+            <!--<nuxt-link v-if="this.$store.state.uid !== null" :to="profileLink" class="sign-up">Profile</nuxt-link>-->
+            <!--<a v-if="this.$store.state.uid !== null" href="#logout" @click="signout">Logout</a>-->
         </div>
         <div class="mobile-menu-btn-holder">
             <div id="nav-icon" @click="navMenu" :class="{ open: this.navMenuOpen }">
@@ -31,11 +37,14 @@
             <li @click="navMenuClose"><nuxt-link to="/workout-library/">Workout Library</nuxt-link></li>
             <li @click="navMenuClose"><nuxt-link to="/athlete-type/">Pick a Track</nuxt-link></li>
             <li @click="navMenuClose"><nuxt-link to="/blog/">Blog</nuxt-link></li>
+            <li @click="navMenuClose"><nuxt-link to="/individual-crossfit-programming/">Individual Programming</nuxt-link></li>
+            <li @click="navMenuClose"><nuxt-link to="/crossfit-gym-programming/">Gym Programming</nuxt-link></li>
             <li @click="navMenuClose"><nuxt-link to="/coaches/">Coaches</nuxt-link></li>
-            <li v-if="this.$store.state.uid === null" @click="navMenuClose"><nuxt-link to="/sign-up/">Sign Up</nuxt-link></li>
-            <li v-if="this.$store.state.uid === null" @click="navMenuClose"><nuxt-link to="/login/">Login</nuxt-link></li>
-            <li v-if="this.$store.state.uid !== null" @click="navMenuClose"><nuxt-link :to="profileLink" class="sign-up">Profile</nuxt-link></li>
-            <li v-if="this.$store.state.uid !== null" @click="navMenuClose"><a href="#logout" @click="signout">Logout</a></li>
+            <li @click="navMenuClose"><nuxt-link to="/contact-us/">Contact Us</nuxt-link></li>
+            <!--<li v-if="this.$store.state.uid === null" @click="navMenuClose"><nuxt-link to="/sign-up/">Sign Up</nuxt-link></li>-->
+            <!--<li v-if="this.$store.state.uid === null" @click="navMenuClose"><nuxt-link to="/login/">Login</nuxt-link></li>-->
+            <!--<li v-if="this.$store.state.uid !== null" @click="navMenuClose"><nuxt-link :to="profileLink" class="sign-up">Profile</nuxt-link></li>-->
+            <!--<li v-if="this.$store.state.uid !== null" @click="navMenuClose"><a href="#logout" @click="signout">Logout</a></li>-->
         </div>
         <div class="social">
             <a href="https://www.instagram.com/kodacompetitor/" class="fa fa-instagram" target="_blank"></a>
@@ -46,10 +55,16 @@
 </template>
 <script>
 import { mapActions } from 'vuex'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+library.add(faChevronDown);
 export default {
+    components: { library, faChevronDown, FontAwesomeIcon },
     data() {
         return {
-            navMenuOpen: false
+            navMenuOpen: false,
+            showOn: false
         }
     },
     methods: {
@@ -78,6 +93,7 @@ export default {
     },
     mounted() {
         window.addEventListener('scroll', this.updateScroll);
+        this.showOn = true;
     },
     head () {
         return {
@@ -102,6 +118,12 @@ a, a:active, #nav-icon {
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     tap-highlight-color: rgba(0,0,0,0);
 }
+.hide-on-load {
+    display: none;
+}
+.showOnLoad {
+    display: inline-block;
+}
 .categories-menu {
     border-top: 3px solid #C60314;
     width:100%;
@@ -120,7 +142,7 @@ a, a:active, #nav-icon {
         color:#C60314;
         font-weight: bold;
         text-decoration:none;
-        padding: 20px;
+        padding: 23px 20px 22px;
         border-bottom: 3px solid transparent;
         display: inline-block;
         transition: 0.2s ease-in-out;
@@ -190,6 +212,24 @@ a, a:active, #nav-icon {
     .logo:hover {
         border-bottom: 0;
     }
+}
+.coaching-dropdown {
+    background: #fff;
+    position: absolute;
+    right: 84px;
+    flex-direction: column;
+    display: none;
+    transition: 0.25s ease-in-out all;
+    box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
+    margin-top: -3px;
+    border-top: 3px solid #c60314;
+    border-radius: 5px;
+}
+.coach-dropdown-btn:hover ~ .coaching-dropdown {
+    display: flex;
+}
+.coaching-dropdown:hover {
+    display: flex;
 }
 .categories-menu.scrolled {
     background: #fff;
@@ -393,7 +433,7 @@ a, a:active, #nav-icon {
         color: #c60314;
         text-decoration: none;
         padding: 8px;
-        font-size: 1.5em;
+        font-size: 16px;
         font-weight: bold;
     }
 }

@@ -16,6 +16,7 @@
                       <a v-if="post.acf.balanced_athlete" @click="setActive('balanced_athlete')" :class="{ activebias: $store.state.activeBias === 'balanced_athlete' }" href="javascript:void(0)" class="bias">Balanced Athlete</a>
                     </div>
                     <div class="post-text-content">
+                        <p style="color: #7f828b;font-size:14px;margin-bottom: 5px;">**Join our SugarWOD account "Koda Competitor" to receive warm ups and compare scores on the leaderboard.**</p>
                         <transition name="slide-fade">
                             <div v-if="$store.state.activeBias === 'all_athletes'" id="all-athletes-content" v-html="post.acf.all_athletes"></div>
                         </transition>

@@ -126,7 +126,7 @@ import firebaseApp from '~/firebase/app'
         methods: {
             ...mapActions([ 'login' ]),
             async signUp () {
-                // set the input fields as global vux variables
+                // set the input fields as global vuex variables
 
             // <h1>Name: {{ this.$store.state.profileData.displayName }}</h1>
             //     <h1>Email: {{ this.$store.state.profileData.email }}</h1>
