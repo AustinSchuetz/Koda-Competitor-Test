@@ -160,7 +160,7 @@
     }
     .scrollable-leaderboard {
         overflow-y: auto;
-        max-height: calc(100vh - 330px);
+        max-height: calc(100vh - 350px);
         padding: 0 10px;
     }
     .logo-programming-select-holder.hideLeaderboard .scrollable-leaderboard {

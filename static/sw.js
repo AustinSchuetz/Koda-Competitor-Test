@@ -8,16 +8,16 @@ workbox.precaching.precacheAndRoute([
     "revision": "6a25f9e3740e266f31a21f53297795ba"
   },
   {
-    "url": "/_nuxt/layouts_default.307916738cc6832e91b3.js",
-    "revision": "f3f46de4299c4c94e3f6f4c226933d4f"
+    "url": "/_nuxt/layouts_default.578a26e32bd34d5c3fcd.js",
+    "revision": "3343b1aac4618b9adc4f5a24cf9b7237"
   },
   {
-    "url": "/_nuxt/layouts_protected.ed70ac2f0648166fb93f.js",
-    "revision": "1ff3d240fe06a9a33de96d766d4d57f2"
+    "url": "/_nuxt/layouts_protected.baabf5c86383edcac3db.js",
+    "revision": "8c1198668592450d1e7b03b9f1217afe"
   },
   {
-    "url": "/_nuxt/manifest.81753d8463055a4e0a13.js",
-    "revision": "42833755a5203d55a39780b5e72d38f2"
+    "url": "/_nuxt/manifest.31d2eb11a77a12c5aada.js",
+    "revision": "fc6ec68062469563f9f3bcaf851f2da9"
   },
   {
     "url": "/_nuxt/pages_about_index.f9350afc0b15e8635dd2.js",
@@ -28,8 +28,8 @@ workbox.precaching.precacheAndRoute([
     "revision": "2603656aa5f7488ae96d691c3726cf98"
   },
   {
-    "url": "/_nuxt/pages_blog__slug_index.10bbfb0c551da8427e49.js",
-    "revision": "cd8350527bb1e0ca7897baa908f1a892"
+    "url": "/_nuxt/pages_blog__slug_index.09a58c059d19170a5c78.js",
+    "revision": "a00e28928d414a6051ca71b545fd2a50"
   },
   {
     "url": "/_nuxt/pages_blog_index.98d2a9fa7a972e3ea20d.js",
@@ -48,16 +48,16 @@ workbox.precaching.precacheAndRoute([
     "revision": "73da7c771fa3fdb8654057f218e13a8c"
   },
   {
-    "url": "/_nuxt/pages_contact-us_index.9fb5e93fcd97d70cac67.js",
-    "revision": "45e96a411ddb9e00eb0e9ab3322a9297"
+    "url": "/_nuxt/pages_contact-us_index.ef4f13c87c4899a9c937.js",
+    "revision": "fa9c20672e38401f273f45a43de64b83"
   },
   {
     "url": "/_nuxt/pages_crossfit-gym-programming_index.211400bdf4be1f4552a0.js",
     "revision": "734382e53eb8d85d6b0c3edbe895edb0"
   },
   {
-    "url": "/_nuxt/pages_index.eed7a54cb3808809fd86.js",
-    "revision": "aa147e871b435bc470166c33664272a8"
+    "url": "/_nuxt/pages_index.4993d6de78abe7539f85.js",
+    "revision": "0259ee35932781e740b5d5210f6b9468"
   },
   {
     "url": "/_nuxt/pages_individual-crossfit-programming_index.eaaec2f95831a26dabf3.js",
@@ -92,12 +92,12 @@ workbox.precaching.precacheAndRoute([
     "revision": "4bf1cb5c4550cc8f09175f66939bf07a"
   },
   {
-    "url": "/_nuxt/pages_workout-of-the-day__slug_index.ac0ffa3ad1454b8c8578.js",
-    "revision": "e132184a6b51dfd16234bc2680685600"
+    "url": "/_nuxt/pages_workout-of-the-day__slug_index.b95741ec0d8d3c47215e.js",
+    "revision": "0b71c8eef3207ac979d16ea85a0c54bb"
   },
   {
-    "url": "/_nuxt/pages_workout-of-the-day_index.0a88849b68b516651320.js",
-    "revision": "618a391dbdd6be9907bac8de9ea59395"
+    "url": "/_nuxt/pages_workout-of-the-day_index.10905bd37dc63324fc66.js",
+    "revision": "63b55feea34de9af36b4d8f536e89c29"
   },
   {
     "url": "/_nuxt/vendor.80c1badebb3778417935.js",

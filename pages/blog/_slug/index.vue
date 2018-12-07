@@ -127,6 +127,9 @@
         max-width: 95%;
         margin: 0 auto;
     }
+    .blog-content a {
+        color: #c60314;
+    }
     .blog-content p {
         margin: 10px 0;
     }
