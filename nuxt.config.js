@@ -9,10 +9,11 @@ module.exports = {
       { src: '@nuxtjs/pwa', options: { icon: { sizes: [512, 192, 380 ] } } },
       'nuxt-stripe-module',
       '@nuxtjs/axios',
-      ['@nuxtjs/google-analytics', {
-          id: 'UA-130634018-1'
-      }]
+      '@nuxtjs/google-analytics'
   ],
+  'google-analytics': {
+    id: 'UA-130634018-1'
+  },
   stripe: {
     version: 'v3',
     publishableKey: 'pk_test_q18g70gNaRpri7661jkdHXfP'
