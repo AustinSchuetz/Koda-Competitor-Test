@@ -14,6 +14,6 @@ deploy:
   provider: firebase
   token:
     secure: "1/IMxf1uIw-4fn9Hd4j6Wlr6oig_ZRX2ineovUuvP9Ahg"
-  project: "koda-competitor-testing"
+  project: "koda-competitor"
 after_success:
-   firebase deploy -  project koda-competitor-testing - token $FIREBASE_TOKEN.
+   firebase deploy -  project koda-competitor - token $FIREBASE_TOKEN.
