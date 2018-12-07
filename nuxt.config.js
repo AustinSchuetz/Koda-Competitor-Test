@@ -8,7 +8,10 @@ module.exports = {
   modules: [
       { src: '@nuxtjs/pwa', options: { icon: { sizes: [512, 192, 380 ] } } },
       'nuxt-stripe-module',
-      '@nuxtjs/axios'
+      '@nuxtjs/axios',
+      ['@nuxtjs/google-analytics', {
+          id: 'UA-130634018-1'
+      }]
   ],
   stripe: {
     version: 'v3',

@@ -4,8 +4,8 @@ importScripts('/_nuxt/workbox.678c6960.js')
 
 workbox.precaching.precacheAndRoute([
   {
-    "url": "/_nuxt/app.dfef5681b10cb53bafd0.js",
-    "revision": "ce3e53c8d70fa2a3a5e613dfd51d2456"
+    "url": "/_nuxt/app.ce9fb204778c3c244c8a.js",
+    "revision": "e759b8e442edb8aef1580ee8dccfd53c"
   },
   {
     "url": "/_nuxt/layouts_default.491588aa59536880ab74.js",
@@ -16,7 +16,7 @@ workbox.precaching.precacheAndRoute([
     "revision": "fdf2810792cdb15e0c22e3853c527d66"
   },
   {
-    "url": "/_nuxt/manifest.291ac153374af75a0f06.js",
+    "url": "/_nuxt/manifest.b2ea37c205366e9785f9.js",
     "revision": "f8e15693f750a73663679f5677e61070"
   },
   {
@@ -100,8 +100,8 @@ workbox.precaching.precacheAndRoute([
     "revision": "64ddd486e2c4edc658c5095bcfc0674c"
   },
   {
-    "url": "/_nuxt/vendor.80c1badebb3778417935.js",
-    "revision": "6aaaf7679fe225c39c0ade287615378c"
+    "url": "/_nuxt/vendor.51d7acee166b648e5751.js",
+    "revision": "0d2c17b4a0db08e232a92d021e7ec695"
   }
 ], {
   "cacheId": "wp-vue-ssr",
