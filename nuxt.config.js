@@ -9,11 +9,10 @@ module.exports = {
       { src: '@nuxtjs/pwa', options: { icon: { sizes: [512, 192, 380 ] } } },
       'nuxt-stripe-module',
       '@nuxtjs/axios',
-      '@nuxtjs/google-analytics'
+      ['@nuxtjs/google-analytics', {
+          id: 'UA-130634018-1'
+      }]
   ],
-  'google-analytics': {
-    id: 'UA-130634018-1'
-  },
   stripe: {
     version: 'v3',
     publishableKey: 'pk_test_q18g70gNaRpri7661jkdHXfP'
@@ -23,8 +22,7 @@ module.exports = {
       '~/plugins/firebase',
       '~/plugins/moment.js',
       '~/plugins/vue-js-modal.js',
-      '~/plugins/auth.js',
-      { src: '~plugins/ga.js', ssr: false }
+      '~/plugins/auth.js'
   ],
   router: {
     middleware: 'check-auth'
