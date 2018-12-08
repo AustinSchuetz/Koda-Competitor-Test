@@ -23,7 +23,8 @@ module.exports = {
       '~/plugins/firebase',
       '~/plugins/moment.js',
       '~/plugins/vue-js-modal.js',
-      '~/plugins/auth.js'
+      '~/plugins/auth.js',
+      { src: '~plugins/ga.js', ssr: false }
   ],
   router: {
     middleware: 'check-auth'
