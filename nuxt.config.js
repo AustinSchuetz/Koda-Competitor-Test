@@ -1,5 +1,6 @@
 const bodyParser = require('body-parser');
 const session = require('express-session');
+const axios = require('axios')
 module.exports = {
   /*
   ** Extend nuxt using nuxt modules system (Alpha)
@@ -9,10 +10,21 @@ module.exports = {
       { src: '@nuxtjs/pwa', options: { icon: { sizes: [512, 192, 380 ] } } },
       'nuxt-stripe-module',
       '@nuxtjs/axios',
+      '@nuxtjs/sitemap',
       ['@nuxtjs/google-analytics', {
           id: 'UA-130634018-1'
       }]
   ],
+  sitemap: {
+      exclude: [
+          '/sign-up',
+          '/login'
+      ],
+      routes () {
+          return axios.get('https://wod.kodacompetitor.com/wp-json/wp/v2/posts?categories=2')
+              .then(res => res.data.map(post =>  '/workout-of-the-day/' + post.slug));
+      }
+  },
   stripe: {
     version: 'v3',
     publishableKey: 'pk_test_q18g70gNaRpri7661jkdHXfP'
