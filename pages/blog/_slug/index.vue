@@ -3,6 +3,7 @@
         <div class="post" v-for="(blog, index) in blog" :key="index">
             <div v-if="blog.fi_medium" class="post-featured-background fi_medium" :style="{ 'background-image': 'url(' + blog.fi_medium + ')' }">
                 <h1 v-html="blog.title.rendered"></h1>
+                <h3 class="blog-date">{{ blog.date | moment("MMMM Do, YYYY") }}</h3>
             </div>
             <div class="blog-content">
                 <div class="author" v-if="blog.acf.author">
@@ -160,6 +161,19 @@
         font-weight:bold;
         line-height: 1.4;
         padding-bottom: 20px;
+        color: #fff;
+        text-align: center;
+        width: 550px;
+        max-width: 100%;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+        text-shadow:  0 0 5px #000;
+    }
+    .post-featured-background .blog-date {
+        font-weight:bold;
+        line-height: 1.4;
+        padding-bottom: 10px;
         color: #fff;
         text-align: center;
         width: 550px;

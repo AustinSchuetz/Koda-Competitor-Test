@@ -16,8 +16,8 @@ workbox.precaching.precacheAndRoute([
     "revision": "fdf2810792cdb15e0c22e3853c527d66"
   },
   {
-    "url": "/_nuxt/manifest.b2ea37c205366e9785f9.js",
-    "revision": "f8e15693f750a73663679f5677e61070"
+    "url": "/_nuxt/manifest.f6ae63f2b06aeb0dd9cb.js",
+    "revision": "0b1800f81699b2084c2c5f13167794f3"
   },
   {
     "url": "/_nuxt/pages_about_index.f9350afc0b15e8635dd2.js",
@@ -28,12 +28,12 @@ workbox.precaching.precacheAndRoute([
     "revision": "2603656aa5f7488ae96d691c3726cf98"
   },
   {
-    "url": "/_nuxt/pages_blog__slug_index.09a58c059d19170a5c78.js",
-    "revision": "a00e28928d414a6051ca71b545fd2a50"
+    "url": "/_nuxt/pages_blog__slug_index.effcef41522311bc1b48.js",
+    "revision": "7b6b0ca4c331ce254dc5a23f7b5016c3"
   },
   {
-    "url": "/_nuxt/pages_blog_index.98d2a9fa7a972e3ea20d.js",
-    "revision": "96629737080bcb3d63266dfb9eb96afd"
+    "url": "/_nuxt/pages_blog_index.2574236cd1164c4082ad.js",
+    "revision": "d6fcb78866aeb43525e30cdc6a3c32aa"
   },
   {
     "url": "/_nuxt/pages_category__slug_index.6f0da73b1709507748f1.js",

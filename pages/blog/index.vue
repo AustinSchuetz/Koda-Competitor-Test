@@ -8,6 +8,7 @@
                     <img class="author-pic" :src="item.acf.author[0].author_pic">
                     <div>
                         <h3 class="author-name">by {{ item.acf.author[0].author_name }}</h3>
+                        <h3 class="author-name">{{ item.date | moment("MMMM Do, YYYY") }}</h3>
                     </div>
                 </div>
             </div>
