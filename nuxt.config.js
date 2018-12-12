@@ -23,8 +23,14 @@ module.exports = {
       hostname: 'https://kodacompetitor.com',
       generate: true,
       routes () {
-          return axios.get('https://wod.kodacompetitor.com/wp-json/wp/v2/posts?categories=2')
-              .then(res => res.data.map(post =>  '/workout-of-the-day/' + post.slug));
+          return axios.all([
+              axios.get('https://wod.kodacompetitor.com/wp-json/wp/v2/posts?categories=2'),
+              axios.get('https://wod.kodacompetitor.com/wp-json/wp/v2/posts?categories=6')
+          ])
+              .then(axios.spread((workout, blog) => [
+                      ...workout.data.map(article => '/workout-of-the-day/' + article.slug),
+                      ...blog.data.map(article => '/blog/' + article.slug)
+              ]));
       }
   },
   stripe: {
