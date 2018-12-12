@@ -20,6 +20,7 @@ module.exports = {
           '/sign-up',
           '/login'
       ],
+      generate: true,
       routes () {
           return axios.get('https://wod.kodacompetitor.com/wp-json/wp/v2/posts?categories=2')
               .then(res => res.data.map(post =>  '/workout-of-the-day/' + post.slug));
