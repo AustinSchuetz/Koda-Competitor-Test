@@ -247,6 +247,9 @@ export default {
         padding: 0;
         flex-grow: 2;
     }
+    .post-text-content iframe {
+        max-width: 90% !important;
+    }
     .post .post-featured-background {
         width: 350px;
         max-width: 35%;

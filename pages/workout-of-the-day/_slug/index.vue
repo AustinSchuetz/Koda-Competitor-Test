@@ -246,6 +246,9 @@ export default {
   padding: 10px 20px;
   background: linear-gradient(to bottom, #fff, rgba(255,255,255,0.01));
 }
+.post-text-content iframe {
+    max-width: 90% !important;
+}
 .post-container h4 {
   text-transform: uppercase;
   letter-spacing: 0.5px;
