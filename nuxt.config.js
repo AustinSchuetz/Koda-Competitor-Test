@@ -33,6 +33,9 @@ module.exports = {
               ]));
       }
   },
+  mode: [
+    'universal'
+  ],
   stripe: {
     version: 'v3',
     publishableKey: 'pk_test_q18g70gNaRpri7661jkdHXfP'
