@@ -11,7 +11,8 @@ install:
   - npm install -g
   - npm install -g firebase-tools
   - npm get prefix
-  - npm run generate
+  - npm run build
+  - npm start
 deploy:
   provider: firebase
   token:
