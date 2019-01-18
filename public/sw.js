@@ -8,16 +8,16 @@ workbox.precaching.precacheAndRoute([
     "revision": "e759b8e442edb8aef1580ee8dccfd53c"
   },
   {
-    "url": "/_nuxt/layouts_default.baf6d8e6a6ba6c3bd766.js",
-    "revision": "bfd4d35c7c570d05f70eeaf5636da130"
+    "url": "/_nuxt/layouts_default.aa98e520b2a2c9c9a6d0.js",
+    "revision": "bd0c34206a9dc547edd679a23d83e379"
   },
   {
-    "url": "/_nuxt/layouts_protected.8c5717939b9f3829dbbe.js",
-    "revision": "6b924192e9fee59d0af662e651d03da8"
+    "url": "/_nuxt/layouts_protected.b32104aadf78f108f745.js",
+    "revision": "8d29573e25e20d36d8158e866a2bbdf6"
   },
   {
-    "url": "/_nuxt/manifest.38e81a4d3c355f47e19e.js",
-    "revision": "91f71ef6f53aa3778a2e57ed4e3f0b48"
+    "url": "/_nuxt/manifest.333ebc7022bd8ac5e2f4.js",
+    "revision": "8e9d2008a2df7adab3d068977c220105"
   },
   {
     "url": "/_nuxt/pages_about_index.f9350afc0b15e8635dd2.js",
@@ -56,8 +56,8 @@ workbox.precaching.precacheAndRoute([
     "revision": "734382e53eb8d85d6b0c3edbe895edb0"
   },
   {
-    "url": "/_nuxt/pages_index.fbcbc637ca32c7a926ca.js",
-    "revision": "853ffff8146fed0272694df3da9ab0f0"
+    "url": "/_nuxt/pages_index.c00fccfe1417648737d6.js",
+    "revision": "3ecb935966386c7b5d1ab33cfc280ca6"
   },
   {
     "url": "/_nuxt/pages_individual-crossfit-programming_index.eaaec2f95831a26dabf3.js",
@@ -92,12 +92,12 @@ workbox.precaching.precacheAndRoute([
     "revision": "4bf1cb5c4550cc8f09175f66939bf07a"
   },
   {
-    "url": "/_nuxt/pages_workout-of-the-day__slug_index.0dded68013693824c618.js",
-    "revision": "a091208311ae027d530c8734621e559d"
+    "url": "/_nuxt/pages_workout-of-the-day__slug_index.ecf0c9ea5837c4ccd32c.js",
+    "revision": "21cb2f3c9da51912f21cbde00625dc54"
   },
   {
-    "url": "/_nuxt/pages_workout-of-the-day_index.b524b1a5230aa216cbc2.js",
-    "revision": "b8824692efa44da782fca9b6ac857b04"
+    "url": "/_nuxt/pages_workout-of-the-day_index.7e5af15ca9e3fcf2e040.js",
+    "revision": "3681b5ee8cb08e9201248934307f897c"
   },
   {
     "url": "/_nuxt/vendor.51d7acee166b648e5751.js",
