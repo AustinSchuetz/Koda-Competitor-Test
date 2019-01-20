@@ -11,7 +11,9 @@ install:
   - npm install -g
   - npm install -g firebase-tools
   - npm get prefix
-  - npm run build
+  - nuxt generate
+  - nuxt build
+  - nuxt start
 deploy:
   provider: firebase
   token:
