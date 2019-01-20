@@ -8,7 +8,10 @@
     ],
     "rewrites": [{
       "source": "**",
-      "function": "nuxtssr"
+      "function": "ssrapp"
     }]
+  },
+  "functions": {
+    "source": "ssrfunctions"
   }
 }
