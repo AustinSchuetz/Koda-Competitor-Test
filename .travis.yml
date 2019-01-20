@@ -11,6 +11,7 @@ install:
   - npm get prefix
 script:
   - nuxt build
+  - git add .
   - echo "Deploy!"
 deploy:
   provider: firebase
