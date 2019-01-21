@@ -44,7 +44,9 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "precommit": "npm run lint"
+    "precommit": "npm run lint",
+    "serve": "firebase serve --only hosting,functions",
+    "deploy": "firebase deploy"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",
