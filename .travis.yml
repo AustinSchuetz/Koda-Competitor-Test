@@ -10,7 +10,6 @@ install:
   - npm install -g firebase-tools
   - npm get prefix
 script:
-  - nuxt build
   - npm run serve
   - echo "Deploy!"
 deploy:
