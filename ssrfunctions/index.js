@@ -2,7 +2,8 @@ const functions = require('firebase-functions');
 const express = require('express');
 const { Nuxt } = require('nuxt');
 
-const app = express();
+const app = require('express')();
+// const app = express();
 // const nuxt = new Nuxt({
 //     dev: false,
 //     buildDir: 'public',
@@ -21,6 +22,6 @@ const app = express();
 // }
 
 app.use(require('prerender-node').set('prerenderToken', 'NyLo86U3Oey8sbHZlSG9'));
-
+exports.ssrapp = functions.https.onRequest(app);
 // app.use(handleRequest);
 // exports.ssrapp = functions.https.onRequest(app);
