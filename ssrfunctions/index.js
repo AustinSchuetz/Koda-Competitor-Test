@@ -1,3 +1,6 @@
+npm install --save
+npm init
+npm install express --save
 const functions = require('firebase-functions');
 const express = require('express');
 const { Nuxt } = require('nuxt');
