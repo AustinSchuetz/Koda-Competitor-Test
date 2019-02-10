@@ -10,12 +10,12 @@ install:
   - npm install -g firebase-tools
   - npm get prefix
 script:
-  - echo "Deploy firebase!"
+  - echo "Deploy functions and firebase!"
 deploy:
   provider: firebase
   token:
     secure: "1/IMxf1uIw-4fn9Hd4j6Wlr6oig_ZRX2ineovUuvP9Ahg"
   project: "koda-competitor-testing"
 after_success:
-  firebase init functions -  project koda-competitor-testing - token $FIREBASE_TOKEN.
+  firebase init functions
    firebase deploy -  project koda-competitor-testing - token $FIREBASE_TOKEN.
