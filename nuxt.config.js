@@ -72,7 +72,8 @@ module.exports = {
         { hid: "og:description", name: "og:description", content: "Koda Competitor CrossFit Programming" },
         { hid: "og:title", name: "og:title", content: "Koda Competitor CrossFit Programming" },
         { hid: "author", name: "author", content: "Austin Schuetz" },
-        { hid: "og:site_name", name: "og:site_name", content: "Koda Competitor" }
+        { hid: "og:site_name", name: "og:site_name", content: "Koda Competitor" },
+        { name: "fragment", content: "!" }
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },

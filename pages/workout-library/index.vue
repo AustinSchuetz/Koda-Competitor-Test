@@ -25,7 +25,7 @@
                 <div>
                     <div class="results-pages-holder">
                         <h1>Results: {{ this.total }}</h1>
-                        <h5 v-if="this.totalPages > 0">Page 1 of {{ this.totalPages }}</h5>
+                        <h5 v-if="this.totalPages > 0">Page {{ this.currentPage }} of {{ this.totalPages }}</h5>
                     </div>
                     <div v-if="this.total == 0">
                         <h1 class="no-workouts">No workouts match your filter</h1>

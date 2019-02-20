@@ -5,11 +5,11 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-    ],
-    "rewrites": [{
-      "source": "**",
-      "function": "ssrapp"
-    }]
+    ]
+//    "rewrites": [{
+//      "source": "**",
+//      "function": "api1"
+//    }]
   },
   "functions": {
     "source": "ssrfunctions"
