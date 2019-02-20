@@ -17,7 +17,4 @@ deploy:
     secure: "1/IMxf1uIw-4fn9Hd4j6Wlr6oig_ZRX2ineovUuvP9Ahg"
   project: "koda-competitor-testing"
 after_success:
-  cd ssrfunctions
-  npm install
-  cd ..
    firebase deploy -  project koda-competitor-testing - token $FIREBASE_TOKEN.
