@@ -6,10 +6,6 @@
       "**/.*",
       "**/node_modules/**"
     ]
-//    "rewrites": [{
-//      "source": "**",
-//      "function": "api1"
-//    }]
   },
   "functions": {
     "source": "ssrfunctions"
