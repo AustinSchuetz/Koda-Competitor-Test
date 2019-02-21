@@ -15,6 +15,6 @@ app.use(require('prerender-node').set('prerenderToken', 'NyLo86U3Oey8sbHZlSG9'))
 app.get("*", (request, response) => {
     response.send("Hello from Express on Firebase!")
 })
-exports.helloWorld = functions.https.onRequest((request, response) => {
- response.send("Hello from Firebase!");
-});
+// exports.helloWorld = functions.https.onRequest((request, response) => {
+//  response.send("Hello from Firebase!");
+// });
