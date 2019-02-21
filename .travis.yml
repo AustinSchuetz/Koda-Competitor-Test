@@ -11,7 +11,7 @@ install:
   - npm get prefix
 script:
   - echo "Deploy functions and firebase!"
-  - cd ssrfunctions
+  - cd functions
   - npm install firebase-tools
   - npm install firebase-functions
   - npm install firebase-admin
