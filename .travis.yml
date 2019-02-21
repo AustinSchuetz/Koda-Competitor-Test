@@ -15,7 +15,7 @@ script:
   - npm install
   - firebase deploy --only functions
   - cd -
-  - firebase deploy --only hosting -  project koda-competitor-testing - token $FIREBASE_TOKEN.
+  - firebase deploy --only hosting -project koda-competitor-testing - token $FIREBASE_TOKEN.
 #deploy:
 #  provider: firebase
 #  token:
