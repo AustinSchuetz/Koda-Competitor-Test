@@ -1,0 +1,37 @@
+[debug] [2019-02-21T22:33:11.789Z] ----------------------------------------------------------------------
+[debug] [2019-02-21T22:33:11.796Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ausi4\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-02-21T22:33:11.796Z] CLI Version:   6.3.1
+[debug] [2019-02-21T22:33:11.796Z] Platform:      win32
+[debug] [2019-02-21T22:33:11.796Z] Node Version:  v8.12.0
+[debug] [2019-02-21T22:33:11.798Z] Time:          Thu Feb 21 2019 15:33:11 GMT-0700 (Mountain Standard Time)
+[debug] [2019-02-21T22:33:11.798Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-02-21T22:33:11.821Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-02-21T22:33:11.825Z] > authorizing via signed-in user
+[debug] [2019-02-21T22:33:11.826Z] [iam] checking project koda-competitor-testing for permissions ["firebase.projects.get"]
+[debug] [2019-02-21T22:33:11.830Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-02-21T22:33:11.830Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-02-21T22:33:12.114Z] <<< HTTP RESPONSE 200
+[debug] [2019-02-21T22:33:12.131Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/koda-competitor-testing:testIamPermissions  
+
+[debug] [2019-02-21T22:33:12.523Z] <<< HTTP RESPONSE 200
+[debug] [2019-02-21T22:33:12.528Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/koda-competitor-testing  
+ 
+[debug] [2019-02-21T22:33:12.843Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\ausi4\PhpstormProjects\Koda-Competitor-Test'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2019-02-21T22:33:14.883Z] Fetching environment
+[debug] [2019-02-21T22:33:14.896Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/495914058922:getServerAppConfig  
+ 
+[debug] [2019-02-21T22:33:14.896Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/495914058922/clients/_:getWebAppConfig  
+ 
+[debug] [2019-02-21T22:33:15.124Z] <<< HTTP RESPONSE 200
+[debug] [2019-02-21T22:33:15.125Z] Starting @google-cloud/functions-emulator
+[debug] [2019-02-21T22:33:15.183Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+[debug] [2019-02-21T22:33:18.697Z] Parsing function triggers
+[info] i  functions: No HTTPS functions found. Use firebase functions:shell if you would like to emulate other types of functions.
