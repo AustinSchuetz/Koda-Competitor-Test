@@ -12,6 +12,9 @@ install:
 script:
   - echo "Deploy functions and firebase!"
   - cd ssrfunctions
+  - npm install firebase-tools
+  - npm install firebase-functions
+  - npm install firebase-admin
   - npm install
   - cd ..
 deploy:
