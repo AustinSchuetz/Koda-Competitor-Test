@@ -8,10 +8,10 @@ const functions = require('firebase-functions');
 // });
 
 const express = require('express');
-app.use(require('prerender-node').set('prerenderToken', 'NyLo86U3Oey8sbHZlSG9'));
 
 /* Express */
 const app = express()
+app.use(require('prerender-node').set('prerenderToken', 'NyLo86U3Oey8sbHZlSG9'));
 app.get("*", (request, response) => {
     response.send("Hello from Express on Firebase!")
 })
