@@ -13,9 +13,8 @@ script:
   - echo "Deploy functions and firebase!"
   - cd functions
   - npm install
-  - firebase deploy --only functions
+  - firebase deploy --only functions -project koda-competitor-testing - token $FIREBASE_TOKEN.
   - cd -
-  - firebase deploy --only hosting -project koda-competitor-testing - token $FIREBASE_TOKEN.
 #deploy:
 #  provider: firebase
 #  token:
