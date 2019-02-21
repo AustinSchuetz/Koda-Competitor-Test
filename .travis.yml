@@ -13,7 +13,8 @@ script:
   - echo "Deploy functions and firebase!"
   - cd functions
   - npm install
-  - cd ..
+  - firebase deploy
+  - cd -
 deploy:
   provider: firebase
   token:
