@@ -11,6 +11,9 @@ install:
   - npm get prefix
 script:
   - echo "Deploy functions and firebase!"
+  - cd ssrfunctions
+  - npm install
+  - cd ..
 deploy:
   provider: firebase
   token:
