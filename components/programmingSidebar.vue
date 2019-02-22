@@ -8,6 +8,7 @@
             <div class="social">
                 <a href="https://www.instagram.com/kodacompetitor/" class="fa fa-instagram" target="_blank"></a>
                 <a href="https://www.facebook.com/groups/416882822174358/" class="fa fa-facebook" target="_blank"></a>
+                <a href="https://www.youtube.com/channel/UC2xH8AHU58InlOW0cXkXW8w" class="fa fa-youtube-play" target="_blank"></a>
                 <a href="mailto:kodacompetitor@gmail.com" class="contact-email" target="_blank">kodacompetitor@gmail.com</a>
             </div>
         </div>
