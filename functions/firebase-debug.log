@@ -1,0 +1,25 @@
+[debug] [2019-02-22T19:05:37.314Z] ----------------------------------------------------------------------
+[debug] [2019-02-22T19:05:37.318Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ausi4\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2019-02-22T19:05:37.318Z] CLI Version:   6.3.1
+[debug] [2019-02-22T19:05:37.318Z] Platform:      win32
+[debug] [2019-02-22T19:05:37.318Z] Node Version:  v8.12.0
+[debug] [2019-02-22T19:05:37.320Z] Time:          Fri Feb 22 2019 12:05:37 GMT-0700 (Mountain Standard Time)
+[debug] [2019-02-22T19:05:37.320Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-02-22T19:05:37.343Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-02-22T19:05:37.344Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\ausi4\PhpstormProjects\Koda-Competitor-Test
+
+Before we get started, keep in mind:
+
+  * You are initializing in an existing Firebase project directory
+
