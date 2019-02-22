@@ -20,4 +20,3 @@ deploy:
   project: "koda-competitor-testing"
 #after_success:
 #  - firebase deploy -project koda-competitor-testing - token $FIREBASE_TOKEN.
-  - cd -
